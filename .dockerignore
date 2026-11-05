@@ -1,0 +1,8 @@
+node_modules
+.next
+data
+docs
+brand-src
+preview
+.env
+.env*.local

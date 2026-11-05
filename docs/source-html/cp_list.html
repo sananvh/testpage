@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+
+    <title> Cyberpoint </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Template Basic Images Start -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/cyberPointLogo.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/cyberPointLogo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/cyberPointLogo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="/css/flag-icon.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="~/img/favicon/ms-icon-144x144.png">
+    <meta property="og:image" content="~/img/og/img.png">
+    <!-- Template Basic Images End -->
+    <!-- Custom Browsers Color Start -->
+    <meta name="theme-color" content="#000">
+    <!-- Custom Browsers Color End -->
+
+    <link rel="stylesheet" href="/css/app.min.css">
+
+
+   
+
+
+
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css"> 
+
+
+
+    
+
+
+ 
+ 
+ <link rel="stylesheet" href="/css/aos.css">
+
+
+</head>
+
+<body>
+
+
+    
+
+<header class="header container-wrapper">
+
+    <div class="leftSideMenu">
+        <svg class="hamburgerIcon dark-photo">
+            <use xlink:href="/img/svg/icons.svg#icon-magnifying"></use>
+        </svg>
+
+        <img src="/img/hamburgerLightMode.png" class="darkHamburger light-photo" alt="logo" />
+        <div class="cancelBtn">
+            <img src="/img/cancelDarkMode.png" class="dark-photo" />
+            <img src="/img/cancelLightMode.png" class="light-photo" />
+
+        </div>
+
+
+    </div>
+
+    <div>
+        <a href="/">
+            <svg class="logo  dark-photo">
+                <use xlink:href="/img/svg/icons.svg#icon-Isolation-Mode"></use>
+            </svg>
+            <svg class="logo  light-photo">
+                <use xlink:href="/img/svg/icons.svg#icon-Isolation-Mode-1"></use>
+            </svg>
+
+        </a>
+    </div>
+
+    <div class="d-md-flex  d-none ">
+
+        <div class="d-lg-flex d-none">
+
+
+
+
+
+            <div class="currency-switcher">
+                <div class="dropdown">
+                    <div class="caption">
+                        <svg class="langSvg">
+                            <use xlink:href="/img/svg/icons.svg#icon-us"></use>
+                        </svg>
+
+                    </div>
+                    <div class="list">
+                        <div class="item" data-item="AZ">
+                            <svg class="langSvg">
+                                <use xlink:href="/img/svg/icons.svg#icon-az"></use>
+                            </svg>
+
+                        </div>
+
+
+                        <div class="item selected" data-item="EN-US">
+                            <svg class="langSvg">
+                                <use xlink:href="/img/svg/icons.svg#icon-us"></use>
+                            </svg>
+
+                        </div>
+
+
+                        <div class="item" data-item="RU">
+
+                            <svg class="langSvg">
+                                <use xlink:href="/img/svg/icons.svg#icon-ru"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="mt-2">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <img src="/img/soon.png" alt="soon" class="hi light-photo" />
+                <img src="/img/soonDarkMode.png" class="darkSoon dark-photo " />
+
+                <img src="/img/moon.png" alt="moon" class="bye dark-photo" />
+                <img src="/img/lightModeMoon.png" class="darkMoon light-photo" />
+                <span class="ball"></span>
+            </label>
+
+        </div>
+    </div>
+
+
+
+    <div class="navbarUl ">
+        <div class="navbarLists row d-flex justify-content-between ">
+            <div class="flags" id="flags-phone">
+                <button class="az-tablet" data-culture-code="AZ">
+                    <img src="/img/azerbaijan.png" />
+                </button>
+                <button class="ru-phone" data-culture-code="RU">
+                    <img src="/img/russian-federation.png" class="ms-3" />
+                </button>
+                <button data-culture-code="EN-US">
+                    <img src="/img/english.png" class="ms-3" style="border-radius:4px" />
+                </button>
+
+            </div>
+            <div class="turnBox d-block  d-md-none ">
+                <input type="checkbox" id="checkboxMobile" class="secondCheckBox">
+
+                <img src="/img/soon.png" class="soon  dark-photo" alt="soon" /><span class="dark-photo lightVersion">
+                    &#x130;&#x15F;&#x131;ql&#x131; versiyaya ke&#xE7;in
+                </span>
+
+                <img src="/img/moon.png" class="moon light-photo " alt="moon" />
+                <span class="light-photo darkVersion">
+                    Qaranl&#x131;q versiyaya ke&#xE7;in
+                </span>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 " style="padding-bottom: 0px;margin-bottom: 0px;">
+                <ul class="firstUl serviceList" id="services">
+
+                    <a>
+                    <li onclick="location.href='/#advantages'">
+                            &#xDC;st&#xFC;nl&#xFC;kl&#x259;rimiz
+                    </li>
+                    </a>
+
+                    <a href="/#ourServices">
+                    <li onclick="location.href='/#ourServices'">Xidm&#x259;tl&#x259;r</li>
+                    </a>
+
+                    <a id="myPartners">
+                    <li data-title="Partners" onclick="location.href='/#partners'">Partnerl&#x259;r</li>
+                    </a>
+
+                    <a id="myClients">
+                    <li data-title="Clients" onclick="location.href='/#clients'">M&#xFC;&#x15F;t&#x259;ril&#x259;r</li>
+                    </a>
+
+                    <a id="myCertificates">
+                    <li data-title="Certificates" onclick="location.href='/#certificates'">Sertifikatlar</li>
+                    </a>
+
+                    <a>
+                    <li onclick="location.href='#contacts'">Biziml&#x259; &#x259;laq&#x259;</li>
+                    </a>
+                </ul>
+
+
+
+
+
+            </div>
+
+            <div class="col-12 col-md-6 mt-3 pb-5">
+
+                <ul class="secondUl serviceList">
+                    <a class="mainATag pt-sm-5 " href="/whoweare">
+                    <li>
+                            Biz kimik
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+                    </a>
+                    <a class="mainATag" href="/employees">
+
+                    <li>
+                            Komandam&#x131;z
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+                    </a>
+                    <a class="mainATag" href="/brandings">
+
+                    <li>
+
+                            Brendl&#x259;&#x15F;m&#x259;
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+                    </a>
+                    <a class="mainATag" href="/list">
+
+                    <li>
+                            Mediada biz
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+
+                    </a>
+
+                </ul>
+
+            </div>
+        </div>
+        <div>
+            <img src="/img/envisioning.png" class="dark-photo navbarBg" />
+            <img src="/img/envisionLightttt.png" class="light-photo navbarBg" />
+        </div>
+        <div class="flagsTablet">
+            <button data-culture-code="AZ">
+                <img src="/img/azerbaijan.png" class="flagTabletImg" />
+            </button>
+            <button data-culture-code="RU">
+                <img src="/img/russian-federation.png" class="flagTabletImg" />
+            </button>
+            <button data-culture-code="EN-US">
+                <img src="/img/english.png" class="flagTabletImg" />
+            </button>
+
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+    
+<main>
+    <div class="mainMediaBox">
+        <div class="pagePaths">
+            <p><a href="/">Ana s&#x259;hif&#x259; </a> </p>
+            <p class="redBorder"></p>
+            <p>Mediada biz</p>
+        </div>
+        <div class="position-relative container-wrapper">
+            <h1 class="detailCancel">X</h1>
+
+        </div>
+
+        <div class="mediaBoxes">
+
+                <div class="mediaBox" id="MediaModal-1" data-id="1" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title"> &#x201C;AZINTELECOM&#x201D; V&#x18F; &#x201C;CYBERPO&#x130;NT&#x201D; K&#x130;BERT&#x18F;HL&#xDC;K&#x18F;S&#x130;ZL&#x130;K SAH&#x18F;S&#x130;ND&#x18F; B&#x130;RG&#x18F; F&#x18F;AL&#x130;YY&#x18F;T G&#xD6;ST&#x18F;R&#x18F;C&#x18F;K</h3>
+
+                        <p class="date">iyn 07, 2023</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/53zma4xo.sf0/t0i2rrsb.i0f.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-1-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-1-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/53zma4xo.sf0/t0i2rrsb.i0f.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                         &#x201C;AZINTELECOM&#x201D; V&#x18F; &#x201C;CYBERPO&#x130;NT&#x201D; K&#x130;BERT&#x18F;HL&#xDC;K&#x18F;S&#x130;ZL&#x130;K SAH&#x18F;S&#x130;ND&#x18F; B&#x130;RG&#x18F; F&#x18F;AL&#x130;YY&#x18F;T G&#xD6;ST&#x18F;R&#x18F;C&#x18F;K
+                                    </h3>
+                                    <p class="dateMediaModal">iyn 07, 2023</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    R&#x259;q&#x259;msal &#x130;nki&#x15F;af v&#x259; N&#x259;qliyyat Nazirliyinin tabeliyind&#x259; olan &#x201C;AzInTelecom&#x201D; MMC v&#x259; kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sind&#x259; apar&#x131;c&#x131; &#x15F;irk&#x259;tl&#x259;rd&#x259;n biri olan &#x201C;Cyberpoint&#x201D; MMC aras&#x131;nda &#x259;m&#x259;kda&#x15F;l&#x131;q memorandumu imzalan&#x131;b.&#xD;&#xA;&#xD;&#xA;Memorandumu &#x201C;AzInTelecom&#x201D; MMC-nin &#x130;dar&#x259; Hey&#x259;tinin s&#x259;dri Elxan &#x18F;zizov v&#x259; &#x201C;Cyberpoint&#x201D; MMC-nin direktoru Fuad Nift&#x259;liyev imzalay&#x131;b.&#xD;&#xA;&#xD;&#xA;&#x15E;irk&#x259;t r&#x259;hb&#x259;rl&#x259;ri memorandum &#x259;sas&#x131;nda kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sind&#x259; i&#x15F;g&#xFC;zar m&#xFC;nasib&#x259;tl&#x259;rin qurulmas&#x131;n&#x131;, birg&#x259; layih&#x259;l&#x259;rin h&#x259;yata ke&#xE7;irilm&#x259;sini v&#x259; s&#x259;m&#x259;r&#x259;li m&#x259;lumat m&#xFC;badil&#x259;sinin t&#x259;&#x15F;kil olunmas&#x131;n&#x131; raz&#x131;la&#x15F;d&#x131;r&#x131;blar.&#xD;&#xA;&#xD;&#xA;T&#x259;r&#x259;fl&#x259;r elmi-texniki &#x259;m&#x259;kda&#x15F;l&#x131;&#x11F;&#x131;n inki&#x15F;af etdirilm&#x259;si, birg&#x259; t&#x259;dqiqat layih&#x259;l&#x259;rinin t&#x259;&#x15F;kil olunmas&#x131;, kibert&#x259;hl&#xFC;k&#x259;sizlik &#xFC;zr&#x259; aidiyy&#x259;ti m&#x259;rk&#x259;zl&#x259;rin qar&#x15F;&#x131;l&#x131;ql&#x131; istifad&#x259;si &#xFC;&#xE7;&#xFC;n &#x15F;&#x259;raitin yarad&#x131;lmas&#x131;, h&#x259;m&#xE7;inin yeni texnologiya v&#x259; h&#x259;ll&#x259;rin &#xF6;yr&#x259;nilm&#x259;si v&#x259; m&#xF6;vcud h&#x259;ll&#x259;rin t&#x259;kmill&#x259;&#x15F;dirilm&#x259;si m&#x259;qs&#x259;dil&#x259; t&#x259;cr&#xFC;b&#x259; m&#xFC;badil&#x259;si aparma&#x11F;&#x131; planla&#x15F;d&#x131;r&#x131;r.&#xD;&#xA;&#xD;&#xA;&#x201C;AzInTelecom&#x201D; MMC v&#x259; &#x201C;Cyberpoint&#x201D; MMC Az&#x259;rbaycanda kibert&#x259;hl&#xFC;k&#x259;sizlik ekosisteminin g&#xFC;cl&#x259;ndirilm&#x259;si &#xFC;&#xE7;&#xFC;n ortaq m&#x259;hsul v&#x259; h&#x259;ll&#x259;rin haz&#x131;rlanmas&#x131;n&#x131;, m&#xFC;&#x15F;t&#x259;ril&#x259;r&#x259; birg&#x259; xidm&#x259;t g&#xF6;st&#x259;rm&#x259;yi h&#x259;d&#x259;fl&#x259;yir.&#xD;&#xA;&#xD;&#xA;Qeyd ed&#x259;k ki, &#xF6;lk&#x259;nin bir s&#x131;ra b&#xF6;y&#xFC;k &#x15F;irk&#x259;t v&#x259; d&#xF6;vl&#x259;t qurumlar&#x131;n&#x131;n informasiya resurslar&#x131;n&#x131; etibar etdiyi &#x201C;AzInTelecom&#x201D; MMC ISO 27001 &#xFC;zr&#x259; audit, konsultasiya v&#x259; maarifl&#x259;ndirm&#x259; xidm&#x259;tl&#x259;ri, N&#xFC;fuzetm&#x259; testl&#x259;rinin simulyasiyas&#x131; v&#x259; insidentl&#x259;rin ara&#x15F;d&#x131;r&#x131;lmas&#x131;, h&#x259;m&#xE7;inin T&#x259;hl&#xFC;k&#x259;sizlik &#x18F;m&#x259;liyyatlar&#x131; M&#x259;rk&#x259;zi xidm&#x259;tl&#x259;rini g&#xF6;st&#x259;rir.&#xD;&#xA;&#xD;&#xA;
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-6" data-id="6" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">Az&#x259;rbaycan&#x131;n &#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;ti D&#xFC;nyan&#x131;n apar&#x131;c&#x131; kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;ri &#x15F;irk&#x259;til&#x259; m&#xFC;qavil&#x259; imzalad&#x131;    </h3>
+
+                        <p class="date">avq 23, 2022</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/mqdwng0x.ruq/302vqtzd.h55.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-6-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-6-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/mqdwng0x.ruq/302vqtzd.h55.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        Az&#x259;rbaycan&#x131;n &#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;ti D&#xFC;nyan&#x131;n apar&#x131;c&#x131; kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;ri &#x15F;irk&#x259;til&#x259; m&#xFC;qavil&#x259; imzalad&#x131;    
+                                    </h3>
+                                    <p class="dateMediaModal">avq 23, 2022</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                     Az&#x259;rbaycan&#x131;n apar&#x131;c&#x131; kibert&#x259;hl&#xFC;k&#x259;sizlik xidm&#x259;ti t&#x259;minat&#xE7;&#x131;s&#x131; olan &#x201C;Cyberpoint&#x201D; MMC il&#x259; d&#xFC;nyan&#x131;n apar&#x131;c&#x131; &#x201C;Privileged Access Management&#x201D; (PAM) v&#x259; kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;ri t&#x259;minat&#xE7;&#x131;s&#x131; &#x201C;Kron&#x201D;la aras&#x131;nda &#x259;m&#x259;kda&#x15F;l&#x131;q m&#xFC;qavil&#x259;si imzalan&#x131;b.&#xD;&#xA;&#xD;&#xA;&#x18F;m&#x259;kda&#x15F;l&#x131;q &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; &#x201C;Kron&#x201D;un kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;rinin, x&#xFC;susil&#x259; &#x201C;Privileged Account Access Security&#x201D; m&#x259;hsulunun Az&#x259;rbaycanda sat&#x131;&#x15F;&#x131; v&#x259; istifad&#x259;sinin geni&#x15F;l&#x259;ndirilm&#x259;si h&#x259;d&#x259;fl&#x259;nir.&#xD;&#xA;&#xD;&#xA;VTB-d&#x259; minimal faiz d&#x259;r&#x259;c&#x259;si il&#x259; na&#x11F;d kredit 10.99%-d&#x259;n&#xD;&#xA;&#xD;&#xA;&#x18F;m&#x259;kda&#x15F;l&#x131;q m&#xFC;qavil&#x259;si Az&#x259;rbaycanda &#x15F;irk&#x259;tl&#x259;r v&#x259; d&#xF6;vl&#x259;t qurumlar&#x131; &#xFC;&#xE7;&#xFC;n kibert&#x259;hl&#xFC;k&#x259;sizlik m&#x259;hsullar&#x131;na &#xE7;&#x131;x&#x131;&#x15F; imkan&#x131; yaratmaqla iki &#xF6;lk&#x259; aras&#x131;nda informasiya texnologiyalar&#x131; sah&#x259;sind&#x259; biznes t&#x259;r&#x259;fda&#x15F;l&#x131;&#x11F;&#x131;n&#x131; v&#x259; kommersiya &#x259;laq&#x259;l&#x259;rini daha da d&#x259;rinl&#x259;&#x15F;dir&#x259;c&#x259;k.&#xD;&#xA;&#xD;&#xA;Bu sazi&#x15F;, h&#x259;m&#xE7;inin Az&#x259;rbaycan v&#x259; T&#xFC;rkiy&#x259; aras&#x131;nda texnologiya sah&#x259;sind&#x259; &#x259;m&#x259;kda&#x15F;l&#x131;&#x11F;&#x131; g&#xFC;cl&#x259;ndir&#x259;c&#x259;k, bilik m&#xFC;badil&#x259;sin&#x259;, t&#x259;cr&#xFC;b&#x259;nin &#xF6;t&#xFC;r&#xFC;lm&#x259;sin&#x259; v&#x259; g&#x259;l&#x259;c&#x259;k birg&#x259; layih&#x259;l&#x259;rin haz&#x131;rlanmas&#x131;na imkan ver&#x259;c&#x259;k.&#xD;&#xA;&#xD;&#xA;&#x18F;m&#x259;kda&#x15F;l&#x131;q m&#xFC;qavil&#x259;sinin imzalanma m&#x259;rasimind&#x259; sazi&#x15F;l&#x259; ba&#x11F;l&#x131; fikirl&#x259;rini b&#xF6;l&#xFC;&#x15F;&#x259;n &#x201C;Kron&#x201D;un ba&#x15F; direktoru Mete Sansal Az&#x259;rbaycan bazar&#x131;nda m&#x259;hsul sat&#x131;&#x15F;&#x131; v&#x259; xidm&#x259;tl&#x259;r &#xFC;&#xE7;&#xFC;n g&#xFC;cl&#xFC;, y&#xFC;ks&#x259;k &#x259;lav&#x259; d&#x259;y&#x259;r&#x259; malik kibert&#x259;hl&#xFC;k&#x259;sizlik xidm&#x259;ti t&#x259;minat&#xE7;&#x131;s&#x131; olan &#x201C;Cyberpoint&#x201D; il&#x259; &#x259;m&#x259;kda&#x15F;l&#x131;qdan &#xE7;ox m&#x259;mnun oldu&#x11F;unu vur&#x11F;ulay&#x131;b: &#xD;&#xA;&#xD;&#xA;&#x201C;Biz i&#x15F; orta&#x11F;&#x131;m&#x131;zla Az&#x259;rbaycanda kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sind&#x259; aktiv olma&#x11F;&#x131; v&#x259; q&#x131;sa m&#xFC;dd&#x259;td&#x259; bazar pay&#x131;m&#x131;z&#x131; art&#x131;rma&#x11F;&#x131; h&#x259;d&#x259;fl&#x259;yirik&#x201D;.&#xD;&#xA;&#xD;&#xA;H&#x259;m&#xE7;inin &#x201C;Cyberpoint&#x201D;in direktoru Fuad Nift&#x259;liyev qeyd edib ki, &#x201C;Kron&#x201D;un m&#x259;lumat v&#x259; giri&#x15F; t&#x259;hl&#xFC;k&#x259;sizliyi sah&#x259;sind&#x259; t&#x259;cr&#xFC;b&#x259;si il&#x259; birlikd&#x259; Az&#x259;rbaycan &#x15F;irk&#x259;tl&#x259;rin&#x259; &#x259;n yax&#x15F;&#x131; identifikasiya v&#x259; giri&#x15F; idar&#x259;etm&#x259; h&#x259;lli t&#x259;klif edil&#x259;c&#x259;k:&#xD;&#xA;&#xD;&#xA;&#x201C;Bu i&#x15F; ortaql&#x131;&#x11F;&#x131; iki &#xF6;lk&#x259; aras&#x131;nda texnoloji &#x259;laq&#x259;ni daha da g&#xFC;cl&#x259;ndir&#x259;r&#x259;k kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sind&#x259; yeni qap&#x131;lar a&#xE7;acaq&#x201D;.&#xD;&#xA;&#xD;&#xA;PAM sah&#x259;sind&#x259; T&#xFC;rkiy&#x259;nin apar&#x131;c&#x131; h&#x259;ll istehsal&#xE7;&#x131;s&#x131; olan &#x201C;Kron&#x201D;, &#x201C;Gartner&#x201D; hesabat&#x131;nda ard&#x131;c&#x131;l olaraq iki d&#x259;f&#x259; yer alan ilk v&#x259; yegan&#x259; t&#xFC;rk &#x15F;irk&#x259;tidir. O c&#xFC;ml&#x259;d&#x259;n, &#x15F;irk&#x259;t &#x201C;Kuppinger Cole&#x201D;, &#x201C;Forrester&#x201D; kimi t&#x259;dqiqat &#x15F;irk&#x259;tl&#x259;rinin hesabatlar&#x131;nda d&#xFC;nyan&#x131;n apar&#x131;c&#x131; &#x201C;PAM&#x201D; m&#x259;hsul t&#x259;minat&#xE7;&#x131;lar&#x131;ndan biri kimi g&#xF6;st&#x259;rilir.&#xD;&#xA;&#xD;&#xA;M&#x259;lumat &#xFC;&#xE7;&#xFC;n bildir&#x259;k ki, Az&#x259;rbaycanda apar&#x131;c&#x131; kibert&#x259;hl&#xFC;k&#x259;sizlik &#x15F;irk&#x259;ti olan &#x201C;Cyberpoint&#x201D; MMC m&#xFC;xt&#x259;lif d&#xF6;vl&#x259;t qurumlar&#x131;na v&#x259; el&#x259;c&#x259; d&#x259; &#xF6;z&#x259;l &#x15F;irk&#x259;tl&#x259;r&#x259; xidm&#x259;t g&#xF6;st&#x259;rir. Kibert&#x259;hl&#xFC;k&#x259;sizlik &#xFC;zr&#x259; &#x259;n b&#xF6;y&#xFC;k &#x259;m&#x259;liyyat m&#x259;rk&#x259;zin&#x259; malik olan &#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;ti T&#x259;hl&#xFC;k&#x259;sizlik &#x18F;m&#x259;liyyat M&#x259;rk&#x259;zi xidm&#x259;ti, N&#xFC;fuzetm&#x259; S&#x131;naqlar&#x131; xidm&#x259;ti, R&#x259;q&#x259;msal Audit v&#x259; &#x130;stintaq xidm&#x259;ti, Kibert&#x259;hl&#xFC;k&#x259;sizlik H&#x259;ll&#x259;rinin T&#x259;tbiqi v&#x259; Dizayn&#x131; xidm&#x259;ti, Kiber Konsalting v&#x259; Kiber Maarifl&#x259;ndirm&#x259; xidm&#x259;tl&#x259;rini t&#x259;qdim edir.&#xD;&#xA;
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-7" data-id="7" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">AzTU il&#x259; &#x201C;Cyberpoint&#x201D; MMC aras&#x131;nda &#x259;m&#x259;kda&#x15F;l&#x131;q memorandumu imzalan&#x131;b</h3>
+
+                        <p class="date">sen 20, 2023</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/eujxs45t.hlg/04dvhpwx.hqc.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-7-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-7-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/eujxs45t.hlg/04dvhpwx.hqc.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        AzTU il&#x259; &#x201C;Cyberpoint&#x201D; MMC aras&#x131;nda &#x259;m&#x259;kda&#x15F;l&#x131;q memorandumu imzalan&#x131;b
+                                    </h3>
+                                    <p class="dateMediaModal">sen 20, 2023</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    Az&#x259;rbaycan&#x131;n apar&#x131;c&#x131; kibert&#x259;hl&#xFC;k&#x259;sizlik xidm&#x259;ti t&#x259;minat&#xE7;&#x131;s&#x131; olan &#x201C;Cyberpoint&#x201D; MMC il&#x259; &#xF6;lk&#x259;mizin &#x259;n n&#xFC;fuzlu universitetl&#x259;rind&#x259;n biri olan Az&#x259;rbaycan Texniki Universiteti (AzTU) aras&#x131;nda &#x259;m&#x259;kda&#x15F;l&#x131;q haqq&#x131;nda memorandum imzalan&#x131;b. S&#x259;n&#x259;di &#x201C;Cyberpoint&#x201D;in direktoru Fuad Nift&#x259;liyev v&#x259; AzTU-nun rektoru Vilay&#x259;t V&#x259;liyev imzalay&#x131;blar.&#xD;&#xA;&#xD;&#xA;Memorandumun m&#x259;qs&#x259;di t&#x259;r&#x259;fl&#x259;r aras&#x131;nda &#xF6;z nizamnam&#x259;l&#x259;ri &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sind&#x259; milli, elmi-texniki v&#x259; insan resurslar&#x131; potensial&#x131;n&#x131;n g&#xFC;cl&#x259;ndirilm&#x259;si m&#x259;qs&#x259;dil&#x259; &#x259;laq&#x259;l&#x259;rin v&#x259; i&#x15F;g&#xFC;zar m&#xFC;nasib&#x259;tl&#x259;rin qurulmas&#x131;n&#x131;n, birg&#x259; layih&#x259;l&#x259;rin h&#x259;yata ke&#xE7;irilm&#x259;sinin, s&#x259;m&#x259;r&#x259;li m&#x259;lumat m&#xFC;badil&#x259;sinin t&#x259;&#x15F;kil olunmas&#x131;n&#x131;n t&#x259;&#x15F;viq edilm&#x259;sidir.&#xD;&#xA;&#xD;&#xA;Bununla yana&#x15F;&#x131; &#x201C;Cyberpoint&#x201D;l&#x259; AzTU aras&#x131;nda imzalanan memorandum t&#x259;r&#x259;fl&#x259;r aras&#x131;nda &#x259;m&#x259;kda&#x15F;l&#x131;&#x11F;&#x131;n h&#x259;yata ke&#xE7;iril&#x259;c&#x259;yi &#xFC;mumi sah&#x259;l&#x259;rin m&#xFC;&#x259;yy&#x259;nl&#x259;&#x15F;dirilm&#x259;si m&#x259;qs&#x259;dini d&#x259; &#xF6;z&#xFC;nd&#x259; da&#x15F;&#x131;y&#x131;r.&#xD;&#xA;&#xD;&#xA;&#x18F;m&#x259;kda&#x15F;l&#x131;q memomrandumunun ba&#x15F;l&#x131;ca h&#x259;d&#x259;fl&#x259;rind&#x259;n biri d&#x259; kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;si &#xFC;zr&#x259; t&#x259;hsil alan t&#x259;l&#x259;b&#x259;l&#x259;rin praktiki t&#x259;liml&#x259;r&#x259; c&#x259;lb olunmas&#x131; v&#x259; onlar&#x131;n bu sah&#x259;d&#x259; daha geni&#x15F; bilikl&#x259;r&#x259; yiy&#x259;l&#x259;nm&#x259;si &#xFC;&#xE7;&#xFC;n laz&#x131;m&#x131; &#x15F;&#x259;raitin yarad&#x131;lmas&#x131;d&#x131;r.
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-8" data-id="8" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">Az&#x259;rbaycan Kibert&#x259;hl&#xFC;k&#x259;sizlik T&#x259;&#x15F;kilatlar&#x131; Assosiasiyas&#x131; (AKTA) t&#x259;r&#x259;find&#x259;n h&#x259;yata ke&#xE7;iril&#x259;n &#x201C;Kiberm&#x259;kanda saxta x&#x259;b&#x259;rl&#x259;rl&#x259; m&#xFC;bariz&#x259;nin apar&#x131;lmas&#x131;&#x201D; layih&#x259;si &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; t&#x259;liml&#x259;r ba&#x15F;a &#xE7;at&#x131;b</h3>
+
+                        <p class="date">okt 05, 2023</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/qthmgncd.vx2/wryjfpow.uvt.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-8-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-8-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/qthmgncd.vx2/wryjfpow.uvt.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        Az&#x259;rbaycan Kibert&#x259;hl&#xFC;k&#x259;sizlik T&#x259;&#x15F;kilatlar&#x131; Assosiasiyas&#x131; (AKTA) t&#x259;r&#x259;find&#x259;n h&#x259;yata ke&#xE7;iril&#x259;n &#x201C;Kiberm&#x259;kanda saxta x&#x259;b&#x259;rl&#x259;rl&#x259; m&#xFC;bariz&#x259;nin apar&#x131;lmas&#x131;&#x201D; layih&#x259;si &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; t&#x259;liml&#x259;r ba&#x15F;a &#xE7;at&#x131;b
+                                    </h3>
+                                    <p class="dateMediaModal">okt 05, 2023</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    Layih&#x259;nin sayca d&#xF6;rd&#xFC;nc&#xFC; v&#x259; sonuncu t&#x259;lim paketi 29.09.2023-c&#xFC; il tarixind&#x259; C&#x259;nubi Qafqaz&#x131;n &#x259;n b&#xF6;y&#xFC;k kibert&#x259;hl&#xFC;k&#x259;sizlik xidm&#x259;ti provayderl&#x259;rind&#x259;n olan &#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;tind&#x259; i&#x15F;tirak&#xE7;&#x131;lara t&#x259;qdim edilib.&#xD;&#xA;&#xD;&#xA;Layih&#x259; r&#x259;hb&#x259;ri T&#x259;briz C&#x259;f&#x259;rovun layih&#x259; haqq&#x131;nda &#xE7;&#x131;x&#x131;&#x15F;&#x131;ndan sonra AKTA s&#x259;dri Elvin Balacanov t&#x259;lim i&#x15F;tirak&#xE7;&#x131;lar&#x131;n&#x131; Az&#x259;rbaycan&#x131;n kibert&#x259;hl&#xFC;k&#x259;sizlik ekosistemi v&#x259; bu ekosistemin g&#xFC;cl&#x259;ndirilm&#x259;si m&#x259;qs&#x259;dil&#x259; &#xF6;lk&#x259;d&#x259; h&#x259;yata ke&#xE7;irilmi&#x15F; m&#xFC;h&#xFC;m t&#x259;dbirl&#x259;r bar&#x259;d&#x259; m&#x259;lumatland&#x131;r&#x131;b. AKTA s&#x259;dri g&#xF6;r&#xFC;l&#x259;n i&#x15F;l&#x259;rd&#x259;n b&#x259;hs ed&#x259;rk&#x259;n &#xF6;lk&#x259;nin m&#xFC;vafiq strategiyas&#x131; v&#x259; m&#xFC;&#x259;yy&#x259;nl&#x259;&#x15F;dirilmi&#x15F; prioritet istiqam&#x259;tl&#x259;r, el&#x259;c&#x259; d&#x259; kritik informasiya infrastrukturunun t&#x259;hl&#xFC;k&#x259;sizliyinin t&#x259;min olunmas&#x131; m&#x259;qs&#x259;dil&#x259; h&#xFC;quqi sferada at&#x131;lm&#x131;&#x15F; add&#x131;mlara dair m&#x259;lumatlar&#x131; i&#x15F;tirak&#xE7;&#x131;lar&#x131;n diqq&#x259;tin&#x259; &#xE7;atd&#x131;r&#x131;b.&#xD;&#xA;&#xD;&#xA;Daha sonra, ara&#x15F;d&#x131;rma&#xE7;&#x131; jurnalist, sosial media eksperti S&#x259;nan N&#x259;c&#x259;fov t&#x259;r&#x259;find&#x259;n kiberm&#x259;kanda saxta x&#x259;b&#x259;rl&#x259;r v&#x259; dezinformasiyaya qar&#x15F;&#x131; m&#xFC;bariz&#x259;d&#x259; t&#x259;tbiq olunan al&#x259;t v&#x259; mexanizml&#x259;r, x&#xFC;susil&#x259; d&#x259; vizual materiallar&#x131;n texniki &#xFC;sullardan istifad&#x259; etm&#x259;kl&#x259; saxtala&#x15F;d&#x131;r&#x131;lmas&#x131;n&#x131;n m&#xFC;&#x259;yy&#x259;n olunmas&#x131; vasit&#x259;l&#x259;ri bar&#x259;d&#x259; t&#x259;lim ke&#xE7;irilib. Qeyd edil&#x259;n t&#x259;qdimatdan sonra is&#x259; &#x130;KT m&#xFC;t&#x259;x&#x259;ssisl&#x259;ri R&#x259;&#x15F;ad &#x18F;liyev v&#x259; Rauf Cabarov saxta x&#x259;b&#x259;rl&#x259;rl&#x259; m&#xFC;bariz&#x259;d&#x259; texniki imkanlar&#x131;, el&#x259;c&#x259; d&#x259; media n&#xFC;may&#x259;nd&#x259;l&#x259;ri &#xFC;&#xE7;&#xFC;n t&#xF6;vsiy&#x259;l&#x259;ri ehtiva ed&#x259;n t&#x259;qdimatla &#xE7;&#x131;x&#x131;&#x15F; edib.&#xD;&#xA;&#xD;&#xA;Kibert&#x259;hl&#xFC;k&#x259;sizliyin t&#x259;min olunmas&#x131;n&#x131;n texniki v&#x259; t&#x259;cr&#xFC;bi aspektl&#x259;rin&#x259; dair t&#x259;lim i&#x15F;itirak&#xE7;&#x131;lar&#x131;n&#x131;n suallar&#x131;n&#x131;n cavabland&#x131;r&#x131;lmas&#x131; m&#x259;qs&#x259;dil&#x259; &quot;Cyberpoint&quot; &#x15F;irk&#x259;tinin direktoru Fuad Nift&#x259;liyev v&#x259; &#x130;nformasiya t&#x259;hl&#xFC;k&#x259;sizliyi m&#x259;s&#x259;l&#x259;l&#x259;ri &#xFC;zr&#x259; direktor m&#xFC;avini Ayd&#x131;n Qurbanl&#x131; t&#x259;r&#x259;find&#x259;n &#x15F;irk&#x259;tin t&#x259;qdim etdiyi kibert&#x259;hl&#xFC;k&#x259;sizlik xidm&#x259;tl&#x259;ri, m&#x259;hsul v&#x259; h&#x259;ll&#x259;ri, el&#x259;c&#x259; d&#x259; texniki imkanlar&#x131;, o c&#xFC;ml&#x259;d&#x259;n &#x15F;irk&#x259;tin kibert&#x259;hl&#xFC;k&#x259;sizlik &#x259;m&#x259;liyyatlar&#x131; m&#x259;rk&#x259;zinin f&#x259;aliyy&#x259;tin&#x259; dair &#x259;trafl&#x131; m&#x259;lumat verilib.&#xD;&#xA;&#xD;&#xA;T&#x259;dbirin sonunda t&#x259;limi m&#xFC;v&#x259;f&#x259;qiyy&#x259;tl&#x259; ba&#x15F;a vuran media n&#xFC;may&#x259;nd&#x259;l&#x259;rin&#x259; m&#xFC;vafiq sertifikatlar t&#x259;qdim edilib.&#xD;&#xA;&#xD;&#xA;Qeyd ed&#x259;k ki, &#x201C;Kiberm&#x259;kanda saxta x&#x259;b&#x259;rl&#x259;rl&#x259; m&#xFC;bariz&#x259;nin apar&#x131;lmas&#x131;&#x201D; layih&#x259;si Az&#x259;rbaycan Respublikas&#x131;n&#x131;n Qeyri-H&#xF6;kum&#x259;t T&#x259;&#x15F;kilatlar&#x131;na D&#xF6;vl&#x259;t D&#x259;st&#x259;yi Agentliyinin maliyy&#x259; d&#x259;st&#x259;yi il&#x259; ba&#x15F; tutmu&#x15F;dur.
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-9" data-id="9" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">&#x201C;Cyberpoint&#x201D;in t&#x259;&#x15F;kilat&#xE7;&#x131;l&#x131;&#x11F;&#x131; il&#x259; Az&#x259;rbaycan Texniki Universitetinin t&#x259;l&#x259;b&#x259;l&#x259;ri &#xFC;&#xE7;&#xFC;n 4 g&#xFC;n davam ed&#x259;n &quot;A&#xE7;&#x131;q Qap&#x131;&quot; g&#xFC;nl&#x259;ri t&#x259;&#x15F;kil edildi</h3>
+
+                        <p class="date">okt 06, 2023</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/qt2bs2v2.cbt/dh2xdqfd.kv4.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-9-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-9-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/qt2bs2v2.cbt/dh2xdqfd.kv4.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        &#x201C;Cyberpoint&#x201D;in t&#x259;&#x15F;kilat&#xE7;&#x131;l&#x131;&#x11F;&#x131; il&#x259; Az&#x259;rbaycan Texniki Universitetinin t&#x259;l&#x259;b&#x259;l&#x259;ri &#xFC;&#xE7;&#xFC;n 4 g&#xFC;n davam ed&#x259;n &quot;A&#xE7;&#x131;q Qap&#x131;&quot; g&#xFC;nl&#x259;ri t&#x259;&#x15F;kil edildi
+                                    </h3>
+                                    <p class="dateMediaModal">okt 06, 2023</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    &#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;ti olaraq g&#x259;l&#x259;c&#x259;yimizin potensial kibert&#x259;hl&#xFC;k&#x259;sizlik m&#xFC;t&#x259;x&#x259;ssisl&#x259;rin&#x259; daima d&#x259;st&#x259;yimizi g&#xF6;st&#x259;ririk. Bu m&#x259;qs&#x259;dl&#x259;   &#x15F;irk&#x259;timiz t&#x259;r&#x259;find&#x259;n Az&#x259;rbaycan Texniki Universitetinin t&#x259;l&#x259;b&#x259;l&#x259;ri &#xFC;&#xE7;&#xFC;n kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sinin &#xF6;yr&#x259;dilm&#x259;si, m&#xFC;vafiq m&#xF6;vzuda bilik v&#x259; t&#x259;cr&#xFC;b&#x259;l&#x259;rinin art&#x131;r&#x131;lmas&#x131; m&#x259;qs&#x259;di il&#x259; &#x201C;A&#xE7;&#x131;q Qap&#x131;&#x201D; g&#xFC;nl&#x259;ri t&#x259;&#x15F;kil edilib. &#xD;&#xA;&#xD;&#xA;24-28 sentyabr tarixl&#x259;rind&#x259; 4 g&#xFC;n boyunca davam ed&#x259;n bu g&#xFC;nl&#x259;rd&#x259; t&#x259;l&#x259;b&#x259;l&#x259;r&#x259; kibert&#x259;hl&#xFC;k&#x259;sizlik il&#x259; ba&#x11F;l&#x131; &#x259;sasl&#x131; m&#x259;lumatlar verilib, kibert&#x259;hl&#xFC;k&#x259;sizlik t&#x259;dbirl&#x259;ri v&#x259; riskl&#x259;ri il&#x259; ba&#x11F;l&#x131; t&#x259;liml&#x259;r ke&#xE7;ilib. &#xD6;yr&#x259;dil&#x259;n informasiyalar onlara h&#x259;m &#x15F;&#x259;xsi m&#x259;lumatlar&#x131;n&#x131; qorumaqda, h&#x259;m texniki infrastruktur v&#x259; informasiya t&#x259;hl&#xFC;k&#x259;l&#x259;rini daha yax&#x15F;&#x131; anlamaqda, h&#x259;m&#xE7;inin potensial t&#x259;hl&#xFC;k&#x259;l&#x259;rd&#x259; pe&#x15F;&#x259;kar m&#xFC;dafi&#x259; mexanizmi t&#x259;&#x15F;kil etm&#x259;kd&#x259; k&#xF6;m&#x259;k ed&#x259;c&#x259;k.
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-10" data-id="10" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">&#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;ti &#xD6;zb&#x259;kistanda Da&#x15F;k&#x259;nd &#x15F;&#x259;h&#x259;rind&#x259; ke&#xE7;iril&#x259;n &#x201C;Kiber T&#x259;hl&#xFC;k&#x259;sizlik Sammiti &#x2013; M&#x259;rk&#x259;zi Avrasiya&#x201D; (CSS 2023) t&#x259;dbirind&#x259; i&#x15F;tirak edib.</h3>
+
+                        <p class="date">okt 09, 2023</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/y0cxydoa.l5e/pm3t5djq.zkf.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-10-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-10-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/y0cxydoa.l5e/pm3t5djq.zkf.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        &#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;ti &#xD6;zb&#x259;kistanda Da&#x15F;k&#x259;nd &#x15F;&#x259;h&#x259;rind&#x259; ke&#xE7;iril&#x259;n &#x201C;Kiber T&#x259;hl&#xFC;k&#x259;sizlik Sammiti &#x2013; M&#x259;rk&#x259;zi Avrasiya&#x201D; (CSS 2023) t&#x259;dbirind&#x259; i&#x15F;tirak edib.
+                                    </h3>
+                                    <p class="dateMediaModal">okt 09, 2023</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    &#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;ti &#xD6;zb&#x259;kistanda Da&#x15F;k&#x259;nd &#x15F;&#x259;h&#x259;rind&#x259; ke&#xE7;iril&#x259;n &#x201C;Kiber T&#x259;hl&#xFC;k&#x259;sizlik Sammiti &#x2013; M&#x259;rk&#x259;zi Avrasiya&#x201D; (CSS 2023) t&#x259;dbirind&#x259; i&#x15F;tirak edib. 3-4 oktyabrda ba&#x15F; tutan t&#x259;dbird&#x259; n&#xFC;may&#x259;nd&#x259;l&#x259;rimiz Ayd&#x131;n Qurbanl&#x131; v&#x259; Mehman &#x130;sg&#x259;nd&#x259;rov &#x15F;irk&#x259;timizi t&#x259;msil edib. &#xD;&#xA;&#xD;&#xA;T&#x259;dbirin m&#xFC;h&#xFC;m bir hiss&#x259;si &#x201C;R&#x259;q&#x259;msal M&#x259;rk&#x259;zi Avrasiya &#xFC;&#xE7;&#xFC;n Kibert&#x259;hl&#xFC;k&#x259;sizlik&#x201D; m&#xF6;vzulu konfransa h&#x259;sr edilib. Konfransda m&#xFC;t&#x259;x&#x259;ssisl&#x259;rin &#xE7;&#x131;x&#x131;&#x15F;lar&#x131; dinl&#x259;nilib, el&#x259;c&#x259; d&#x259; m&#xFC;xt&#x259;lif yerli v&#x259; xarici &#x15F;irk&#x259;tl&#x259;r innovativ h&#x259;ll v&#x259; texnologiyalarla &#x259;laq&#x259;dar t&#x259;qdimatlar edibl&#x259;r. &#xD;&#xA;Konfransda kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sind&#x259; &#x259;m&#x259;kda&#x15F;l&#x131;q m&#x259;s&#x259;l&#x259;l&#x259;ri, kibert&#x259;hdidl&#x259;rl&#x259; m&#xFC;bariz&#x259; v&#x259; m&#xFC;asir m&#xFC;dafi&#x259; vasit&#x259;l&#x259;rinin inki&#x15F;af&#x131; m&#xF6;vzular&#x131; &#x259;traf&#x131;nda geni&#x15F; m&#xFC;zakir&#x259;l&#x259;r apar&#x131;l&#x131;b. N&#xFC;may&#x259;nd&#x259;l&#x259;rimiz Da&#x15F;k&#x259;ndd&#x259;n f&#x259;aliyy&#x259;timiz&#x259; d&#x259;st&#x259;k olacaq d&#x259;rin m&#x259;lumatlarla qay&#x131;d&#x131;blar.
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-11" data-id="11" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">&#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;ti CIDC-2023-&#x259; g&#xF6;st&#x259;rdiyi d&#x259;st&#x259;y&#x259; g&#xF6;r&#x259; t&#x259;ltif olundu</h3>
+
+                        <p class="date">noy 06, 2023</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/u2fhu5pz.gbx/nf04mums.jem.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-11-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-11-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/u2fhu5pz.gbx/nf04mums.jem.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        &#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;ti CIDC-2023-&#x259; g&#xF6;st&#x259;rdiyi d&#x259;st&#x259;y&#x259; g&#xF6;r&#x259; t&#x259;ltif olundu
+                                    </h3>
+                                    <p class="dateMediaModal">noy 06, 2023</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    Oktyabr&#x131;n 26 v&#x259; 27-d&#x259; ke&#xE7;iril&#x259;n &#x201C;Critical Infrastructure Defence Challenge 2023&#x201D; kiberfestival&#x131;nda &#x15F;irk&#x259;timiz h&#x259;m ekskl&#xFC;ziv sponsor, h&#x259;m d&#x259; m&#x259;hsul v&#x259; xidm&#x259;tl&#x259;rini &#xF6;z stendind&#x259; t&#x259;qdim ed&#x259;n i&#x15F;tirak&#xE7;&#x131; kimi t&#x259;msil olunurdu.  &#xD;&#xA;X&#xFC;susi Rabit&#x259; v&#x259; &#x130;nformasiya T&#x259;hl&#xFC;k&#x259;sizliyi D&#xF6;vl&#x259;t Xidm&#x259;ti v&#x259; D&#xF6;vl&#x259;t T&#x259;hl&#xFC;k&#x259;sizliyi Xidm&#x259;tinin birg&#x259; t&#x259;&#x15F;kilat&#xE7;&#x131;l&#x131;&#x11F;&#x131; il&#x259; ba&#x15F; tutan t&#x259;dbird&#x259; kiber sah&#x259;d&#x259;n olan, el&#x259;c&#x259; d&#x259; bu sah&#x259;y&#x259; maraq g&#xF6;st&#x259;r&#x259;n t&#x259;r&#x259;fl&#x259;r bir yer&#x259; toplanm&#x131;&#x15F;d&#x131;. Qeyd etm&#x259;liyik ki, xidm&#x259;t v&#x259; m&#x259;hsullar&#x131;m&#x131;za maraq y&#xFC;ks&#x259;k oldu&#x11F;u &#xFC;&#xE7;&#xFC;n kiberfestival &#x15F;irk&#x259;timiz &#xFC;&#xE7;&#xFC;n &#xE7;ox produktiv ke&#xE7;di.
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-12" data-id="12" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">Az&#x259;rbaycan M&#x259;rk&#x259;zi v&#x259; &#x15E;&#x259;rqi Avropan&#x131;n &#x259;n b&#xF6;y&#xFC;k kibert&#x259;hl&#xFC;k&#x259;sizlik konfrans&#x131;nda t&#x259;msil olunub</h3>
+
+                        <p class="date">noy 24, 2023</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/3wyi1ftc.l4h/5ixsmgqh.cxq.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-12-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-12-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/3wyi1ftc.l4h/5ixsmgqh.cxq.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        Az&#x259;rbaycan M&#x259;rk&#x259;zi v&#x259; &#x15E;&#x259;rqi Avropan&#x131;n &#x259;n b&#xF6;y&#xFC;k kibert&#x259;hl&#xFC;k&#x259;sizlik konfrans&#x131;nda t&#x259;msil olunub
+                                    </h3>
+                                    <p class="dateMediaModal">noy 24, 2023</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    Az&#x259;rbaycan Kibert&#x259;hl&#xFC;k&#x259;sizlik T&#x259;&#x15F;kilatlar&#x131; Assosiasiyas&#x131;n&#x131;n (AKTA) v&#x259; onun &#x130;dar&#x259; Hey&#x259;tinin &#xFC;zv&#xFC; olan &quot;Cyberpoint&quot; &#x15F;irk&#x259;tinin n&#xFC;may&#x259;nd&#x259; hey&#x259;ti, &quot;Kibert&#x259;hl&#xFC;k&#x259;sizlik ekspertl&#x259;rinin beyn&#x259;lxalq kibert&#x259;hl&#xFC;k&#x259;sizlik m&#x259;rk&#x259;zl&#x259;rin&#x259; s&#x259;f&#x259;ri&quot; layih&#x259;si &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; Rum&#x131;niya Respublikas&#x131;na i&#x15F;g&#xFC;zar s&#x259;f&#x259;r&#x259; &#xE7;&#x131;xm&#x131;&#x15F;d&#x131;r. Bu s&#x259;f&#x259;r, Avropa Komissiyas&#x131; t&#x259;r&#x259;find&#x259;n maliyy&#x259;l&#x259;&#x15F;diril&#x259;n v&#x259; TAIEX - Texniki Yard&#x131;m v&#x259; &#x130;nformasiya M&#xFC;badil&#x259;si Al&#x259;ti t&#x259;r&#x259;find&#x259;n d&#x259;st&#x259;kl&#x259;n&#x259;n layih&#x259;nin bir hiss&#x259;sidir.&#xD;&#xA;&#xD;&#xA;S&#x259;f&#x259;rin ilk g&#xFC;n&#xFC;nd&#x259;, n&#xFC;may&#x259;nd&#x259; hey&#x259;ti Rum&#x131;niyan&#x131;n Milli Kiber T&#x259;hl&#xFC;k&#x259;sizlik Direktoratl&#x131;&#x11F;&#x131;n&#x131;n r&#x259;hb&#x259;ri v&#x259; &#x259;m&#x259;kda&#x15F;lar&#x131; il&#x259; g&#xF6;r&#xFC;&#x15F;&#xFC;bl&#x259;r. Bu g&#xF6;r&#xFC;&#x15F;d&#x259;, h&#x259;r iki &#xF6;lk&#x259;nin kibert&#x259;hl&#xFC;k&#x259;sizlik ekosisteml&#x259;ri, h&#xFC;quqi, t&#x259;&#x15F;kilati v&#x259; texniki sferalarda son ill&#x259;rd&#x259; h&#x259;yata ke&#xE7;irilmi&#x15F; f&#x259;aliyy&#x259;tl&#x259;r bar&#x259;d&#x259; m&#x259;lumat m&#xFC;badil&#x259;si apar&#x131;l&#x131;b. Eyni zamanda, kibert&#x259;hl&#xFC;k&#x259;sizliyin daha effektiv v&#x259; s&#x259;m&#x259;r&#x259;li t&#x259;min edilm&#x259;si m&#x259;qs&#x259;dil&#x259; &#x259;m&#x259;kda&#x15F;l&#x131;&#x11F;&#x131;n geni&#x15F;l&#x259;ndirilm&#x259;si imkanlar&#x131; m&#xFC;zakir&#x259; olunub.&#xD;&#xA;&#xD;&#xA;Noyabr&#x131;n 25-d&#x259;k davam ed&#x259;c&#x259;k layih&#x259; &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; n&#xFC;may&#x259;nd&#x259; hey&#x259;tinin aidiyy&#x259;ti t&#x259;&#x15F;kilat, &#x15F;irk&#x259;t v&#x259; ali t&#x259;hsil m&#xFC;&#x259;ssis&#x259;l&#x259;rin&#x259; i&#x15F;g&#xFC;zar s&#x259;f&#x259;rl&#x259;ri, h&#x259;m&#xE7;inin M&#x259;rk&#x259;zi v&#x259; &#x15E;&#x259;rqi Avropan&#x131;n &#x259;n b&#xF6;y&#xFC;k kibert&#x259;hl&#xFC;k&#x259;sizlik konfranslar&#x131;ndan biri olan &#x201C;DefCamp Conference&#x201D;-da i&#x15F;tirak&#x131; n&#x259;z&#x259;rd&#x259; tutulur.&#xD;&#xA;&#xD;&#xA;Bundan &#x259;lav&#x259;, AKTA n&#xFC;may&#x259;nd&#x259; hey&#x259;ti Rum&#x131;niyada yerl&#x259;&#x15F;&#x259;n &quot;Bitdefender&quot; kibert&#x259;hl&#xFC;k&#x259;sizlik &#x15F;irk&#x259;tinin Buxarestd&#x259;ki ba&#x15F; ofisin&#x259; s&#x259;f&#x259;r edibl&#x259;r. Bu s&#x259;f&#x259;rd&#x259;, &quot;Bitdefender&quot; &#x15F;irk&#x259;tinin idar&#x259; hey&#x259;ti il&#x259; g&#xF6;r&#xFC;&#x15F; ke&#xE7;irilib v&#x259; n&#xFC;may&#x259;nd&#x259; hey&#x259;tin&#x259; &#x15F;irk&#x259;tin f&#x259;aliyy&#x259;ti v&#x259; imkanlar&#x131; bar&#x259;d&#x259; &#x259;trafl&#x131; m&#x259;lumat verilib. AKTA &#x130;dar&#x259; Hey&#x259;tinin s&#x259;dri Elvin Balacanov, &quot;Bitdefender&quot; &#x15F;irk&#x259;tinin n&#xFC;may&#x259;nd&#x259;l&#x259;rini AKTA v&#x259; onun &#xFC;zv&#xFC; olan &#x15F;irk&#x259;tl&#x259;r haqq&#x131;nda m&#x259;lumatland&#x131;r&#x131;b. G&#xF6;r&#xFC;&#x15F; zaman&#x131;, h&#x259;r iki t&#x259;r&#x259;f aras&#x131;nda m&#xFC;mk&#xFC;n &#x259;m&#x259;kda&#x15F;l&#x131;q imkanlar&#x131; da m&#xFC;zakir&#x259; olunub.&#xD;&#xA;&#xD;&#xA;Qlobal arenada f&#x259;aliyy&#x259;t g&#xF6;st&#x259;r&#x259;n &quot;Bitdefender&quot; &#x15F;irk&#x259;ti, sahibkarl&#x131;q subyektl&#x259;ri, qurumlar v&#x259; t&#x259;&#x15F;kilatlar &#xFC;&#xE7;&#xFC;n qabaqc&#x131;l kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;ri t&#x259;qdim edir.
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-13" data-id="13" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">&quot;Cyberpoint&quot; &#x15F;irk&#x259;tinin d&#x259;st&#x259;yi il&#x259; &quot;III Zirv&#x259; Toplant&#x131;s&#x131;&quot; ke&#xE7;irildi.</h3>
+
+                        <p class="date">fev 06, 2024</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/bnupjobi.ldn/ge0dqemx.n0g.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-13-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-13-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/bnupjobi.ldn/ge0dqemx.n0g.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        &quot;Cyberpoint&quot; &#x15F;irk&#x259;tinin d&#x259;st&#x259;yi il&#x259; &quot;III Zirv&#x259; Toplant&#x131;s&#x131;&quot; ke&#xE7;irildi.
+                                    </h3>
+                                    <p class="dateMediaModal">fev 06, 2024</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    &#x15E;irk&#x259;timizin sponsor olaraq d&#x259;st&#x259;k verdiyi &#x201C;D&#xF6;vl&#x259;t Qurumlar&#x131;n&#x131;n &#x130;T r&#x259;hb&#x259;rl&#x259;rinin III Zirv&#x259; Toplant&#x131;s&#x131;&#x201D; 2 fevral tarixind&#x259; ba&#x15F; tutdu. &#xD;&#xA;X&#xFC;susi Rabit&#x259; v&#x259; &#x130;nformasiya T&#x259;hl&#xFC;k&#x259;sizliyi D&#xF6;vl&#x259;t Xidm&#x259;ti t&#x259;r&#x259;find&#x259;n t&#x259;&#x15F;kil olunan t&#x259;dbird&#x259; 73 d&#xF6;vl&#x259;t qurumundan 100-d&#x259;n art&#x131;q n&#xFC;may&#x259;nd&#x259; i&#x15F;tirak edirdi. T&#x259;dbirin &#x259;sas m&#x259;qs&#x259;di d&#xF6;vl&#x259;t qurumlar&#x131;n&#x131;n informasiya t&#x259;hl&#xFC;k&#x259;sizliyi &#xFC;zr&#x259; r&#x259;hb&#x259;r hey&#x259;tinin t&#x259;cr&#xFC;b&#x259; m&#xFC;badil&#x259;sin&#x259; c&#x259;lb edilm&#x259;si v&#x259; qurumlararas&#x131; kommunikasiyan&#x131;n g&#xFC;cl&#x259;ndirilm&#x259;si idi.&#xD;&#xA;&quot;Zirv&#x259; Toplant&#x131;s&#x131;&quot;nda &#x201C;Cyberpoint&#x201D; &#x15F;irk&#x259;tinin n&#xFC;may&#x259;nd&#x259;si Ayd&#x131;n Qurbanl&#x131; &#xE7;&#x131;x&#x131;&#x15F; ed&#x259;r&#x259;k &#x15F;irk&#x259;timiz, h&#x259;yata ke&#xE7;irdiyimiz i&#x15F;l&#x259;r, xidm&#x259;tl&#x259;rimiz bar&#x259;d&#x259; &#x259;trafl&#x131; m&#x259;lumat verib.
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-14" data-id="14" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title"> &#x201C;Regionlarda kibert&#x259;hl&#xFC;k&#x259;sizlik m&#x259;s&#x259;l&#x259;l&#x259;ri&#x201D; m&#xF6;vzusunda konfrans ke&#xE7;irilib</h3>
+
+                        <p class="date">okt 13, 2026</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/pldhdecj.ju4/envmuccm.yeb.jpg" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-14-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-14-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/pldhdecj.ju4/envmuccm.yeb.jpg" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                         &#x201C;Regionlarda kibert&#x259;hl&#xFC;k&#x259;sizlik m&#x259;s&#x259;l&#x259;l&#x259;ri&#x201D; m&#xF6;vzusunda konfrans ke&#xE7;irilib
+                                    </h3>
+                                    <p class="dateMediaModal">okt 13, 2026</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    &#xD;&#xA;21 sentyabr tarixind&#x259; Saatl&#x131; rayonunda AKTA v&#x259; Saatl&#x131; Rayon &#x130;cra Hakimiyy&#x259;tinin t&#x259;&#x15F;kilat&#xE7;&#x131;l&#x131;&#x11F;&#x131; il&#x259; &#x201C;Regionlarda kibert&#x259;hl&#xFC;k&#x259;sizlik m&#x259;s&#x259;l&#x259;l&#x259;ri&#x201D; m&#xF6;vzusunda konfrans ke&#xE7;irilib.&#xD;&#xA;&#xD;&#xA;CyberPoint konfransda t&#x259;msil olunaraq regionlarda kibert&#x259;hl&#xFC;k&#x259;sizliyin g&#xFC;cl&#x259;ndirilm&#x259;si, m&#xFC;asir kibert&#x259;hdidl&#x259;r&#x259; qar&#x15F;&#x131; dayan&#x131;ql&#x131;l&#x131;&#x11F;&#x131;n art&#x131;r&#x131;lmas&#x131; v&#x259; r&#x259;q&#x259;msal t&#x259;hl&#xFC;k&#x259;sizlik &#xFC;zr&#x259; maarifl&#x259;ndirm&#x259;nin &#x259;h&#x259;miyy&#x259;ti il&#x259; ba&#x11F;l&#x131; m&#xFC;zakir&#x259;l&#x259;r&#x259; t&#xF6;hf&#x259; verib.&#xD;&#xA;&#xD;&#xA;T&#x259;dbir &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; regionlarda kibert&#x259;hl&#xFC;k&#x259;sizlik &#xFC;zr&#x259; yerli kadr potensial&#x131;n&#x131;n inki&#x15F;af etdirilm&#x259;si, m&#xFC;vafiq bilik v&#x259; bacar&#x131;qlar&#x131;n art&#x131;r&#x131;lmas&#x131;, el&#x259;c&#x259; d&#x259; bu sah&#x259;d&#x259; yeni imkanlar&#x131;n yarad&#x131;lmas&#x131; istiqam&#x259;tind&#x259; g&#xF6;r&#xFC;l&#x259;n i&#x15F;l&#x259;r v&#x259; g&#x259;l&#x259;c&#x259;k &#x259;m&#x259;kda&#x15F;l&#x131;q perspektivl&#x259;ri m&#xFC;zakir&#x259; olunub.&#xD;&#xA;&#xD;&#xA;CyberPoint kibert&#x259;hl&#xFC;k&#x259;sizlik m&#x259;d&#x259;niyy&#x259;tinin regionlarda geni&#x15F;l&#x259;ndirilm&#x259;sini v&#x259; bu sah&#x259;d&#x259; insan kapital&#x131;n&#x131;n inki&#x15F;af&#x131;n&#x131; &#xF6;lk&#x259;nin kibert&#x259;hl&#xFC;k&#x259;sizliyinin v&#x259; kibersuverenliyinin g&#xFC;cl&#x259;ndirilm&#x259;sinin m&#xFC;h&#xFC;m istiqam&#x259;tl&#x259;rind&#x259;n hesab edir.&#xD;&#xA;
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-15" data-id="15" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">&#x201C;Baku ID&#x201D; &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; &#x130;nnovasiya v&#x259; R&#x259;q&#x259;msal &#x130;nki&#x15F;af Agentliyinin t&#x259;&#x15F;&#x259;bb&#xFC;s&#xFC; il&#x259; ke&#xE7;iril&#x259;n &#x201C;Ecosystem Meetup&#x201D; g&#xF6;r&#xFC;&#x15F;&#xFC;nd&#x259; Cyberpoint d&#x259; t&#x259;msil olunub.</h3>
+
+                        <p class="date">okt 13, 2026</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/hxs2iv2v.w5o/bxatn3lj.rrz.jpg" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-15-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-15-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/hxs2iv2v.w5o/bxatn3lj.rrz.jpg" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        &#x201C;Baku ID&#x201D; &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; &#x130;nnovasiya v&#x259; R&#x259;q&#x259;msal &#x130;nki&#x15F;af Agentliyinin t&#x259;&#x15F;&#x259;bb&#xFC;s&#xFC; il&#x259; ke&#xE7;iril&#x259;n &#x201C;Ecosystem Meetup&#x201D; g&#xF6;r&#xFC;&#x15F;&#xFC;nd&#x259; Cyberpoint d&#x259; t&#x259;msil olunub.
+                                    </h3>
+                                    <p class="dateMediaModal">okt 13, 2026</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    20-y&#x259; yax&#x131;n &#x15F;irk&#x259;tin n&#xFC;may&#x259;nd&#x259;sinin qat&#x131;ld&#x131;&#x11F;&#x131; g&#xF6;r&#xFC;&#x15F;d&#x259; Az&#x259;rbaycan&#x131;n texnologiya v&#x259; innovasiya ekosisteminin inki&#x15F;af&#x131;, r&#x259;q&#x259;msal transformasiya v&#x259; yeni &#x259;m&#x259;kda&#x15F;l&#x131;q imkanlar&#x131; m&#xFC;zakir&#x259; edilib.&#xD;&#xA;&#xD;&#xA;M&#xFC;zakir&#x259;l&#x259;r zaman&#x131; Cyberpoint t&#x259;r&#x259;find&#x259;n kibert&#x259;hl&#xFC;k&#x259;sizliyin t&#x259;min olunmas&#x131; sah&#x259;sind&#x259; m&#xF6;vcud v&#x259;ziyy&#x259;t v&#x259; resurslarla ba&#x11F;l&#x131; fikirl&#x259;r b&#xF6;l&#xFC;&#x15F;&#xFC;l&#xFC;b, bu resurslardan s&#x259;m&#x259;r&#x259;li istifad&#x259; v&#x259; &#x259;m&#x259;kda&#x15F;l&#x131;&#x11F;&#x131;n g&#xFC;cl&#x259;ndirilm&#x259;sin&#x259; dair t&#x259;klifl&#x259;r s&#x259;sl&#x259;ndirilib.&#xD;&#xA;&#xD;&#xA;T&#x259;hl&#xFC;k&#x259;siz v&#x259; dayan&#x131;ql&#x131; r&#x259;q&#x259;msal ekosistemin inki&#x15F;af&#x131; namin&#x259; birg&#x259; t&#x259;&#x15F;&#x259;bb&#xFC;sl&#x259;r&#x259; v&#x259; &#x259;m&#x259;kda&#x15F;l&#x131;&#x11F;a a&#xE7;&#x131;&#x11F;&#x131;q.&#xD;&#xA;
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-16" data-id="16" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">Cyberpoint yeni T&#x259;dqiqat v&#x259; &#x130;nki&#x15F;af (R&amp;D) M&#x259;rk&#x259;zini yarad&#x131;b!</h3>
+
+                        <p class="date">okt 14, 2026</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/wto4pltd.gxr/0rkwnf4d.t0y.png" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-16-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-16-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/wto4pltd.gxr/0rkwnf4d.t0y.png" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        Cyberpoint yeni T&#x259;dqiqat v&#x259; &#x130;nki&#x15F;af (R&amp;D) M&#x259;rk&#x259;zini yarad&#x131;b!
+                                    </h3>
+                                    <p class="dateMediaModal">okt 14, 2026</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    Cyberpoint texnoloji inki&#x15F;af istiqam&#x259;tind&#x259; f&#x259;aliyy&#x259;tini geni&#x15F;l&#x259;ndir&#x259;r&#x259;k T&#x259;dqiqat v&#x259; &#x130;nki&#x15F;af (R&amp;D) M&#x259;rk&#x259;zini yarad&#x131;b. M&#x259;rk&#x259;zin &#x259;sas f&#x259;aliyy&#x259;t istiqam&#x259;tl&#x259;rind&#x259;n biri yerli bilik v&#x259; m&#xFC;h&#x259;ndislik potensial&#x131;na &#x259;saslanan milli kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;rinin haz&#x131;rlanmas&#x131;d&#x131;r.&#xD;&#xA;&#xD;&#xA;R&amp;D komandam&#x131;z art&#x131;q yeni h&#x259;ll&#x259;r &#xFC;z&#x259;rind&#x259; &#xE7;al&#x131;&#x15F;&#x131;r. M&#x259;qs&#x259;dimiz m&#xFC;&#x15F;t&#x259;ril&#x259;rimizin real t&#x259;hl&#xFC;k&#x259;sizlik ehtiyaclar&#x131;na cavab ver&#x259;n texnologiyalar haz&#x131;rlamaq, elmi yana&#x15F;man&#x131; praktik t&#x259;cr&#xFC;b&#x259; il&#x259; birl&#x259;&#x15F;dirm&#x259;k v&#x259; &#xF6;lk&#x259;nin milli kibert&#x259;hl&#xFC;k&#x259;sizlik ekosisteminin g&#xFC;cl&#x259;ndirilm&#x259;sin&#x259; t&#xF6;hf&#x259; verm&#x259;kdir.&#xD;&#xA;&#xD;&#xA;Haz&#x131;rlad&#x131;&#x11F;&#x131;m&#x131;z ilk h&#x259;ll&#x259;ri tezlikl&#x259; m&#xFC;&#x15F;t&#x259;ril&#x259;rimiz&#x259;, t&#x259;r&#x259;fda&#x15F;lar&#x131;m&#x131;za v&#x259; ictimaiyy&#x259;t&#x259; t&#x259;qdim ed&#x259;c&#x259;yik.&#xD;&#xA;&#xD;&#xA;Yeni R&amp;D M&#x259;rk&#x259;zimiz birg&#x259; t&#x259;dqiqat v&#x259; texnoloji &#x259;m&#x259;kda&#x15F;l&#x131;q &#xFC;&#xE7;&#xFC;n d&#x259; imkanlar a&#xE7;&#x131;r. Universitetl&#x259;ri, t&#x259;dqiqat m&#x259;rk&#x259;zl&#x259;rini v&#x259; texnologiya komandalar&#x131;n&#x131; birg&#x259; layih&#x259;l&#x259;ri, m&#xFC;&#x15F;t&#x259;ril&#x259;rimizi v&#x259; yeni h&#x259;ll&#x259;rin t&#x259;tbiqind&#x259; maraql&#x131; olan dig&#x259;r t&#x259;&#x15F;kilatlar&#x131; is&#x259; pilot t&#x259;tbiq imkanlar&#x131;n&#x131; m&#xFC;zakir&#x259; etm&#x259;y&#x259; d&#x259;v&#x259;t edirik.&#xD;&#xA;&#xD;&#xA;Yeni m&#x259;rk&#x259;z. Milli h&#x259;ll&#x259;r. Birg&#x259; inki&#x15F;af.&#xD;&#xA;&#xD;&#xA;Yenilikl&#x259;rimizi izl&#x259;yin v&#x259; &#x259;m&#x259;kda&#x15F;l&#x131;q &#xFC;&#xE7;&#xFC;n biziml&#x259; &#x259;laq&#x259; saxlay&#x131;n.
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="mediaBox" id="MediaModal-17" data-id="17" data-aos="fade-up">
+                    <div class="leftSide">
+                        <h3 class="title">CYBERPOINT-d&#x259;n kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sind&#x259; daha bir u&#x11F;ur: 3 yeni CVE!</h3>
+
+                        <p class="date">okt 15, 2026</p>
+                        <p class="articeLink">
+                            <img src="img/link.png" />
+
+                            Go to article
+                        </p>
+                    </div>
+                    <div>
+                        <img src="/cyberpoint_files/article/m4qr21qw.tqh/csmqwia3.jd1.jpg" />
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my-17-thMediaModal" class="modal">
+
+                        <div class="modal-content container-wrapper">
+
+                            <span class="closeThird"
+                              onclick="(function(e) { document.querySelector('#my-17-thMediaModal').style.display = 'none'; })(event)">&times;</span>
+
+                            <div class="row container-wrapper "
+                             style="display: flex;justify-content: center; align-items: center;">
+
+                                <div class="col-12 col-lg-6 imgSide mediaModalImg">
+                                    <img src="/cyberpoint_files/article/m4qr21qw.tqh/csmqwia3.jd1.jpg" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <h3 class="titleMediaModal">
+                                        CYBERPOINT-d&#x259;n kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sind&#x259; daha bir u&#x11F;ur: 3 yeni CVE!
+                                    </h3>
+                                    <p class="dateMediaModal">okt 15, 2026</p>
+                                    <p class="articeLink">
+                                        <img src="img/link.png" />
+
+                                        Go to article
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <ul class="mediaDetailUl">
+                                <li class="mediaLiModal">
+                                    Kibert&#x259;hl&#xFC;k&#x259;sizliyin t&#x259;min edilm&#x259;si m&#xF6;vcud t&#x259;hdidl&#x259;r&#x259; qar&#x15F;&#x131; m&#xFC;hafiz&#x259; t&#x259;dbirl&#x259;ri il&#x259; yana&#x15F;&#x131;, &#x259;vv&#x259;ll&#x259;r m&#x259;lum olmayan t&#x259;hl&#xFC;k&#x259;sizlik z&#x259;iflikl&#x259;rinin sistemli t&#x259;dqiqatlar &#x259;sas&#x131;nda a&#x15F;karlanmas&#x131;n&#x131; v&#x259; aradan qald&#x131;r&#x131;lmas&#x131;n&#x131; da n&#x259;z&#x259;rd&#x259; tutur.&#xD;&#xA;&#xD;&#xA;CYBERPOINT-in T&#x259;dqiqat v&#x259; &#x130;nki&#x15F;af (R&amp;D) komandas&#x131; t&#x259;r&#x259;find&#x259;n apar&#x131;lan d&#x259;rin texniki ara&#x15F;d&#x131;rmalar n&#x259;tic&#x259;sind&#x259; Windows &#x259;m&#x259;liyyat sistemind&#x259; istifad&#x259; olunan &#xFC;&#xE7; f&#x259;rqli kernel drayverind&#x259; t&#x259;hl&#xFC;k&#x259;sizlik bo&#x15F;luqlar&#x131; a&#x15F;kar edilib. A&#x15F;kar edilmi&#x15F; z&#x259;iflikl&#x259;rin h&#x259;r biri beyn&#x259;lxalq s&#x259;viyy&#x259;d&#x259; tan&#x131;naraq r&#x259;smi CVE identifikatoru il&#x259; qeydiyyata al&#x131;n&#x131;b.&#xD;&#xA;&#xD;&#xA;Ara&#x15F;d&#x131;rmalar&#x131;m&#x131;z&#x131;n n&#x259;tic&#x259;l&#x259;ri:&#xD;&#xA;&#xD;&#xA;A&#x15F;kar edilmi&#x15F; t&#x259;hl&#xFC;k&#x259;sizlik bo&#x15F;luqlar&#x131; VPN ba&#x11F;lant&#x131;lar&#x131;n&#x131;n idar&#x259; olunmas&#x131;, operativ yadda&#x15F;&#x131;n RGB i&#x15F;&#x131;qland&#x131;rmas&#x131;n&#x131;n t&#x259;nziml&#x259;nm&#x259;si v&#x259; komp&#xFC;terin temperaturuna v&#x259; fan s&#xFC;r&#x259;tin&#x259; n&#x259;zar&#x259;t funksiyalar&#x131;n&#x131; t&#x259;min ed&#x259;n &#xFC;&#xE7; f&#x259;rqli proqram t&#x259;minat&#x131;n&#x131;n Windows kernel drayverl&#x259;rin&#x259; aiddir.&#xD;&#xA;&#xD;&#xA;- CVE-2026-19380 - Mullvad WireGuard wireguard.sys drayverind&#x259; resurslar&#x131;n idar&#x259; olunmas&#x131; il&#x259; ba&#x11F;l&#x131; z&#x259;iflik m&#xFC;&#x259;yy&#x259;n edilib. Bu bo&#x15F;luq sistemin sabitliyin&#x259; v&#x259; &#x259;l&#xE7;atanl&#x131;&#x11F;&#x131;na t&#x259;sir g&#xF6;st&#x259;r&#x259; bil&#x259;r (&#x259;trafl&#x131; - [https://www.cve.org/CVERecord?id=CVE-2026-19380](https://www.cve.org/CVERecord?id=CVE-2026-19380)).&#xD;&#xA;&#xD;&#xA;- CVE-2026-19381- Kingston FURY CTRL NTIOLib\_KSFX.sys drayverind&#x259; a&#x15F;kar edil&#x259;n y&#xFC;ks&#x259;k riskli bo&#x15F;luq lokal s&#x259;lahiyy&#x259;tl&#x259;rin art&#x131;r&#x131;lmas&#x131; (Privilege Escalation) imkan&#x131;n&#x131; yarada bil&#x259;r (&#x259;trafl&#x131; - [https://www.cve.org/CVERecord?id=CVE-2026-19381](https://www.cve.org/CVERecord?id=CVE-2026-19381)).&#xD;&#xA;&#xD;&#xA;- CVE-2026-19382  - Almico SpeedFan speedfan.sys drayverind&#x259; a&#x15F;kar edilmi&#x15F; yadda&#x15F; s&#x131;zmas&#x131; (Memory Leak) z&#x259;ifliyi sistem resurslar&#x131;n&#x131;n t&#xFC;k&#x259;nm&#x259;sin&#x259; v&#x259; xidm&#x259;tin dayanmas&#x131;na s&#x259;b&#x259;b ola bil&#x259;r (&#x259;trafl&#x131; - [https://www.cve.org/CVERecord?id=CVE-2026-19382](https://www.cve.org/CVERecord?id=CVE-2026-19382)).&#xD;&#xA;&#xD;&#xA; Bu n&#x259;tic&#x259;l&#x259;r bizim &#xFC;&#xE7;&#xFC;n n&#x259; ifad&#x259; edir? &#xD;&#xA;&#xD;&#xA;&#xDC;&#xE7; f&#x259;rqli m&#x259;hsul. &#xDC;&#xE7; f&#x259;rqli t&#x259;hl&#xFC;k&#x259;sizlik z&#x259;ifliyi. &#xDC;&#xE7; beyn&#x259;lxalq CVE qeydiyyat&#x131;.&#xD;&#xA;&#xD;&#xA;Bu n&#x259;tic&#x259;l&#x259;r CYBERPOINT komandas&#x131;n&#x131;n t&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;rinin t&#x259;tbiqi il&#x259; yana&#x15F;&#x131;, proqram t&#x259;minat&#x131;n&#x131;n n&#xFC;v&#x259; s&#x259;viyy&#x259;sind&#x259; i&#x15F;l&#x259;y&#x259;n komponentl&#x259;ri &#xFC;zr&#x259;, o c&#xFC;ml&#x259;d&#x259;n Windows kernel s&#x259;viyy&#x259;sind&#x259; aktiv t&#x259;dqiqatlar apard&#x131;&#x11F;&#x131;n&#x131; g&#xF6;st&#x259;rir.&#xD;&#xA;&#xD;&#xA;Hesab edirik ki, kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;sind&#x259; pe&#x15F;&#x259;kar s&#x259;ri&#x15F;t&#x259;nin inki&#x15F;af&#x131; m&#xF6;vcud h&#xFC;cumlar&#x131;n t&#x259;hlili il&#x259; yana&#x15F;&#x131;, potensial h&#xFC;cum s&#x259;thl&#x259;rinin sistemli ara&#x15F;d&#x131;r&#x131;lmas&#x131;n&#x131;, &#x259;vv&#x259;ll&#x259;r m&#x259;lum olmayan z&#x259;iflikl&#x259;rin a&#x15F;karlanmas&#x131;n&#x131; v&#x259; &#x259;ld&#x259; olunan bilikl&#x259;rin t&#x259;hl&#xFC;k&#x259;sizlik icmas&#x131; il&#x259; payla&#x15F;&#x131;lmas&#x131;n&#x131; t&#x259;l&#x259;b edir.&#xD;&#xA;&#xD;&#xA;Komandam&#x131;z bu yana&#x15F;ma &#x259;sas&#x131;nda t&#x259;dqiqatlar&#x131;n&#x131; davam etdir&#x259;r&#x259;k m&#xFC;r&#x259;kk&#x259;b texnoloji sisteml&#x259;rin t&#x259;hl&#xFC;k&#x259;sizliyinin v&#x259; dayan&#x131;ql&#x131;l&#x131;&#x11F;&#x131;n&#x131;n g&#xFC;cl&#x259;ndirilm&#x259;sin&#x259; t&#xF6;hf&#x259; verir.&#xD;&#xA;&#xD;&#xA;Yeni n&#x259;tic&#x259;l&#x259;r v&#x259; innovativ h&#x259;ll&#x259;r - tezlikl&#x259;!&#xD;&#xA; 
+                                </li>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+        </div>
+
+    </div>
+</main>
+
+
+
+    <!-- =========================
+        Section - Footer
+    ============================== -->
+    
+<footer>
+    <div class="row container-wrapper d-flex flex-column flex-lg-row">
+        <div class="col-sm-12 col-lg-6">
+            <h2 class="footerTitle">Biziml&#x259; &#x259;laq&#x259;</h2>
+            <p class="footerMainDescription">
+                H&#x259;r hans&#x131; bir sual&#x131;n&#x131;z varsa v&#x259; ya  h&#x259;r hans&#x131; yard&#x131;ma ehtiyac&#x131;n&#x131;z varsa, &#x259;laq&#x259; saxlay&#x131;n
+            </p>
+            <div class="footerLabelsBox">
+                <div class="row w-100">
+                    <div class="col-12  col-lg-3">
+                        <div class="mt-3 tabletBox">
+                            <p class="footerLabel">E-po&#xE7;t</p>
+                            <a href="/cdn-cgi/l/email-protection#a888c1c6cec7e8cbd1cacddad8c7c1c6dc86c9d2" class="footerDescription"><span class="__cf_email__" data-cfemail="ec85828a83ac8f958e899e9c83858298c28d96">[email&#160;protected]</span></a>
+                        </div>
+                    </div>
+                    <div class="col-12  col-lg-9">
+                        <div class="styledLabel mt-3 tabletBox">
+                            <p class="footerLabel">&#x130;&#x15F; saatlar&#x131;</p>
+                            <p class="footerDescription">7/24</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row w-100">
+                    <div class="col-12  col-lg-3">
+                        <div class="mt-md-5 mt-3 tabletBox">
+                            <p class="footerLabel" id="contacts">Telefon</p>
+                            <a href="tel:&#x2B;99412 526 33 33" class="footerDescription">&#x2B;99412 526 33 33</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9 ">
+                        <div class="styledLabel mt-3  mt-md-5 tabletBox">
+                            <p class="footerLabel">M&#x259;kan</p>
+                            <p class="footerDescription">Bak&#x131; &#x15F;&#x259;h&#x259;ri, Nizami rayonu, Heyd&#x259;r &#x18F;liyev prospekti 189 B</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div> -->
+                <div class="socialIconsFooterMobile ">
+                        <a href="https://www.facebook.com/cyberpoint.az" target="_blank">
+                            <img src="/img/Facebook (3).png" alt="map" class="fb dark-photo" />
+                            <img src="/img/Facebook (4)Light.png" alt="map" class="fb light-photo" />
+                        </a>
+                        <a href="https://twitter.com/cyberpointaz" target="_blank">
+                            <img src="/img/twitter-dark.png" alt="map" class="tw dark-photo" />
+                            <img src="/img/twitter-light.png" alt="map" class="tw light-photo" />
+                        </a>
+                        <a href="https://www.linkedin.com/company/cyberpoint-az" target="_blank">
+                            <img src="/img/Linkedin.png" alt="map" class="linkedin dark-photo" />
+                            <img src="/img/Linkedin (1)Light.png" alt="map" class="linkedin light-photo" />
+                        </a>
+                        <a href="https://instagram.com/cyberpoint.az?igshid=MzRlODBiNWFlZA==" target="_blank">
+                            <img src="/img/Instagram (2).png" alt="map" class="insta dark-photo" />
+                            <img src="/img/InstagramLight.png" alt="map" class="insta light-photo" />
+                        </a>
+
+                </div>
+                <!-- </div> -->
+
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-5 mt-0 mt-sm-5 mt-lg-0">
+            <iframe style="filter: invert(90%); border:0;" class="dark-photo"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.556098832186!2d49.9088632!3d40.41868360000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab46defd82568e27%3A0xc333559db39fdf27!2sCyberpoint!5e0!3m2!1sru!2saz!4v1687245611052!5m2!1sru!2saz"
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="light-photo"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.556098832186!2d49.9088632!3d40.41868360000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab46defd82568e27%3A0xc333559db39fdf27!2sCyberpoint!5e0!3m2!1sru!2saz!4v1687245611052!5m2!1sru!2saz"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div class="footerLastPart container-wrapper">
+        <p class="copyRight">
+            © 2026 Copyright Cyberpoint All Rights Reserved.
+        </p>
+        <a href="https://crocusoft.com/" target="_blank">
+            <p class="developed">Developed by <span>Crocusoft</span> </p>
+
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/js/jquery-last.js"></script>
+
+
+
+    <script src="/js/popper.min.js"></script>
+
+
+
+    <script src="/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/jquery.cookie.min.js"></script>
+    
+   
+
+
+    
+    <script src="/js/common.js"></script>
+    <script src="/js/owlCarousel.js"></script>
+    <script src="/js/languages.js"></script>
+    <script src="/js/tabMenu.js"></script>
+    <script src="/js/flag.js"></script>
+
+
+
+
+    <script src="/js/initMap.js"></script>
+
+
+
+
+
+
+
+
+
+
+   
+ 
+ <script src="/js/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+
+    
+    <script>
+    $(document).ready(function () {
+        $('#yearSelect, #monthSelect').change(function () {
+            var year = $('#yearSelect').val();
+            var month = $('#monthSelect').val();
+
+
+            $.ajax({
+                url: '/articles/filterdata',
+                type: 'GET',
+                data: { year: year, month: month },
+                success: function (result) {
+                    $('.mediaBoxes').html(result);
+                },
+                error: function (res) {
+                }
+            });
+        });
+    });
+    </script>
+
+</body>
+</html>

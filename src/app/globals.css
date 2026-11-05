@@ -1,0 +1,550 @@
+/* =========================================================
+   Cyberpoint design system — light + dark
+   Brand: navy #0D1550 · blue #0D6EF5 · purple #7B2AB8 (from the logo)
+   ========================================================= */
+:root {
+  color-scheme: light;
+  --bg: #ffffff;
+  --bg-2: #f4f6fb;
+  --surface: #ffffff;
+  --surface-2: #eef1f8;
+  --line: #e3e7f1;
+  --line-2: #cfd6e6;
+  --ink: #0b1036;
+  --ink-2: #474e6c;
+  --ink-3: #5f6683;
+  --accent: #0d6ef5;
+  --accent-hover: #0a5bd2;
+  --accent-soft: #e7f0ff;
+  --accent-text: #0a56c4; /* small text on light surfaces (WCAG AA) */
+  --accent-btn: #0d6ef5; /* filled buttons with white text */
+  --accent-btn-hover: #0a5bd2;
+  --purple-text: #7b2ab8;
+  --accent-ink: #ffffff;
+  --navy: #0d1550;
+  --purple: #7b2ab8;
+  --feature: #0d1550;
+  --feature-2: #16217a;
+  --on-feature: #ffffff;
+  --on-feature-2: #b9c1e8;
+  --on-feature-line: rgba(255, 255, 255, 0.14);
+  --ok: #12a874;
+  --warn: #c98a12;
+  --crit: #e5384b;
+  --shadow: 0 24px 60px -30px rgba(13, 21, 80, 0.28);
+  --logo-light: block;
+  --logo-dark: none;
+
+  --font-display: var(--font-manrope), "Segoe UI", system-ui, sans-serif;
+  --font-body: var(--font-manrope), "Segoe UI", system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
+
+  --container: 1320px;
+  --gutter: clamp(16px, 3vw, 32px);
+  --radius-lg: 28px;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --header-h: 84px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #070b26;
+  --bg-2: #0b1033;
+  --surface: #0e143e;
+  --surface-2: #131b4c;
+  --line: #1d2559;
+  --line-2: #2b3573;
+  --ink: #f2f4ff;
+  --ink-2: #b6bde0;
+  --ink-3: #7f88b5;
+  --accent: #3384ff;
+  --accent-hover: #5596ff;
+  --accent-soft: #14215c;
+  --accent-text: #6aa6ff;
+  --accent-btn: #1d66da;
+  --accent-btn-hover: #1a5fd0;
+  --purple-text: #b98ae8;
+  --accent-ink: #ffffff;
+  --feature: #101a63;
+  --feature-2: #1a2687;
+  --on-feature-line: rgba(255, 255, 255, 0.16);
+  --ok: #2bd49a;
+  --warn: #f5b83d;
+  --crit: #ff5d6c;
+  --shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.6);
+  --logo-light: none;
+  --logo-dark: block;
+}
+/* No-JS fallback: follow the OS */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #070b26; --bg-2: #0b1033; --surface: #0e143e; --surface-2: #131b4c; --line: #1d2559; --line-2: #2b3573;
+    --ink: #f2f4ff; --ink-2: #b6bde0; --ink-3: #7f88b5; --accent: #3384ff; --accent-hover: #5596ff; --accent-soft: #14215c; --accent-text: #6aa6ff; --accent-btn: #1d66da; --accent-btn-hover: #1a5fd0; --purple-text: #b98ae8;
+    --feature: #101a63; --feature-2: #1a2687; --ok: #2bd49a; --warn: #f5b83d; --crit: #ff5d6c;
+    --logo-light: none; --logo-dark: block;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.35s var(--ease), color 0.35s var(--ease);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img,
+svg,
+video {
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  margin: 0;
+  color: var(--ink);
+}
+p {
+  margin: 0;
+}
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* ---------- Layout primitives ---------- */
+main {
+  overflow-x: clip;
+}
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+.section {
+  padding-block: clamp(72px, 10vw, 136px);
+}
+.section-tight {
+  padding-block: clamp(48px, 6vw, 80px);
+}
+.bg-2 {
+  background: var(--bg-2);
+}
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 200;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+.skip:focus {
+  top: 12px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Type ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+}
+.eyebrow::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--purple);
+}
+.display {
+  font-size: clamp(40px, 6.4vw, 92px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+.h1 {
+  font-size: clamp(36px, 5vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+.h2 {
+  font-size: clamp(30px, 3.8vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.028em;
+  font-weight: 700;
+}
+.h3 {
+  font-size: clamp(20px, 1.7vw, 24px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+.lede {
+  font-size: clamp(17px, 1.35vw, 20px);
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+.muted {
+  color: var(--ink-3);
+}
+
+/* ---------- Buttons (pill, JIS/tezode style) ---------- */
+.btn {
+  --btn-bg: var(--surface-2);
+  --btn-ink: var(--ink);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 52px;
+  padding: 0 8px 0 24px;
+  border-radius: 999px;
+  border: 0;
+  background: var(--btn-bg);
+  color: var(--btn-ink);
+  font: inherit;
+  font-weight: 600;
+  font-size: 15.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.btn:not(:has(.btn-icon)) {
+  padding: 0 24px;
+}
+.btn-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--btn-ink);
+  color: var(--btn-bg);
+  flex: none;
+  transition: transform 0.4s var(--ease);
+}
+.btn-icon svg {
+  width: 17px;
+  height: 17px;
+}
+.btn:hover .btn-icon {
+  transform: rotate(-45deg);
+}
+.btn-primary {
+  --btn-bg: var(--accent-btn);
+  --btn-ink: #fff;
+}
+.btn-primary .btn-icon {
+  background: #fff;
+  color: var(--accent-btn);
+}
+.btn-primary:hover {
+  --btn-bg: var(--accent-btn-hover);
+}
+.btn-dark {
+  --btn-bg: var(--ink);
+  --btn-ink: var(--bg);
+}
+.btn-light {
+  --btn-bg: #fff;
+  --btn-ink: var(--navy);
+}
+.btn-light .btn-icon {
+  background: var(--navy);
+  color: #fff;
+}
+.btn-outline {
+  --btn-bg: transparent;
+  box-shadow: inset 0 0 0 1px var(--line-2);
+}
+.btn-outline:hover {
+  box-shadow: inset 0 0 0 1px var(--ink);
+}
+.btn-outline-light {
+  --btn-bg: transparent;
+  --btn-ink: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+.btn-outline-light:hover {
+  box-shadow: inset 0 0 0 1px #fff;
+}
+.btn-sm {
+  height: 44px;
+  font-size: 14.5px;
+}
+.btn-sm .btn-icon {
+  width: 32px;
+  height: 32px;
+}
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* Chip (JIS pill tags) */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease);
+}
+.chip:hover {
+  background: var(--line);
+}
+.chip[aria-pressed="true"],
+.chip[aria-current="page"],
+.chip.is-active {
+  background: var(--ink);
+  color: var(--bg);
+}
+.chip-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* Text roll: label slides up, copy rises in (primecotton-style nav) */
+.roll {
+  position: relative;
+  display: inline-flex;
+  overflow: hidden;
+  vertical-align: top;
+}
+.roll > span {
+  display: block;
+  transition: transform 0.45s var(--ease);
+}
+.roll > span + span {
+  position: absolute;
+  inset: 0;
+  transform: translateY(105%);
+}
+a:hover > .roll > span:first-child,
+button:hover > .roll > span:first-child,
+.roll-host:hover .roll > span:first-child {
+  transform: translateY(-105%);
+}
+a:hover > .roll > span + span,
+button:hover > .roll > span + span,
+.roll-host:hover .roll > span + span {
+  transform: translateY(0);
+}
+
+/* Link with arrow */
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.arrow-link svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.35s var(--ease);
+}
+.arrow-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Logo theme switching */
+.logo-light {
+  display: var(--logo-light);
+}
+.logo-dark {
+  display: var(--logo-dark);
+}
+
+/* Pulse dot */
+.pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 55%, transparent);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+/* ---------- Page transitions (View Transitions API) ---------- */
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    transform: translateY(-24px);
+    filter: blur(4px);
+  }
+}
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+::view-transition-old(root) {
+  animation: vt-out 0.35s var(--ease) both;
+}
+::view-transition-new(root) {
+  animation: vt-in 0.6s var(--ease) both;
+}
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Theme switch circular reveal */
+::view-transition-old(theme),
+::view-transition-new(theme) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* ---------- Lenis ---------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ---------- Rich text ---------- */
+.prose {
+  font-size: 17.5px;
+  line-height: 1.75;
+  color: var(--ink-2);
+  max-width: 72ch;
+}
+.prose > * + * {
+  margin-top: 1.1em;
+}
+.prose h2 {
+  font-size: 26px;
+  color: var(--ink);
+  margin-top: 1.8em;
+}
+.prose ul {
+  padding-left: 0;
+  list-style: none;
+}
+.prose li {
+  position: relative;
+  padding-left: 26px;
+}
+.prose li + li {
+  margin-top: 0.6em;
+}
+.prose li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.72em;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+/* Icon colours for outline buttons */
+.btn-outline .btn-icon {
+  background: var(--ink);
+  color: var(--bg);
+}
+.btn-outline-light .btn-icon {
+  background: #fff;
+  color: var(--navy);
+}

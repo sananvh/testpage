@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+
+    <title> Cyberpoint </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Template Basic Images Start -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/cyberPointLogo.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/cyberPointLogo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/cyberPointLogo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="/css/flag-icon.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="~/img/favicon/ms-icon-144x144.png">
+    <meta property="og:image" content="~/img/og/img.png">
+    <!-- Template Basic Images End -->
+    <!-- Custom Browsers Color Start -->
+    <meta name="theme-color" content="#000">
+    <!-- Custom Browsers Color End -->
+
+    <link rel="stylesheet" href="/css/app.min.css">
+
+
+   
+
+
+
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css"> 
+
+
+
+    
+
+
+ 
+ 
+ <link rel="stylesheet" href="/css/aos.css">
+
+
+</head>
+
+<body>
+
+
+    
+
+<header class="header container-wrapper">
+
+    <div class="leftSideMenu">
+        <svg class="hamburgerIcon dark-photo">
+            <use xlink:href="/img/svg/icons.svg#icon-magnifying"></use>
+        </svg>
+
+        <img src="/img/hamburgerLightMode.png" class="darkHamburger light-photo" alt="logo" />
+        <div class="cancelBtn">
+            <img src="/img/cancelDarkMode.png" class="dark-photo" />
+            <img src="/img/cancelLightMode.png" class="light-photo" />
+
+        </div>
+
+
+    </div>
+
+    <div>
+        <a href="/">
+            <svg class="logo  dark-photo">
+                <use xlink:href="/img/svg/icons.svg#icon-Isolation-Mode"></use>
+            </svg>
+            <svg class="logo  light-photo">
+                <use xlink:href="/img/svg/icons.svg#icon-Isolation-Mode-1"></use>
+            </svg>
+
+        </a>
+    </div>
+
+    <div class="d-md-flex  d-none ">
+
+        <div class="d-lg-flex d-none">
+
+
+
+
+
+            <div class="currency-switcher">
+                <div class="dropdown">
+                    <div class="caption">
+                        <svg class="langSvg">
+                            <use xlink:href="/img/svg/icons.svg#icon-us"></use>
+                        </svg>
+
+                    </div>
+                    <div class="list">
+                        <div class="item" data-item="AZ">
+                            <svg class="langSvg">
+                                <use xlink:href="/img/svg/icons.svg#icon-az"></use>
+                            </svg>
+
+                        </div>
+
+
+                        <div class="item selected" data-item="EN-US">
+                            <svg class="langSvg">
+                                <use xlink:href="/img/svg/icons.svg#icon-us"></use>
+                            </svg>
+
+                        </div>
+
+
+                        <div class="item" data-item="RU">
+
+                            <svg class="langSvg">
+                                <use xlink:href="/img/svg/icons.svg#icon-ru"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="mt-2">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <img src="/img/soon.png" alt="soon" class="hi light-photo" />
+                <img src="/img/soonDarkMode.png" class="darkSoon dark-photo " />
+
+                <img src="/img/moon.png" alt="moon" class="bye dark-photo" />
+                <img src="/img/lightModeMoon.png" class="darkMoon light-photo" />
+                <span class="ball"></span>
+            </label>
+
+        </div>
+    </div>
+
+
+
+    <div class="navbarUl ">
+        <div class="navbarLists row d-flex justify-content-between ">
+            <div class="flags" id="flags-phone">
+                <button class="az-tablet" data-culture-code="AZ">
+                    <img src="/img/azerbaijan.png" />
+                </button>
+                <button class="ru-phone" data-culture-code="RU">
+                    <img src="/img/russian-federation.png" class="ms-3" />
+                </button>
+                <button data-culture-code="EN-US">
+                    <img src="/img/english.png" class="ms-3" style="border-radius:4px" />
+                </button>
+
+            </div>
+            <div class="turnBox d-block  d-md-none ">
+                <input type="checkbox" id="checkboxMobile" class="secondCheckBox">
+
+                <img src="/img/soon.png" class="soon  dark-photo" alt="soon" /><span class="dark-photo lightVersion">
+                    &#x130;&#x15F;&#x131;ql&#x131; versiyaya ke&#xE7;in
+                </span>
+
+                <img src="/img/moon.png" class="moon light-photo " alt="moon" />
+                <span class="light-photo darkVersion">
+                    Qaranl&#x131;q versiyaya ke&#xE7;in
+                </span>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 " style="padding-bottom: 0px;margin-bottom: 0px;">
+                <ul class="firstUl serviceList" id="services">
+
+                    <a>
+                    <li onclick="location.href='/#advantages'">
+                            &#xDC;st&#xFC;nl&#xFC;kl&#x259;rimiz
+                    </li>
+                    </a>
+
+                    <a href="/#ourServices">
+                    <li onclick="location.href='/#ourServices'">Xidm&#x259;tl&#x259;r</li>
+                    </a>
+
+                    <a id="myPartners">
+                    <li data-title="Partners" onclick="location.href='/#partners'">Partnerl&#x259;r</li>
+                    </a>
+
+                    <a id="myClients">
+                    <li data-title="Clients" onclick="location.href='/#clients'">M&#xFC;&#x15F;t&#x259;ril&#x259;r</li>
+                    </a>
+
+                    <a id="myCertificates">
+                    <li data-title="Certificates" onclick="location.href='/#certificates'">Sertifikatlar</li>
+                    </a>
+
+                    <a>
+                    <li onclick="location.href='#contacts'">Biziml&#x259; &#x259;laq&#x259;</li>
+                    </a>
+                </ul>
+
+
+
+
+
+            </div>
+
+            <div class="col-12 col-md-6 mt-3 pb-5">
+
+                <ul class="secondUl serviceList">
+                    <a class="mainATag pt-sm-5 " href="/whoweare">
+                    <li>
+                            Biz kimik
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+                    </a>
+                    <a class="mainATag" href="/employees">
+
+                    <li>
+                            Komandam&#x131;z
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+                    </a>
+                    <a class="mainATag" href="/brandings">
+
+                    <li>
+
+                            Brendl&#x259;&#x15F;m&#x259;
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+                    </a>
+                    <a class="mainATag" href="/list">
+
+                    <li>
+                            Mediada biz
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+
+                    </a>
+
+                </ul>
+
+            </div>
+        </div>
+        <div>
+            <img src="/img/envisioning.png" class="dark-photo navbarBg" />
+            <img src="/img/envisionLightttt.png" class="light-photo navbarBg" />
+        </div>
+        <div class="flagsTablet">
+            <button data-culture-code="AZ">
+                <img src="/img/azerbaijan.png" class="flagTabletImg" />
+            </button>
+            <button data-culture-code="RU">
+                <img src="/img/russian-federation.png" class="flagTabletImg" />
+            </button>
+            <button data-culture-code="EN-US">
+                <img src="/img/english.png" class="flagTabletImg" />
+            </button>
+
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+    
+<div class="pagePaths">
+    <p><a href="/">Ana s&#x259;hif&#x259; </a> </p>
+    <p class="redBorder"></p>
+    <p>Biz kimik</p>
+</div>
+<div class="dark-photo">
+    <div class="whoWeAreTopSide ">
+        <img src="/cyberpoint_files/who_we_are_content/dcdogh04.13b/t0bcjo3a.rra.png" class="dark-photo" />
+        <img src="/cyberpoint_files/who_we_are_content/mk35rcxp.qgn/ufjhgrmf.vgt.png" class="light-photo" />
+        <h3>Yeni n&#x259;sil kiberm&#xFC;dafi&#x259;</h3>
+    </div>
+</div>
+
+<div class="light-photo">
+    <div class="whoWeAreTopSide ">
+        <img src="/cyberpoint_files/who_we_are_content/dcdogh04.13b/t0bcjo3a.rra.png" class="dark-photo" />
+        <img src="/cyberpoint_files/who_we_are_content/mk35rcxp.qgn/ufjhgrmf.vgt.png" class="light-photo" />
+        <h3>Yeni n&#x259;sil kiberm&#xFC;dafi&#x259;</h3>
+
+    </div>
+</div>
+
+<div class="mainBottomBoxes">
+
+        <div class="whoWeAreBottomSide mt-0">
+            <h3>&quot;Cyber Point&quot;  hans&#x131; &#xFC;st&#xFC;nl&#xFC;kl&#x259;r&#x259; sahibdir?</h3>
+            <p>-&nbsp; Kibertəhlükəsizlik xidmətləri: Biz, müştərilərimizə dünya standartlarına cavab verən kibertəhlükəsizlik xidmətləri təklif edirik.  Keyfiyyətimizi qorumaq üçün infrastrukturumuzu və təhlükəsizlik mexanizmlərimizi daima təkmilləşdiririk.<br>-&nbsp; Peşəkar komanda: Bizim ən böyük sərvətimiz mütəxəssislərdən ibarət heyətimizdir. Hər bir əməkdaşımızın karyera inkişafını dəstəkləyir, onlar üçün təlimlər təşkil edir və komfortlu iş mühiti yaradırıq.<br>-&nbsp; Müxtəlif sahələrdə iş təcrübəsi: Əməkdaşlarımıza bank, təhsil, sağlamlıq kimi fərqli sahələrdə təcrübə toplamaq imkanları yaradırıq. <br>-&nbsp; Rəqabətli əməkhaqqı: Komandamız bizim üçün dəyərlidir və bu dəyəri onlara hər cəhətdən hiss etdirməyə çalışırıq.
+
+Əməkdaşlarımıza rəqabətli əməkhaqqı təklif edirik. Nəticədə, insan resurslarına verdiyimiz dəyər onların inkişafına kömək edir.
+<br>- “Offensiv” düşünmə: Müdafiə mexanizmlərimizi qurarkən və hücumları qarşılayarkən bir “attacker” kimi düşünürük. Bizə görə hücumu anlamaq müdafiəni inkişaf etdirmək baxımından vacibdir. Devizimiz "think red, act blue"dur, yəni hücumu düşün və müdafiəyə hazırlıqlı ol.
+
+</p>
+        </div>
+        <div class="whoWeAreBottomSide mt-0">
+            <h3>&#x201C;Cyber Point&#x201D; &#xF6;z xidm&#x259;tl&#x259;ri il&#x259; n&#x259; v&#x259;d edir?</h3>
+            <p>1. Qabaqlayıcı təhlükəsizlik məhsulları və konfiqurasiya: Ən effektiv antivirus və digər preventiv təhlükəsizlik mexanizmlərini təqdim edirik. Onları ən yaxşı praktikalar əsasında konfiqurasiya edir, hədəf hücumlarının qarşısını almaqda yardımçı oluruq.
+<br>2.	Hücumların aşkarlanması və izlənməsi: Xidmətlərimizə “detection” (aşkarlamaq) da daxildir. 7/24 monitorinq və insident müdafiəsi sayəsində hücumların qarşısını alırıq.
+<br>3.	Mütəxəssislərin təlimi və sensibilizasiya: Şirkət əməkdaşlarının kibertəhlükəsizliyə həssaslığını və hücumlara qarşı daha ehtiyatlı olmasına diqqət edirik.
+</p>
+        </div>
+        <div class="whoWeAreBottomSide mt-0">
+            <h3>&quot;Cyber Point&quot; xidm&#x259;tl&#x259;rind&#x259;n kiml&#x259;r yararlana bil&#x259;r?</h3>
+            <p>
+"Cyber Point" şirkətinin xidmətlərindən həm özəl, həm də dövlət qurumları və sahibkarlıq subyektləri faydalana bilərlər. Əsas müştəri hədəfimiz orta və böyük sahibkarlıq subyektləri olsa da, kiçik müəssisələrə də özlərini kibertəhlükəsizlik baxımından gücləndirməyi tövsiyə edirik. Statistikalar göstərir ki, kiçik müəssisələr daha çox hədəf kimi seçilir və onlar üçün kiber hücumlardan müdafiə olunmaq vacibdir.
+Şirkətimiz özəl və dövlət sektorundakı kritik infrastrukturlara təhlükəsizlik xidmətləri göstərir. Bu göstərir ki, şirkətimiz ölkənin təhlükəsizliyini təmin etmək baxımından peşəkar və sertifikatlı bir təhlükəsizlik təchizatçısıdır. 
+
+"Cyberpoint" şirkəti kibertəhlükəsizlik sahəsində sizə etibarlı tərəfdaşdır.
+
+</p>
+        </div>
+
+</div>
+
+
+
+
+    <!-- =========================
+        Section - Footer
+    ============================== -->
+    
+<footer>
+    <div class="row container-wrapper d-flex flex-column flex-lg-row">
+        <div class="col-sm-12 col-lg-6">
+            <h2 class="footerTitle">Biziml&#x259; &#x259;laq&#x259;</h2>
+            <p class="footerMainDescription">
+                H&#x259;r hans&#x131; bir sual&#x131;n&#x131;z varsa v&#x259; ya  h&#x259;r hans&#x131; yard&#x131;ma ehtiyac&#x131;n&#x131;z varsa, &#x259;laq&#x259; saxlay&#x131;n
+            </p>
+            <div class="footerLabelsBox">
+                <div class="row w-100">
+                    <div class="col-12  col-lg-3">
+                        <div class="mt-3 tabletBox">
+                            <p class="footerLabel">E-po&#xE7;t</p>
+                            <a href="/cdn-cgi/l/email-protection#1131787f777e517268737463617e787f653f706b" class="footerDescription"><span class="__cf_email__" data-cfemail="1970777f76597a607b7c6b697670776d377863">[email&#160;protected]</span></a>
+                        </div>
+                    </div>
+                    <div class="col-12  col-lg-9">
+                        <div class="styledLabel mt-3 tabletBox">
+                            <p class="footerLabel">&#x130;&#x15F; saatlar&#x131;</p>
+                            <p class="footerDescription">7/24</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row w-100">
+                    <div class="col-12  col-lg-3">
+                        <div class="mt-md-5 mt-3 tabletBox">
+                            <p class="footerLabel" id="contacts">Telefon</p>
+                            <a href="tel:&#x2B;99412 526 33 33" class="footerDescription">&#x2B;99412 526 33 33</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9 ">
+                        <div class="styledLabel mt-3  mt-md-5 tabletBox">
+                            <p class="footerLabel">M&#x259;kan</p>
+                            <p class="footerDescription">Bak&#x131; &#x15F;&#x259;h&#x259;ri, Nizami rayonu, Heyd&#x259;r &#x18F;liyev prospekti 189 B</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div> -->
+                <div class="socialIconsFooterMobile ">
+                        <a href="https://www.facebook.com/cyberpoint.az" target="_blank">
+                            <img src="/img/Facebook (3).png" alt="map" class="fb dark-photo" />
+                            <img src="/img/Facebook (4)Light.png" alt="map" class="fb light-photo" />
+                        </a>
+                        <a href="https://twitter.com/cyberpointaz" target="_blank">
+                            <img src="/img/twitter-dark.png" alt="map" class="tw dark-photo" />
+                            <img src="/img/twitter-light.png" alt="map" class="tw light-photo" />
+                        </a>
+                        <a href="https://www.linkedin.com/company/cyberpoint-az" target="_blank">
+                            <img src="/img/Linkedin.png" alt="map" class="linkedin dark-photo" />
+                            <img src="/img/Linkedin (1)Light.png" alt="map" class="linkedin light-photo" />
+                        </a>
+                        <a href="https://instagram.com/cyberpoint.az?igshid=MzRlODBiNWFlZA==" target="_blank">
+                            <img src="/img/Instagram (2).png" alt="map" class="insta dark-photo" />
+                            <img src="/img/InstagramLight.png" alt="map" class="insta light-photo" />
+                        </a>
+
+                </div>
+                <!-- </div> -->
+
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-5 mt-0 mt-sm-5 mt-lg-0">
+            <iframe style="filter: invert(90%); border:0;" class="dark-photo"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.556098832186!2d49.9088632!3d40.41868360000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab46defd82568e27%3A0xc333559db39fdf27!2sCyberpoint!5e0!3m2!1sru!2saz!4v1687245611052!5m2!1sru!2saz"
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="light-photo"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.556098832186!2d49.9088632!3d40.41868360000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab46defd82568e27%3A0xc333559db39fdf27!2sCyberpoint!5e0!3m2!1sru!2saz!4v1687245611052!5m2!1sru!2saz"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div class="footerLastPart container-wrapper">
+        <p class="copyRight">
+            © 2026 Copyright Cyberpoint All Rights Reserved.
+        </p>
+        <a href="https://crocusoft.com/" target="_blank">
+            <p class="developed">Developed by <span>Crocusoft</span> </p>
+
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/js/jquery-last.js"></script>
+
+
+
+    <script src="/js/popper.min.js"></script>
+
+
+
+    <script src="/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/jquery.cookie.min.js"></script>
+    
+   
+
+
+    
+    <script src="/js/common.js"></script>
+    <script src="/js/owlCarousel.js"></script>
+    <script src="/js/languages.js"></script>
+    <script src="/js/tabMenu.js"></script>
+    <script src="/js/flag.js"></script>
+
+
+
+
+    <script src="/js/initMap.js"></script>
+
+
+
+
+
+
+
+
+
+
+   
+ 
+ <script src="/js/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+
+    
+</body>
+</html>

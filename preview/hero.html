@@ -1,0 +1,326 @@
+<title>Cyberpoint Hero</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky header over a navy hero; copy column left, live SOC panel right; proof (stats, certs, partners) stacked beneath. */
+:root{
+  color-scheme: dark;
+  --navy-950:#060A2B;   /* page ground, deeper than logo navy */
+  --navy-900:#0D1550;   /* logo navy */
+  --navy-800:#16206B;
+  --line:#26307E;
+  --blue:#0D6EF5;       /* logo blue */
+  --blue-soft:#5C9BFF;
+  --purple:#7B2AB8;     /* logo dot */
+  --purple-soft:#A866E0;
+  --ink:#F3F6FF;
+  --ink-2:#B9C2E6;
+  --ink-3:#7F8AC0;
+  --ok:#2BD49A; --warn:#F5B83D; --crit:#FF5D6C;
+  --f-display:"Sora", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+*{box-sizing:border-box}
+body{background:var(--navy-950);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navy-950)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--blue-soft);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* Header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--navy-950) 82%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.bar{display:flex;align-items:center;gap:28px;height:72px}
+.logo{display:block;flex:none}
+.logo svg{height:30px;width:auto;display:block}
+nav.main{display:flex;gap:26px;font-size:15px;color:var(--ink-2)}
+nav.main a{display:flex;align-items:center;gap:6px;padding-block:8px}
+nav.main a:hover{color:var(--ink)}
+nav.main svg{width:10px;height:10px;opacity:.6}
+.bar-end{margin-left:auto;display:flex;align-items:center;gap:18px}
+.lang{display:flex;gap:2px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em}
+.lang button{background:none;border:0;color:var(--ink-3);padding:6px 7px;border-radius:6px;cursor:pointer;font:inherit}
+.lang button[aria-pressed="true"]{color:var(--ink);background:var(--navy-800)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);font-weight:600;font-size:15px;border-radius:10px;padding:13px 20px;border:1px solid transparent;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:#2A80FF;transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--blue-soft);background:color-mix(in srgb,var(--navy-800) 60%,transparent)}
+.btn-sm{padding:10px 16px;font-size:14px}
+.btn svg{width:16px;height:16px}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;color:var(--ink);width:40px;height:40px;cursor:pointer}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;isolation:isolate;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(60% 55% at 78% 30%, color-mix(in srgb,var(--blue) 26%,transparent), transparent 70%),
+    radial-gradient(40% 40% at 92% 85%, color-mix(in srgb,var(--purple) 22%,transparent), transparent 70%),
+    linear-gradient(180deg, transparent 60%, var(--navy-950));}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:56px;align-items:center;padding-block:84px 56px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);border:1px solid var(--line);background:color-mix(in srgb,var(--navy-900) 70%,transparent);padding:7px 12px 7px 10px;border-radius:999px}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 60%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(36px,5.1vw,64px);line-height:1.06;letter-spacing:-.025em;margin:22px 0 0;text-wrap:balance}
+h1 .accent{display:block;color:var(--blue-soft);position:relative}
+h1 .accent i{font-style:normal;color:var(--purple-soft)}
+.lede{font-size:clamp(16px,1.35vw,18.5px);color:var(--ink-2);max-width:56ch;margin:22px 0 0}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+
+/* SOC panel */
+.panel{background:linear-gradient(180deg,color-mix(in srgb,var(--navy-900) 92%,transparent),color-mix(in srgb,var(--navy-950) 92%,transparent));border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 80px -30px rgba(13,110,245,.45), inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden;min-width:0}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.panel-title{font-family:var(--f-display);font-weight:600;font-size:14px;display:flex;gap:10px;align-items:center}
+.panel-title svg{width:18px;height:18px;color:var(--blue-soft)}
+.live{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--ok);display:flex;align-items:center;gap:7px}
+.live .pulse{width:6px;height:6px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.kpi{padding:14px 18px;border-right:1px solid var(--line)}
+.kpi:last-child{border-right:0}
+.kpi b{display:block;font-family:var(--f-display);font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+.kpi span{font-size:12px;color:var(--ink-3)}
+.spark{height:56px;padding:10px 18px 0}
+.spark svg{width:100%;height:100%;display:block}
+.feed{list-style:none;margin:0;padding:6px 0 10px;font-family:var(--f-mono);font-size:12.5px}
+.feed li{display:grid;grid-template-columns:64px 62px minmax(0,1fr);gap:10px;align-items:center;padding:8px 18px;color:var(--ink-2);border-top:1px solid color-mix(in srgb,var(--line) 45%,transparent);animation:in .5s ease both}
+.feed li:first-child{border-top:0}
+.feed time{color:var(--ink-3);font-variant-numeric:tabular-nums}
+.feed .msg{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sev{font-size:10.5px;letter-spacing:.06em;text-align:center;padding:3px 0;border-radius:5px;font-weight:500}
+.sev.crit{color:var(--crit);background:color-mix(in srgb,var(--crit) 14%,transparent)}
+.sev.warn{color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent)}
+.sev.ok{color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent)}
+@keyframes in{from{opacity:.0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.panel-foot{display:flex;justify-content:space-between;gap:10px;padding:12px 18px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-3)}
+.panel-foot b{color:var(--ok);font-weight:500}
+
+/* Proof */
+.proof{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;padding-block:8px 44px;align-items:end}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+.stat{padding:20px 20px 0 0}
+.stat b{display:block;font-family:var(--f-display);font-weight:700;font-size:clamp(28px,3vw,38px);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat b sup{font-size:.5em;color:var(--blue-soft);vertical-align:.7em;margin-left:2px}
+.stat span{display:block;font-size:13.5px;color:var(--ink-3);line-height:1.35;margin-top:4px;max-width:20ch}
+.stat.tbd b{color:var(--ink-3)}
+.certs{border-top:1px solid var(--line);padding-top:20px}
+.label{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:0 0 12px}
+.cert-row{display:flex;flex-wrap:wrap;gap:10px}
+.cert{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:9px 13px;font-size:13px;color:var(--ink-2);background:color-mix(in srgb,var(--navy-900) 60%,transparent)}
+.cert svg{width:22px;height:22px;flex:none;color:var(--blue-soft)}
+.cert.slot{border-style:dashed;color:var(--ink-3)}
+.cert.slot svg{color:var(--ink-3)}
+
+.partners{border-top:1px solid var(--line);padding-block:22px 26px;display:flex;align-items:center;gap:36px}
+.partners .label{margin:0;flex:none;max-width:16ch;line-height:1.5}
+.logos{display:flex;gap:44px;align-items:center;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);flex:1;min-width:0}
+.track{display:flex;gap:44px;align-items:center;flex:none;animation:marquee 32s linear infinite}
+.pl{font-family:var(--f-display);font-weight:600;font-size:18px;color:var(--ink-3);white-space:nowrap;letter-spacing:-.01em;transition:color .2s}
+.pl:hover{color:var(--ink)}
+.pl.slot{font-family:var(--f-mono);font-weight:400;font-size:12px;border:1px dashed var(--line);border-radius:8px;padding:8px 14px}
+@keyframes marquee{to{transform:translateX(calc(-100% - 44px))}}
+
+.note{max-width:1240px;margin:28px auto 40px;font-size:13px;color:var(--ink-3);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.note b{color:var(--ink-2);font-weight:600}
+
+@media (max-width:1060px){
+  nav.main{display:none}
+  .menu-btn{display:grid;place-items:center}
+  .hero-grid{grid-template-columns:minmax(0,1fr);gap:40px;padding-block:56px 40px}
+  .proof{grid-template-columns:minmax(0,1fr);gap:8px}
+}
+@media (max-width:640px){
+  .bar{gap:12px;height:64px}
+  .logo svg{height:24px}
+  .bar-end .btn{display:none}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .partners{flex-direction:column;align-items:flex-start;gap:14px}
+  .partners .logos{width:100%}
+  .feed li{grid-template-columns:56px 54px minmax(0,1fr);gap:8px;padding-inline:14px}
+  .kpi{padding:12px 14px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#" aria-label="Cyberpoint">
+      <!-- Placeholder redraw of the new wordmark (slogan removed). Swap for the official SVG. -->
+      <svg viewBox="0 0 400 64" role="img" aria-hidden="true">
+        <rect x="6" y="6" width="214" height="52" rx="26" fill="#0D1550" stroke="#3A47A8" stroke-width="2"/>
+        <circle cx="9" cy="9" r="7" fill="#7B2AB8" stroke="#060A2B" stroke-width="3"/>
+        <text x="113" y="44" text-anchor="middle" font-family="Sora, sans-serif" font-weight="700" font-size="34" letter-spacing="3" fill="#FFFFFF">CYBER</text>
+        <text x="232" y="44" font-family="Sora, sans-serif" font-weight="600" font-size="36" letter-spacing="4" fill="#0D6EF5">POINT</text>
+      </svg>
+    </a>
+    <nav class="main" aria-label="Əsas menyu">
+      <a href="#">Xidmətlər <svg viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a href="#">Məhsullar <svg viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a href="#">Tərəfdaşlar</a>
+      <a href="#">Xəbərlər</a>
+      <a href="#">Haqqımızda <svg viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <a href="#">Əlaqə</a>
+    </nav>
+    <div class="bar-end">
+      <div class="lang" role="group" aria-label="Dil">
+        <button type="button" id="lang-az" aria-pressed="true">AZ</button>
+        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+        <button type="button" id="lang-ru" aria-pressed="false">RU</button>
+      </div>
+      <a class="btn btn-primary btn-sm" href="#">Konsultasiya al</a>
+      <button class="menu-btn" type="button" aria-label="Menyu"><svg width="18" height="18" viewBox="0 0 18 18"><path d="M2 5h14M2 9h14M2 13h14" stroke="currentColor" stroke-width="1.6"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="pulse"></span>7/24 Təhlükəsizlik Əməliyyatları Mərkəzi</span>
+      <h1>Biznesinizi qoruyan etibarlı kibertəhlükəsizlik tərəfdaşı.
+        <span class="accent">Bir addım öndə<i>.</i></span></h1>
+      <p class="lede">Beynəlxalq sertifikatlı mütəxəssislər, dünya standartlarına uyğun həllər və fasiləsiz monitorinqlə özəl və dövlət sektorunun kritik infrastrukturunu təhdidlərdən qoruyuruq.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#">Konsultasiya al
+          <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="btn btn-ghost" href="#">Xidmətlərimiz</a>
+      </div>
+    </div>
+
+    <aside class="panel" aria-label="SOC monitorinq paneli (illüstrasiya)">
+      <div class="panel-head">
+        <div class="panel-title">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6l7-3z" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 12l2.4 2.4L15.5 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SOC · SIEM hadisə axını
+        </div>
+        <span class="live"><span class="pulse"></span>CANLI</span>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><b id="k-events">18 432</b><span>hadisə / saat</span></div>
+        <div class="kpi"><b>3</b><span>açıq insident</span></div>
+        <div class="kpi"><b>&lt; 15 dəq</b><span>reaksiya müddəti</span></div>
+      </div>
+      <div class="spark" aria-hidden="true">
+        <svg viewBox="0 0 300 46" preserveAspectRatio="none">
+          <defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0D6EF5" stop-opacity=".45"/><stop offset="1" stop-color="#0D6EF5" stop-opacity="0"/></linearGradient></defs>
+          <path id="spark-area" fill="url(#g)" d=""/>
+          <path id="spark-line" fill="none" stroke="#5C9BFF" stroke-width="1.6" d=""/>
+        </svg>
+      </div>
+      <ul class="feed" id="feed">
+        <li><time>14:02:11</time><span class="sev crit">KRİT</span><span class="msg">Brute-force cəhdi bloklandı · VPN gateway</span></li>
+        <li><time>14:01:47</time><span class="sev warn">ORTA</span><span class="msg">Şübhəli PowerShell icrası · EDR</span></li>
+        <li><time>14:01:20</time><span class="sev ok">AŞAĞI</span><span class="msg">Fişinq e-poçtu karantinə alındı</span></li>
+        <li><time>14:00:58</time><span class="sev warn">ORTA</span><span class="msg">WAF: SQL injection cəhdi · /api/login</span></li>
+        <li><time>14:00:31</time><span class="sev ok">AŞAĞI</span><span class="msg">DLP siyasəti tətbiq edildi · USB</span></li>
+      </ul>
+      <div class="panel-foot"><span>Bütün sistemlər monitorinq altında</span><b>● Qorunur</b></div>
+    </aside>
+  </div>
+
+  <div class="wrap proof">
+    <div class="stats">
+      <div class="stat"><b>7/24</b><span>SOC monitorinqi və texniki dəstək</span></div>
+      <div class="stat"><b>9</b><span>kibertəhlükəsizlik xidməti istiqaməti</span></div>
+      <div class="stat"><b>12</b><span>məhsul kateqoriyası: SIEM, EDR, PAM, WAF…</span></div>
+      <div class="stat tbd"><b>__<sup>+</sup></b><span>uğurlu layihə (rəqəm gözlənilir)</span></div>
+    </div>
+    <div class="certs">
+      <p class="label">Standartlar və sertifikatlar</p>
+      <div class="cert-row">
+        <span class="cert"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 15l-1.5 6 5-2.5 5 2.5-1.5-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>CIS Critical Security Controls</span>
+        <span class="cert slot"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 15l-1.5 6 5-2.5 5 2.5-1.5-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Sertifikat</span>
+        <span class="cert slot"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="10" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 15l-1.5 6 5-2.5 5 2.5-1.5-6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Sertifikat</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="partners">
+      <p class="label">Etibarlı tərəfdaşlar və müştərilər</p>
+      <div class="logos">
+        <div class="track">
+          <span class="pl">AzInTelecom</span><span class="pl">Kron</span><span class="pl">AzTU</span><span class="pl">AKTA</span>
+          <span class="pl slot">Tərəfdaş loqosu</span><span class="pl slot">Müştəri loqosu</span><span class="pl slot">Tərəfdaş loqosu</span>
+        </div>
+        <div class="track" aria-hidden="true">
+          <span class="pl">AzInTelecom</span><span class="pl">Kron</span><span class="pl">AzTU</span><span class="pl">AKTA</span>
+          <span class="pl slot">Tərəfdaş loqosu</span><span class="pl slot">Müştəri loqosu</span><span class="pl slot">Tərəfdaş loqosu</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="note"><b>Qeyd (review):</b> The logo is a temporary redraw until the official SVG arrives. The SOC panel is an illustration, not live data. Dashed items wait on real content: the project count, certificate names and partner/client logos. Partner names in the strip come from Cyberpoint's own news posts.</p>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Background: slow node network in brand blues
+  const c = document.getElementById('net'), x = c.getContext('2d');
+  let W, H, pts = [], dpr = Math.min(devicePixelRatio || 1, 2);
+  function size(){
+    const r = c.parentElement.getBoundingClientRect();
+    W = r.width; H = r.height; c.width = W*dpr; c.height = H*dpr; x.setTransform(dpr,0,0,dpr,0,0);
+    const n = Math.round(Math.min(90, W*H/16000));
+    pts = Array.from({length:n}, () => ({x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-.5)*.18, vy:(Math.random()-.5)*.18, p:Math.random()<.06}));
+  }
+  function draw(){
+    x.clearRect(0,0,W,H);
+    for (const a of pts){ a.x+=a.vx; a.y+=a.vy; if(a.x<0||a.x>W)a.vx*=-1; if(a.y<0||a.y>H)a.vy*=-1; }
+    for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++){
+      const a=pts[i], b=pts[j], d=Math.hypot(a.x-b.x,a.y-b.y);
+      if (d<140){ x.strokeStyle=`rgba(92,155,255,${(1-d/140)*.16})`; x.lineWidth=1; x.beginPath(); x.moveTo(a.x,a.y); x.lineTo(b.x,b.y); x.stroke(); }
+    }
+    for (const a of pts){ x.fillStyle = a.p ? 'rgba(168,102,224,.9)' : 'rgba(92,155,255,.55)'; x.beginPath(); x.arc(a.x,a.y,a.p?2.2:1.4,0,7); x.fill(); }
+    if (!reduce) requestAnimationFrame(draw);
+  }
+  size(); draw(); addEventListener('resize', () => { size(); if (reduce) draw(); });
+
+  // Sparkline
+  let series = Array.from({length:40}, (_,i) => 22 + Math.sin(i/3)*6 + Math.random()*8);
+  function spark(){
+    const max = 46, step = 300/(series.length-1);
+    const pts = series.map((v,i)=>`${(i*step).toFixed(1)},${(max - v).toFixed(1)}`);
+    document.getElementById('spark-line').setAttribute('d','M'+pts.join(' L'));
+    document.getElementById('spark-area').setAttribute('d','M0,46 L'+pts.join(' L')+' L300,46 Z');
+  }
+  spark();
+
+  // Feed ticker
+  const events = [
+    ['crit','KRİT','Zərərli IP ünvanından skan · NGFW'],
+    ['ok','AŞAĞI','Uğurlu MFA girişi · PAM sessiyası qeydə alındı'],
+    ['warn','ORTA','Anomal DNS sorğusu · DNS təhlükəsizliyi'],
+    ['ok','AŞAĞI','Təhdid kəşfiyyatı (TI) bazası yeniləndi'],
+    ['warn','ORTA','XDR: lateral movement əlaməti araşdırılır'],
+    ['crit','KRİT','Ransomware imzası bloklandı · son nöqtə'],
+    ['ok','AŞAĞI','SOAR playbook avtomatik icra olundu'],
+  ];
+  const feed = document.getElementById('feed'), kEv = document.getElementById('k-events');
+  let k = 0, count = 18432;
+  function tick(){
+    const [cls,label,msg] = events[k++ % events.length];
+    const t = new Date().toTimeString().slice(0,8);
+    const li = document.createElement('li');
+    li.innerHTML = `<time>${t}</time><span class="sev ${cls}">${label}</span><span class="msg"></span>`;
+    li.querySelector('.msg').textContent = msg;
+    feed.prepend(li); while (feed.children.length > 5) feed.lastElementChild.remove();
+    count += Math.round(Math.random()*40); kEv.textContent = count.toLocaleString('az-AZ').replace(/,/g,' ');
+    series.push(22 + Math.random()*16); series.shift(); spark();
+  }
+  if (!reduce) setInterval(tick, 2600);
+
+  // Language toggle (visual only in preview)
+  document.querySelectorAll('.lang button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.lang button').forEach(o => o.setAttribute('aria-pressed', String(o === b)));
+  }));
+})();
+</script>

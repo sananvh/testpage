@@ -1,0 +1,6 @@
+Contact: mailto:info@cyberpoint.az
+Contact: tel:+994125263333
+Expires: 2027-11-05T00:00:00.000Z
+Preferred-Languages: az, en, ru
+Canonical: https://cyberpoint.az/.well-known/security.txt
+Policy: https://cyberpoint.az/en/contact

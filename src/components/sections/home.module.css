@@ -1,0 +1,422 @@
+/* ---------- Trust marquee ---------- */
+.trust {
+  padding-block: clamp(28px, 4vw, 48px);
+  border-bottom: 1px solid var(--line);
+}
+.trustRow {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.trustLabel {
+  flex: none;
+  max-width: 15ch;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-3);
+  line-height: 1.4;
+}
+.marquee {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.track {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+.trustLogo {
+  position: relative;
+  flex: none;
+  width: 130px;
+  height: 64px;
+  overflow: hidden;
+  opacity: 0.75;
+  transition: opacity 0.3s;
+}
+.trustLogo:hover {
+  opacity: 1;
+}
+.trustLogo img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 130px;
+  height: 130px;
+  transform: translateY(-50%);
+  object-fit: contain;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-100% - 40px));
+  }
+}
+
+/* ---------- About ---------- */
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+.aboutCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+}
+.advantages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.advantage {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(24px, 2.4vw, 32px);
+  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+}
+.advantage:nth-child(even) {
+  margin-top: 40px;
+}
+.advantage p {
+  color: var(--ink-2);
+  font-size: 15.5px;
+}
+.advIcon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--accent);
+  color: #fff;
+  margin-bottom: 18px;
+}
+.advIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ---------- Products panel ---------- */
+.productsWrap {
+  padding: 0 var(--gutter);
+}
+.productsPanel {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--feature);
+  padding-block: clamp(56px, 8vw, 112px);
+  max-width: 1760px;
+  margin-inline: auto;
+}
+.productsPanel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(45% 60% at 0% 0%, rgba(13, 110, 245, 0.4), transparent 70%),
+    radial-gradient(35% 50% at 100% 100%, rgba(123, 42, 184, 0.35), transparent 70%);
+}
+.productsPanel :global(a[class*="productCard"]) {
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.productsPanel :global(a[class*="productCard"]:hover) {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1.5px #7fb2ff;
+}
+.productsPanel :global([class*="productGroup"]) {
+  color: rgba(255, 255, 255, 0.5);
+}
+.productsPanel :global([class*="productFull"]) {
+  color: #7fb2ff;
+}
+.productsPanel :global([class*="productDesc"]) {
+  color: var(--on-feature-2);
+}
+.productsFoot {
+  margin-top: 40px;
+}
+
+/* ---------- Approach ---------- */
+.approach {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: center;
+}
+.approach > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.approachTitle {
+  font-size: clamp(48px, 7.5vw, 112px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+.red {
+  color: var(--crit);
+}
+.blue {
+  color: var(--accent);
+}
+.steps {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.step {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 12px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.stepNum {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--purple-text);
+  padding-top: 4px;
+}
+.step h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.stepIcon {
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
+}
+.step p {
+  margin-top: 6px;
+  color: var(--ink-2);
+}
+.rnd {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: clamp(28px, 3.5vw, 48px);
+  border-radius: var(--radius-lg);
+  background: var(--feature);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.rnd::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(70% 60% at 100% 0%, rgba(123, 42, 184, 0.55), transparent 70%);
+}
+.rndLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8db8ff;
+}
+.rndValue {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 7vw, 96px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+.rndText {
+  color: var(--on-feature-2);
+}
+.cves {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cves li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.cves a {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+}
+.cves a:hover {
+  color: #8db8ff;
+  text-decoration: underline;
+}
+.cves span {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Certificates ---------- */
+.certs {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.6fr);
+  gap: 16px;
+}
+.certCompany {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+.isoCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.isoCard strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+}
+.isoCard span span {
+  color: var(--ink-3);
+  font-size: 14px;
+}
+.isoMedia {
+  position: relative;
+  flex: none;
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.isoMedia img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.certTeam {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.badge {
+  position: relative;
+  aspect-ratio: 1;
+  max-width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+.badge img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s var(--ease);
+}
+.badge:hover img {
+  transform: scale(1.08);
+}
+
+.newsFoot {
+  margin-top: 36px;
+}
+
+@media (max-width: 1100px) {
+  .about,
+  .approach,
+  .certs {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .aboutCopy {
+    position: static;
+  }
+}
+@media (max-width: 680px) {
+  .trustRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .marquee {
+    width: 100%;
+  }
+  .advantages {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .advantage:nth-child(even) {
+    margin-top: 0;
+  }
+  .certTeam {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .productsWrap {
+    padding: 0 10px;
+  }
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.faq > div:first-child {
+  position: sticky;
+  top: calc(var(--header-h) + 24px);
+}
+@media (max-width: 1000px) {
+  .faq {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .faq > div:first-child {
+    position: static;
+  }
+}

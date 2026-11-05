@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+
+    <title> Cyberpoint </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Template Basic Images Start -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/cyberPointLogo.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/cyberPointLogo.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/cyberPointLogo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="/css/flag-icon.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="~/img/favicon/ms-icon-144x144.png">
+    <meta property="og:image" content="~/img/og/img.png">
+    <!-- Template Basic Images End -->
+    <!-- Custom Browsers Color Start -->
+    <meta name="theme-color" content="#000">
+    <!-- Custom Browsers Color End -->
+
+    <link rel="stylesheet" href="/css/app.min.css">
+
+
+   
+
+
+
+    <link rel="stylesheet" href="/css/bootstrap-select.min.css"> 
+
+
+
+    
+
+
+ 
+ 
+ <link rel="stylesheet" href="/css/aos.css">
+
+
+</head>
+
+<body>
+
+
+    
+
+<header class="header container-wrapper">
+
+    <div class="leftSideMenu">
+        <svg class="hamburgerIcon dark-photo">
+            <use xlink:href="/img/svg/icons.svg#icon-magnifying"></use>
+        </svg>
+
+        <img src="/img/hamburgerLightMode.png" class="darkHamburger light-photo" alt="logo" />
+        <div class="cancelBtn">
+            <img src="/img/cancelDarkMode.png" class="dark-photo" />
+            <img src="/img/cancelLightMode.png" class="light-photo" />
+
+        </div>
+
+
+    </div>
+
+    <div>
+        <a href="/">
+            <svg class="logo  dark-photo">
+                <use xlink:href="/img/svg/icons.svg#icon-Isolation-Mode"></use>
+            </svg>
+            <svg class="logo  light-photo">
+                <use xlink:href="/img/svg/icons.svg#icon-Isolation-Mode-1"></use>
+            </svg>
+
+        </a>
+    </div>
+
+    <div class="d-md-flex  d-none ">
+
+        <div class="d-lg-flex d-none">
+
+
+
+
+
+            <div class="currency-switcher">
+                <div class="dropdown">
+                    <div class="caption">
+                        <svg class="langSvg">
+                            <use xlink:href="/img/svg/icons.svg#icon-us"></use>
+                        </svg>
+
+                    </div>
+                    <div class="list">
+                        <div class="item" data-item="AZ">
+                            <svg class="langSvg">
+                                <use xlink:href="/img/svg/icons.svg#icon-az"></use>
+                            </svg>
+
+                        </div>
+
+
+                        <div class="item selected" data-item="EN-US">
+                            <svg class="langSvg">
+                                <use xlink:href="/img/svg/icons.svg#icon-us"></use>
+                            </svg>
+
+                        </div>
+
+
+                        <div class="item" data-item="RU">
+
+                            <svg class="langSvg">
+                                <use xlink:href="/img/svg/icons.svg#icon-ru"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="mt-2">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <img src="/img/soon.png" alt="soon" class="hi light-photo" />
+                <img src="/img/soonDarkMode.png" class="darkSoon dark-photo " />
+
+                <img src="/img/moon.png" alt="moon" class="bye dark-photo" />
+                <img src="/img/lightModeMoon.png" class="darkMoon light-photo" />
+                <span class="ball"></span>
+            </label>
+
+        </div>
+    </div>
+
+
+
+    <div class="navbarUl ">
+        <div class="navbarLists row d-flex justify-content-between ">
+            <div class="flags" id="flags-phone">
+                <button class="az-tablet" data-culture-code="AZ">
+                    <img src="/img/azerbaijan.png" />
+                </button>
+                <button class="ru-phone" data-culture-code="RU">
+                    <img src="/img/russian-federation.png" class="ms-3" />
+                </button>
+                <button data-culture-code="EN-US">
+                    <img src="/img/english.png" class="ms-3" style="border-radius:4px" />
+                </button>
+
+            </div>
+            <div class="turnBox d-block  d-md-none ">
+                <input type="checkbox" id="checkboxMobile" class="secondCheckBox">
+
+                <img src="/img/soon.png" class="soon  dark-photo" alt="soon" /><span class="dark-photo lightVersion">
+                    &#x130;&#x15F;&#x131;ql&#x131; versiyaya ke&#xE7;in
+                </span>
+
+                <img src="/img/moon.png" class="moon light-photo " alt="moon" />
+                <span class="light-photo darkVersion">
+                    Qaranl&#x131;q versiyaya ke&#xE7;in
+                </span>
+
+            </div>
+
+
+            <div class="col-12 col-md-6 " style="padding-bottom: 0px;margin-bottom: 0px;">
+                <ul class="firstUl serviceList" id="services">
+
+                    <a>
+                    <li onclick="location.href='/#advantages'">
+                            &#xDC;st&#xFC;nl&#xFC;kl&#x259;rimiz
+                    </li>
+                    </a>
+
+                    <a href="/#ourServices">
+                    <li onclick="location.href='/#ourServices'">Xidm&#x259;tl&#x259;r</li>
+                    </a>
+
+                    <a id="myPartners">
+                    <li data-title="Partners" onclick="location.href='/#partners'">Partnerl&#x259;r</li>
+                    </a>
+
+                    <a id="myClients">
+                    <li data-title="Clients" onclick="location.href='/#clients'">M&#xFC;&#x15F;t&#x259;ril&#x259;r</li>
+                    </a>
+
+                    <a id="myCertificates">
+                    <li data-title="Certificates" onclick="location.href='/#certificates'">Sertifikatlar</li>
+                    </a>
+
+                    <a>
+                    <li onclick="location.href='#contacts'">Biziml&#x259; &#x259;laq&#x259;</li>
+                    </a>
+                </ul>
+
+
+
+
+
+            </div>
+
+            <div class="col-12 col-md-6 mt-3 pb-5">
+
+                <ul class="secondUl serviceList">
+                    <a class="mainATag pt-sm-5 " href="/whoweare">
+                    <li>
+                            Biz kimik
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+                    </a>
+                    <a class="mainATag" href="/employees">
+
+                    <li>
+                            Komandam&#x131;z
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+                    </a>
+                    <a class="mainATag" href="/brandings">
+
+                    <li>
+
+                            Brendl&#x259;&#x15F;m&#x259;
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+                    </a>
+                    <a class="mainATag" href="/list">
+
+                    <li>
+                            Mediada biz
+
+                    </li>
+                    <img src="/img/redArrow.png" class="redArrow" alt="moon" />
+
+                    </a>
+
+                </ul>
+
+            </div>
+        </div>
+        <div>
+            <img src="/img/envisioning.png" class="dark-photo navbarBg" />
+            <img src="/img/envisionLightttt.png" class="light-photo navbarBg" />
+        </div>
+        <div class="flagsTablet">
+            <button data-culture-code="AZ">
+                <img src="/img/azerbaijan.png" class="flagTabletImg" />
+            </button>
+            <button data-culture-code="RU">
+                <img src="/img/russian-federation.png" class="flagTabletImg" />
+            </button>
+            <button data-culture-code="EN-US">
+                <img src="/img/english.png" class="flagTabletImg" />
+            </button>
+
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+
+    
+
+
+
+<main>
+    <div class="dark-photo" style="position: relative;">
+        <div class="ellipse">
+            <img src="./img/animationLine.png" class="circle">
+        </div>
+
+
+            <div class="staySecureBox " style="background-image: url(/cyberpoint_files/home_content/ndlp1wlm.02j/qvqeatw1.rux.png)">
+                <h3 class="secureTitle">
+                    Haker kimi d&#xFC;&#x15F;&#xFC;n&#x259;r&#x259;k, hakerl&#x259;rd&#x259;n bir add&#x131;m &#xF6;nd&#x259;yik!
+                </h3>
+
+                <div class=" socialIcons">
+                        <a href="https://www.facebook.com/cyberpoint.az" target="_blank">
+                            <img src="img/Facebook (3).png" alt="map" class="fb dark-photo" />
+                            <img src="img/Facebook (4)Light.png" alt="map" class="fb light-photo" />
+                        </a>
+                        <a href="https://twitter.com/cyberpointaz" target="_blank">
+                            <img src="/img/twitter-dark.png" alt="map" class="tw dark-photo" />
+                            <img src="/img/twitter-light.png" alt="map" class="tw light-photo" />
+                        </a>
+                        <a href="https://www.linkedin.com/company/cyberpoint-az" target="_blank">
+                            <img src="img/Linkedin.png" alt="map" class="linkedin dark-photo" />
+                            <img src="img/Linkedin (1)Light.png" alt="map" class="linkedin light-photo" />
+                        </a>
+                        <a href="https://instagram.com/cyberpoint.az?igshid=MzRlODBiNWFlZA==" target="_blank">
+                            <img src="img/Instagram (2).png" alt="map" class="insta dark-photo" />
+                            <img src="img/InstagramLight.png" alt="map" class="insta light-photo" />
+                        </a>
+
+                </div>
+            </div>
+
+    </div>
+    <div class="light-photo" style="position: relative;">
+        <div class="ellipse">
+            <img src="./img/animationLine.png" class="circle">
+            <!-- <div class="circle"></div> -->
+        </div>
+
+
+
+            <div class="staySecureBox " style="background-image: url(/cyberpoint_files/home_content/bveacr3r.gym/kjega4or.1jj.png)">
+                <h3 class="secureTitle">
+                    Haker kimi d&#xFC;&#x15F;&#xFC;n&#x259;r&#x259;k, hakerl&#x259;rd&#x259;n bir add&#x131;m &#xF6;nd&#x259;yik!
+                </h3>
+                <div class="d-flex flex-column socialIcons">
+                        <a href="https://www.facebook.com/cyberpoint.az" target="_blank">
+                            <img src="img/Facebook (3).png" alt="map" class="fb dark-photo" />
+                            <img src="img/Facebook (4)Light.png" alt="map" class="fb light-photo" />
+                        </a>
+                        <a href="https://twitter.com/cyberpointaz" target="_blank">
+                            <img src="/img/twitter-dark.png" alt="map" class="tw dark-photo" />
+                            <img src="/img/twitter-light.png" alt="map" class="tw light-photo" />
+                        </a>
+                        <a href="https://www.linkedin.com/company/cyberpoint-az" target="_blank">
+                            <img src="img/Linkedin.png" alt="map" class="linkedin dark-photo" />
+                            <img src="img/Linkedin (1)Light.png" alt="map" class="linkedin light-photo" />
+                        </a>
+                        <a href="https://instagram.com/cyberpoint.az?igshid=MzRlODBiNWFlZA==" target="_blank">
+                            <img src="img/Instagram (2).png" alt="map" class="insta dark-photo" />
+                            <img src="img/InstagramLight.png" alt="map" class="insta light-photo" />
+                        </a>
+
+                </div>
+            </div>
+    </div>
+
+    <p class="secureDescription">Xidm&#x259;tl&#x259;rimiz &#xFC;&#xE7;&#xFC;n a&#x15F;a&#x11F;&#x131; s&#xFC;r&#xFC;&#x15F;d&#xFC;r&#xFC;n</p>
+
+     <div class="scroll-container">
+
+        <button class="scroll-to-top" id="back-to-top" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                 class="bi bi-chevron-double-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                      d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z" />
+                <path fill-rule="evenodd"
+                      d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+            </svg>
+        </button>
+
+    </div>
+
+
+    <a  href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fas fa-chevron-up"></i></a>
+
+
+
+
+
+    
+
+
+
+    <div class="d-flex m-auto justify-content-center">
+        <a href="#ourServices">
+
+            <button class="button d-none d-lg-block scrollBtn" onclick="scrollToBottom()">
+                <span>
+                    <img src="img/scroll.png" />
+                </span>
+
+            </button>
+        </a>
+
+        <a href="#ourServices">
+
+            <button class="d-block d-lg-none" onclick="scrollToBottom()">
+                <img src="/img/swipeDone.png" alt="swipe done" class="d-block d-lg-none" />
+
+            </button>
+        </a>
+
+
+
+    </div>
+
+
+
+
+    <div class="ourAdvantage" id="advantages">
+        <div data-aos="zoom-in" data-aos-duration="1500">
+            <h4 id="services">
+
+
+                &#xDC;st&#xFC;nl&#xFC;kl&#x259;rimiz
+
+
+            </h4>
+
+        </div>
+        <div data-aos="zoom-in" data-aos-duration="1500">
+            <p>
+                Cyberpoint-d&#x259; innovativ t&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;ri, t&#x259;cr&#xFC;b&#x259;li m&#xFC;t&#x259;x&#x259;ssisl&#x259;ri, yenilik&#xE7;i texnologiya v&#x259; s&#xFC;r&#x259;ti bir araya g&#x259;tirib sizin optimal t&#x259;hl&#xFC;k&#x259;sizliyinizi t&#x259;min edirik!&#xD;&#xA;&#xD;&#xA;
+            </p>
+        </div>
+    </div>
+
+    <div class="ourAdvantageBoxes row container-wrapper">
+        <div class="col-12 col-sm-6   col-lg-3">
+            <div class="box" data-aos="zoom-in" data-aos-duration="1500">
+                <svg>
+                    <use xlink:href="/img/svg/icons.svg#icon-Icon-Stroke"></use>
+                </svg>
+                <p>Biziml&#x259;  t&#x259;hl&#xFC;k&#x259;sizlik t&#x259;hdidl&#x259;rind&#x259;n bir ne&#xE7;&#x259; add&#x131;m ir&#x259;lid&#x259;</p>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="box" data-aos="zoom-in" data-aos-duration="1500">
+                <svg>
+                    <use xlink:href="/img/svg/icons.svg#icon-Icon-1"></use>
+                </svg>
+                <p>Pe&#x15F;&#x259;kar v&#x259; beyn&#x259;lxalq sertifikatl&#x131;  hey&#x259;t</p>
+            </div>
+
+        </div>
+        <div class="col-12 col-sm-6   col-lg-3">
+            <div class="box" data-aos="zoom-in " data-aos-duration="1500">
+                <svg>
+                    <use xlink:href="/img/svg/icons.svg#icon-Outline"></use>
+                </svg>
+                <p>Kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;rinin geni&#x15F; spektr&#x131;</p>
+            </div>
+
+        </div>
+        <div class="col-12 col-sm-6   col-lg-3">
+            <div class="box" data-aos="zoom-in" data-aos-duration="1500">
+                <svg>
+                    <use xlink:href="/img/svg/icons.svg#icon-Vector-Stroke"></use>
+                </svg>
+                <p>7/24 xidm&#x259;t v&#x259; texniki d&#x259;st&#x259;k</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="dark-photo ">
+        <div class="envisioning" data-aos="zoom-in" data-aos-duration="1500">
+            <h2>G&#x259;l&#x259;c&#x259;yimizi t&#x259;s&#x259;vv&#xFC;r etm&#x259;k</h2>
+        </div>
+    </div>
+    <div class="light-photo">
+        <div class="envisioning" data-aos="zoom-in" data-aos-duration="1500">
+            <h2>G&#x259;l&#x259;c&#x259;yimizi t&#x259;s&#x259;vv&#xFC;r etm&#x259;k</h2>
+        </div>
+    </div>
+
+        <div class="envisioningBoxes">
+            <div>
+                <div class="imgAndTitle" data-aos="zoom-in" data-aos-duration="1500">
+
+                    <svg>
+                        <use xlink:href="/img/svg/icons.svg#icon-mission"></use>
+                    </svg>
+
+                    <h3>V&#x259;zif&#x259;</h3>
+                </div>
+                <p data-aos="zoom-in" data-aos-duration="1500">
+
+                    &#x15E;irk&#x259;timiz m&#xFC;&#x15F;t&#x259;ril&#x259;rinin kiber t&#x259;hl&#xFC;k&#x259;sizliyini t&#x259;min etm&#x259;k &#xFC;&#xE7;&#xFC;n daima yenilik&#xE7;i t&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;rini ara&#x15F;d&#x131;r&#x131;r v&#x259; t&#x259;tbiq edir. Sizin t&#x259;hl&#xFC;k&#x259;siz, komfort m&#xFC;hitind&#x259; qalma&#x11F;&#x131;n&#x131;z &#xFC;&#xE7;&#xFC;n f&#x259;aliyy&#x259;t g&#xF6;st&#x259;ririk.
+
+
+                </p>
+
+            </div>
+            <div>
+                <div class="imgAndTitle" data-aos="zoom-in" data-aos-duration="1500">
+                    <svg>
+                        <use xlink:href="/img/svg/icons.svg#icon-vision"></use>
+                    </svg>
+                    <h3>Vizyon</h3>
+                </div>
+                <p data-aos="zoom-in" data-aos-duration="1500">
+
+                    Qlobal &#xF6;l&#xE7;&#xFC;d&#x259; kiber t&#x259;hl&#xFC;k&#x259;sizlik lideri olmaq, yenilikl&#x259;ri t&#x259;tbiq ed&#x259;r&#x259;k v&#x259; standartlara &#x259;m&#x259;l ed&#x259;r&#x259;k m&#xFC;&#x15F;t&#x259;ril&#x259;rimizin elektron d&#xFC;nyada u&#x11F;urlu v&#x259; t&#x259;hl&#xFC;k&#x259;siz olmas&#x131;n&#x131; t&#x259;min etm&#x259;k.
+
+
+                </p>
+            </div>
+            <div>
+                <div class="imgAndTitle" data-aos="zoom-in" data-aos-duration="1500">
+                    <svg>
+                        <use xlink:href="/img/svg/icons.svg#icon-values"></use>
+                    </svg>
+                    <h3>D&#x259;y&#x259;rl&#x259;r</h3>
+                </div>
+
+                <p data-aos="zoom-in" data-aos-duration="1500">
+
+                    Yenilik&#xE7;ilik, etibarl&#x131;l&#x131;q v&#x259; m&#xFC;k&#x259;mm&#x259;l olmaq bizi biz ed&#x259;n &#x259;sas d&#x259;y&#x259;rl&#x259;rd&#x131;r. H&#x259;r bir layih&#x259;d&#x259; bu d&#x259;y&#x259;rl&#x259;ri t&#x259;sdiql&#x259;y&#x259;r&#x259;k, m&#xFC;&#x15F;t&#x259;ril&#x259;rimiz&#x259; qar&#x15F;&#x131; &#xF6;hd&#x259;liyimizi yerin&#x259; yetirir v&#x259; onlar&#x131;n m&#x259;mnun qalmas&#x131;n&#x131; h&#x259;d&#x259;fl&#x259;yirik.
+
+
+                </p>
+            </div>
+        </div>
+
+
+
+    <!-- Secure Boxes -->
+    <div class="container-wrapper secureBoxes" id="ourServices">
+        <h3 class="secureDataTitle" data-aos="fade-up">Cyberpoint il&#x259; m&#x259;lumatlar&#x131;n&#x131;z&#x131; qoruyun</h3>
+        <div class="reversedBoxes">
+            <div class="row box w-100">
+                <div class="col-12  col-lg-8" id="myFirstModalBtn">
+
+                    <div class="leftSide" data-aos="fade-up">
+                        <div>
+                            <p id="p-element" data-aos-duration="1500" data-aos="fade-up">
+                                T&#x259;hl&#xFC;k&#x259;sizlik &#x18F;m&#x259;liyyatlar&#x131; M&#x259;rk&#x259;zi 7/24 b&#xFC;t&#xFC;n infrastrukturun monitorinqini h&#x259;yata ke&#xE7;ir&#x259;n m&#x259;rk&#x259;zdir. Sistem, &#x15F;&#x259;b&#x259;k&#x259; v&#x259; t&#x259;hl&#xFC;k&#x259;sizlik avadanl&#x131;q v&#x259; proqram t&#x259;minatlar&#x131;na aid hadis&#x259;l&#x259;r (log) m&#x259;rk&#x259;zi monitorinq sistemi olan &#x201C;SIEM&#x201D; (Security Information and Event Manager) d&#x259; toplan&#x131;l&#x131;r. T&#x259;hl&#xFC;k&#x259;sizlik &#x18F;m&#x259;liyyatlar&#x131; M&#x259;rk&#x259;zi &#x15F;&#x259;b&#x259;k&#x259;l&#x259;rd&#x259;, serverl&#x259;rd&#x259;, veril&#x259;nl&#x259;r bazas&#x131;nda, proqram t&#x259;minatlar&#x131;nda, vebsaytlarda v&#x259; dig&#x259;r informasiya sisteml&#x259;rind&#x259; ba&#x15F; ver&#x259;n insidentl&#x259;r&#x259; n&#x259;zar&#x259;t edir, t&#x259;hl&#xFC;k&#x259;sizlik pozuntular&#x131;n&#x131; ara&#x15F;d&#x131;r&#x131;b d&#x259;rhal reaksiya bildirirl&#x259;r. Onlar h&#x259;m hadis&#x259;l&#x259;r ba&#x15F; verm&#x259;zd&#x259;n &#x259;vv&#x259;l, h&#x259;m d&#x259; sonra m&#x259;s&#x259;l&#x259;nin t&#x259;hlili il&#x259; m&#x259;&#x15F;&#x11F;ul olurlar.    
+                            </p>
+
+                            <h3 id="h3-element" data-aos-duration="3500" data-aos="fade-up">T&#x259;hl&#xFC;k&#x259;sizlik &#x18F;m&#x259;liyyatlar&#x131; M&#x259;rk&#x259;zi Xidm&#x259;ti   </h3>
+                        </div>
+                        <div class="imgSide" id="image-element">
+                            <img src="/cyberpoint_files/service/qmgzzwjv.dji/iuibzqib.myr.png" alt="service" class="dark-photo" data-aos="fade-up" data-aos-duration="1500" />
+                            <img src="/cyberpoint_files/service/f0uxriip.jhw/13kubckz.oot.png" alt="service" class="light-photo" data-aos="fade-up" data-aos-duration="1500" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-lg-4">
+                    <div class="rightSide">
+                        <div data-aos-duration="1500" data-aos="fade-up" id="my4ModalBtn">
+                            <h3 id="p-element" data-aos-duration="1500" data-aos="fade-up">
+
+
+                                N&#xFC;fuzetm&#x259; S&#x131;naqlar&#x131;
+
+
+                            </h3>
+                            <img src="/cyberpoint_files/service/mukv2usp.01a/at0d1atb.0f3.png" class="dark-photo" id="image-element" />
+                            <img src="/cyberpoint_files/service/5gtv5z0r.1pk/yv5jg15p.dl3.png" class="light-photo" id="image-element" />
+                        </div>
+                        <div class="secondBox" data-aos-duration="1500" data-aos="fade-up" id="my-5-ModalBtn">
+                            <h3 id="p-element" data-aos-duration="1500" data-aos="fade-up">Kod t&#x259;hl&#xFC;k&#x259;sizliyinin yoxlan&#x131;lmas&#x131;</h3>
+                            <img src="/cyberpoint_files/service/v2b42yd4.iik/k3dfbnox.31w.png" class="dark-photo" id="image-element" />
+                            <img src="/cyberpoint_files/service/5y35bjve.zn0/ovuzf1ou.023.png" class="light-photo" id="image-element" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- The Modal -->
+                <div class="serviceModal">
+                    <div id="myFirstModal" class="modal" data-aos="fade-up" data-aos-duration="2500">
+
+                        <!-- Modal content -->
+                        <div class="modal-content container-wrapper">
+                            <span class="closeFirst">&times;</span>
+                            <!-- <p>Some text in the Modal..</p> -->
+                            <div class="row container-wrapper "
+                                 style="display: flex;justify-content: center; align-items: center;">
+                                <div class="col-12 col-lg-6 imgSide">
+
+                                    <h3>T&#x259;hl&#xFC;k&#x259;sizlik &#x18F;m&#x259;liyyatlar&#x131; M&#x259;rk&#x259;zi Xidm&#x259;ti</h3>
+                                    <img src="/cyberpoint_files/service/qmgzzwjv.dji/iuibzqib.myr.png" alt="serviceImg" class="dark-photo">
+                                    <img src="/cyberpoint_files/service/f0uxriip.jhw/13kubckz.oot.png" class="light-photo" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <ul class="modalUl">
+                                        <li>
+                                            T&#x259;hl&#xFC;k&#x259;sizlik &#x18F;m&#x259;liyyatlar&#x131; M&#x259;rk&#x259;zi 7/24 b&#xFC;t&#xFC;n infrastrukturun monitorinqini h&#x259;yata ke&#xE7;ir&#x259;n m&#x259;rk&#x259;zdir. Sistem, &#x15F;&#x259;b&#x259;k&#x259; v&#x259; t&#x259;hl&#xFC;k&#x259;sizlik avadanl&#x131;q v&#x259; proqram t&#x259;minatlar&#x131;na aid hadis&#x259;l&#x259;r (log) m&#x259;rk&#x259;zi monitorinq sistemi olan &#x201C;SIEM&#x201D; (Security Information and Event Manager) d&#x259; toplan&#x131;l&#x131;r. T&#x259;hl&#xFC;k&#x259;sizlik &#x18F;m&#x259;liyyatlar&#x131; M&#x259;rk&#x259;zi &#x15F;&#x259;b&#x259;k&#x259;l&#x259;rd&#x259;, serverl&#x259;rd&#x259;, veril&#x259;nl&#x259;r bazas&#x131;nda, proqram t&#x259;minatlar&#x131;nda, vebsaytlarda v&#x259; dig&#x259;r informasiya sisteml&#x259;rind&#x259; ba&#x15F; ver&#x259;n insidentl&#x259;r&#x259; n&#x259;zar&#x259;t edir, t&#x259;hl&#xFC;k&#x259;sizlik pozuntular&#x131;n&#x131; ara&#x15F;d&#x131;r&#x131;b d&#x259;rhal reaksiya bildirirl&#x259;r. Onlar h&#x259;m hadis&#x259;l&#x259;r ba&#x15F; verm&#x259;zd&#x259;n &#x259;vv&#x259;l, h&#x259;m d&#x259; sonra m&#x259;s&#x259;l&#x259;nin t&#x259;hlili il&#x259; m&#x259;&#x15F;&#x11F;ul olurlar.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="serviceModal">
+                    <div id="my4ThModal" class="modal" data-aos="fade-up" data-aos-duration="2500">
+
+                        <!-- Modal content -->
+                        <div class="modal-content container-wrapper">
+                            <span class="closeFirst">&times;</span>
+
+                            <!-- <p>Some text in the Modal..</p> -->
+                            <div class="row container-wrapper "
+                                 style="display: flex;justify-content: center; align-items: center;">
+                                <div class="col-12 col-lg-6 imgSide">
+
+                                    <h3>N&#xFC;fuzetm&#x259; S&#x131;naqlar&#x131;</h3>
+                                    <img src="/cyberpoint_files/service/mukv2usp.01a/at0d1atb.0f3.png" alt="serviceImg" class="dark-photo">
+                                    <img src="/cyberpoint_files/service/5gtv5z0r.1pk/yv5jg15p.dl3.png" class="light-photo" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <ul class="modalUl">
+                                        <li>
+                                            Mobil t&#x259;tbiql&#x259;rd&#x259;, infrastrukturda, veb t&#x259;tbiq v&#x259; servisl&#x259;rd&#x259; m&#xF6;vcud t&#x259;hl&#xFC;k&#x259;sizlik bo&#x15F;luqlar&#x131;n&#x131;n test edil&#x259;r&#x259;k a&#x15F;karlanmas&#x131; v&#x259; riskl&#x259;rin m&#xFC;&#x259;yy&#x259;n edilm&#x259;si xidm&#x259;tidir. &#x201C;Penetration test&#x201D; olaraq da adland&#x131;r&#x131;lan bu xidm&#x259;t &#x15F;irk&#x259;tl&#x259;rin v&#x259; qurumlar&#x131;n m&#xF6;vcud &#x15F;&#x259;b&#x259;k&#x259;, sistem v&#x259; proqram t&#x259;minatlar&#x131;n&#x131;n t&#x259;hl&#xFC;k&#x259;sizlik s&#x259;viyy&#x259;sini v&#x259; potensial t&#x259;hdidl&#x259;ri &#xF6;yr&#x259;nm&#x259;si &#xFC;&#xE7;&#xFC;n ger&#xE7;&#x259;kl&#x259;&#x15F;dirilir. Bu yolla &#x15F;irk&#x259;tl&#x259;r t&#x259;hl&#xFC;k&#x259;sizlik a&#xE7;&#x131;qlar&#x131;ndan x&#x259;b&#x259;rdar olur v&#x259; bunlar&#x131; z&#x259;r&#x259;r d&#x259;ym&#x259;d&#x259;n &#xF6;nc&#x259; aradan qald&#x131;r&#x131;rlar.&#xD;&#xA;&#xD;&#xA;&#x201C;Pentest&#x201D; 3 yolla h&#x259;yata ke&#xE7;irilir:&#xD;&#xA;1. Qara qutu. Bu test zaman&#x131; sisteml&#x259;r haqq&#x131;nda he&#xE7; bir m&#x259;lumat payla&#x15F;&#x131;lm&#x131;r. Test ictimaiyy&#x259;t&#x259; a&#xE7;&#x131;q olan m&#x259;lumatlarla h&#x259;yata ke&#xE7;irilir;&#xD;&#xA;2. A&#x11F; qutu. Bu testd&#x259; &#x15F;irk&#x259;td&#x259;ki &#x259;m&#x259;liyyat sistemi haqq&#x131;nda tam m&#x259;lumat verilir;&#xD;&#xA;3. Boz qutu. Bu test is&#x259; a&#x11F; v&#x259; qara qutunun ortas&#x131;ndad&#x131;r.&#xD;&#xA;&#xD;&#xA;Test cihaz&#x131;na sistem haqq&#x131;nda icaz&#x259;siz istifad&#x259;&#xE7;inin bildiyi m&#x259;lumat v&#x259; imtiyazlar verilir.
+                                        </li>
+
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="serviceModal">
+                    <div id="my-5-ThModal" class="modal" data-aos="fade-up" data-aos-duration="2500">
+
+                        <!-- Modal content -->
+                        <div class="modal-content container-wrapper">
+                            <span class="closeFirst">&times;</span>
+
+                            <!-- <p>Some text in the Modal..</p> -->
+                            <div class="row container-wrapper "
+                                 style="display: flex;justify-content: center; align-items: center;">
+                                <div class="col-12 col-lg-6 imgSide">
+
+                                    <h3>Kod t&#x259;hl&#xFC;k&#x259;sizliyinin yoxlan&#x131;lmas&#x131;</h3>
+                                    <img src="/cyberpoint_files/service/v2b42yd4.iik/k3dfbnox.31w.png" class="dark-photo">
+                                    <img src="/cyberpoint_files/service/5y35bjve.zn0/ovuzf1ou.023.png" class="light-photo" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <ul class="modalUl">
+                                        <li>
+                                            Kod t&#x259;hl&#xFC;k&#x259;sizliyinin yoxlan&#x131;lmas&#x131; veb v&#x259; mobil t&#x259;tbiql&#x259;r&#x259; aid m&#x259;nb&#x259; kodlar&#x131;n&#x131;n t&#x259;hl&#xFC;k&#x259;sizlik analizi, bo&#x15F;luqlar&#x131;n a&#x15F;karlanmas&#x131; xidm&#x259;tidir. Bu, proqram t&#x259;minat&#x131;n&#x131;n haz&#x131;rlanmas&#x131; prosesini s&#xFC;r&#x259;tl&#x259;ndirm&#x259;k, kod  keyfiyy&#x259;tini yax&#x15F;&#x131;la&#x15F;d&#x131;rmaq, s&#x259;hvl&#x259;ri v&#x259; t&#x259;hl&#xFC;k&#x259;sizlik z&#x259;iflikl&#x259;rini a&#x15F;kar ed&#x259;r&#x259;k m&#xFC;vafiq h&#x259;ll&#x259;r t&#x259;klif etm&#x259;k bax&#x131;m&#x131;ndan &#xE7;ox effektiv bir &#xFC;suldur. T&#x259;hl&#xFC;k&#x259;siz Kod Bax&#x131;&#x15F;&#x131;, bir t&#x259;tbiqin m&#x259;nb&#x259; kodunu ara&#x15F;d&#x131;ran manual v&#x259; ya avtomatla&#x15F;d&#x131;r&#x131;lm&#x131;&#x15F; prosesdir. Bu ara&#x15F;d&#x131;rman&#x131;n &#x259;sas m&#x259;qs&#x259;di h&#x259;r hans&#x131; t&#x259;hl&#xFC;k&#x259;sizlik problemi v&#x259; yaxud z&#x259;ifliyi m&#xFC;&#x259;yy&#x259;n etm&#x259;kdir. Bu prosesd&#x259; x&#xFC;susi olaraq m&#x259;ntiq s&#x259;hvl&#x259;rin&#x259; bax&#x131;l&#x131;r. Manual bax&#x131;&#x15F; y&#xFC;ks&#x259;k s&#x259;viyy&#x259;li v&#x259; ya daha t&#x259;cr&#xFC;b&#x259;li t&#x259;rtibat&#xE7;&#x131; t&#x259;r&#x259;find&#x259;n b&#xFC;t&#xFC;n kod bazas&#x131;n&#x131;n h&#x259;rt&#x259;r&#x259;fli n&#x259;z&#x259;rd&#x259;n ke&#xE7;irilm&#x259;sini &#x259;hat&#x259; edir. Avtomatla&#x15F;d&#x131;r&#x131;lm&#x131;&#x15F; bax&#x131;&#x15F; prosesi, problemli kodu tapmaq &#xFC;&#xE7;&#xFC;n &#x259;vv&#x259;lc&#x259;d&#x259;n m&#xFC;&#x259;yy&#x259;n edilmi&#x15F; qaydalardan istifad&#x259; ed&#x259;r&#x259;k, t&#x259;tbiqin&#xD;&#xA;m&#x259;nb&#x259; kodunun n&#x259;z&#x259;rd&#x259;n ke&#xE7;irilm&#x259; prosesidir. Avtomatla&#x15F;d&#x131;r&#x131;lm&#x131;&#x15F; bax&#x131;&#x15F; prosesi manual bax&#x131;&#x15F;dan daha s&#xFC;r&#x259;tlidir. Lakin manual bax&#x131;&#x15F; prosesind&#x259; kodla&#x15F;d&#x131;rma q&#x259;rarlar&#x131;n&#x131;n konteksti ayd&#x131;nla&#x15F;d&#x131;r&#x131;l&#x131;r. Bu bax&#x131;&#x15F; prosesi daha stratejidir v&#x259; konkret m&#x259;s&#x259;l&#x259;y&#x259; bax&#x131;r.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row box w-100">
+                <div class="col-12 col-lg-8" id="mySecondModalBtn">
+                    <div class="leftSide " data-aos="fade-up">
+                        <div>
+                            <p id="p-element" data-aos-duration="1500" data-aos="fade-up">
+
+
+                                Kibert&#x259;hl&#xFC;k&#x259;sizlik maarifl&#x259;ndirm&#x259; xidm&#x259;ti, istifad&#x259;&#xE7;il&#x259;r&#x259; t&#x259;hl&#xFC;k&#x259; v&#x259; riskl&#x259;rl&#x259; qar&#x15F;&#x131;la&#x15F;d&#x131;qda add&#x131;mlar&#x131;n&#x131; d&#xFC;zg&#xFC;n atmaq &#xFC;&#xE7;&#xFC;n yol g&#xF6;st&#x259;rm&#x259;y&#x259; &#xE7;al&#x131;&#x15F;&#x131;r. Kiber maarifl&#x259;ndirm&#x259;, &#x15F;&#xFC;bh&#x259;siz ki, daha &#xE7;ox t&#x259;hdidl&#x259;rin qar&#x15F;&#x131;s&#x131;n&#x131; alma&#x11F;a k&#xF6;m&#x259;k ed&#x259;c&#x259;kdir. E-po&#xE7;t vasit&#x259;sil&#x259; &#xF6;t&#xFC;r&#xFC;l&#x259;n t&#x259;hdidl&#x259;r h&#x259;mi&#x15F;&#x259; insanlar&#x131; h&#x259;d&#x259;f alaraq onlar&#x131; linkl&#x259;r&#x259; klikl&#x259;m&#x259;k, qo&#x15F;malar&#x131; a&#xE7;maq ya da t&#x259;hl&#xFC;k&#x259;sizlik divar&#x131;n&#x131;n a&#x15F;&#x131;lmas&#x131;nda istifad&#x259; edil&#x259;n parollar v&#x259; &#x15F;&#x259;xsi m&#x259;lumatlar&#x131; payla&#x15F;ma&#x11F;a t&#x259;r&#x259;f istiqam&#x259;tl&#x259;ndirir. &#x18F;n son kibert&#x259;hl&#xFC;k&#x259;sizlik al&#x259;tl&#x259;rin&#x259; v&#x259; ya &#x259;n m&#xFC;r&#x259;kk&#x259;b kibert&#x259;hl&#xFC;k&#x259;sizlik strategiyalar&#x131;na n&#x259; q&#x259;d&#x259;r s&#x259;rmay&#x259; qoyma&#x11F;&#x131;n&#x131;z&#x131;n &#x259;h&#x259;miyy&#x259;ti yoxdur. &#x18F;g&#x259;r istifad&#x259;&#xE7;il&#x259;riniz &#x15F;&#xFC;bh&#x259;li linki v&#x259; ya saxta e-po&#xE7;tu m&#xFC;&#x259;yy&#x259;nl&#x259;&#x15F;dir&#x259; bilmirl&#x259;rs&#x259;, m&#xFC;dafi&#x259;nin z&#x259;ifl&#x259;m&#x259;si ehtimal&#x131; y&#xFC;ks&#x259;kdir.&#xD;&#xA;
+                            </p>
+
+                            <h3 id="h3-element" data-aos-duration="3500" data-aos="fade-up">Kibert&#x259;hl&#xFC;k&#x259;sizlik Maarifl&#x259;ndirm&#x259; Xidm&#x259;ti</h3>
+                        </div>
+                        <div class="imgSide" id="image-element">
+                            <img data-aos-duration="1500" data-aos="fade-up" src="/cyberpoint_files/service/x1ikhpnz.bsz/uqzuxzkw.msf.png" alt="service" class="dark-photo" />
+                            <img data-aos-duration="1500" data-aos="fade-up" src="/cyberpoint_files/service/rtjmjpr2.dzs/rhl1zmjm.1is.png" alt="service" class="light-photo" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12  col-lg-4">
+                    <div class="rightSide" data-aos="fade-up">
+                        <div data-aos-duration="1500" data-aos="fade-up" id="my-6-ModalBtn">
+                            <h3 data-aos-duration="1500" data-aos="fade-up" id="h3-element">&#x15E;&#x259;rti Kiberh&#xFC;cum Simulyasiyas&#x131;</h3>
+                            <img src="/cyberpoint_files/service/nula3rlg.ktu/extc25du.gxg.png" class="dark-photo" id="image-element" />
+                            <img src="/cyberpoint_files/service/i23msqlo.kh4/mhebveuw.vry.png" class="light-photo" id="image-element" />
+                        </div>
+                        <div class="secondBox" data-aos-duration="1500" data-aos="fade-up" id="my-7-ModalBtn">
+                            <h3 id="h3-element" data-aos-duration="1500" data-aos="fade-up">R&#x259;q&#x259;msal istintaq xidm&#x259;ti</h3>
+                            <img src="/cyberpoint_files/service/dypixnd5.5sl/fkoa55z3.nnr.png" class="dark-photo" id="image-element" />
+                            <img src="/cyberpoint_files/service/k33cnww2.wwj/5y24ui3u.bg3.png" class="light-photo" id="image-element" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="serviceModal">
+                    <div id="mySecondModal" class="modal" data-aos="fade-up" data-aos-duration="2500">
+
+                        <!-- Modal content -->
+                        <div class="modal-content container-wrapper">
+                            <span class="closeSecond">&times;</span>
+                            <!-- <p>Some text in the Modal..</p> -->
+                            <div class="row container-wrapper "
+                                 style="display: flex;justify-content: center; align-items: center;">
+                                <div class="col-12 col-lg-6 imgSide">
+
+                                    <h3>Kibert&#x259;hl&#xFC;k&#x259;sizlik Maarifl&#x259;ndirm&#x259; Xidm&#x259;ti</h3>
+                                    <img src="/cyberpoint_files/service/x1ikhpnz.bsz/uqzuxzkw.msf.png" alt="serviceImg" class="dark-photo">
+                                    <img src="/cyberpoint_files/service/rtjmjpr2.dzs/rhl1zmjm.1is.png" class="light-photo" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <ul class="modalUl">
+                                        <li>
+                                            Kibert&#x259;hl&#xFC;k&#x259;sizlik maarifl&#x259;ndirm&#x259; xidm&#x259;ti, istifad&#x259;&#xE7;il&#x259;r&#x259; t&#x259;hl&#xFC;k&#x259; v&#x259; riskl&#x259;rl&#x259; qar&#x15F;&#x131;la&#x15F;d&#x131;qda add&#x131;mlar&#x131;n&#x131; d&#xFC;zg&#xFC;n atmaq &#xFC;&#xE7;&#xFC;n yol g&#xF6;st&#x259;rm&#x259;y&#x259; &#xE7;al&#x131;&#x15F;&#x131;r. Kiber maarifl&#x259;ndirm&#x259;, &#x15F;&#xFC;bh&#x259;siz ki, daha &#xE7;ox t&#x259;hdidl&#x259;rin qar&#x15F;&#x131;s&#x131;n&#x131; alma&#x11F;a k&#xF6;m&#x259;k ed&#x259;c&#x259;kdir. E-po&#xE7;t vasit&#x259;sil&#x259; &#xF6;t&#xFC;r&#xFC;l&#x259;n t&#x259;hdidl&#x259;r h&#x259;mi&#x15F;&#x259; insanlar&#x131; h&#x259;d&#x259;f alaraq onlar&#x131; linkl&#x259;r&#x259; klikl&#x259;m&#x259;k, qo&#x15F;malar&#x131; a&#xE7;maq ya da t&#x259;hl&#xFC;k&#x259;sizlik divar&#x131;n&#x131;n a&#x15F;&#x131;lmas&#x131;nda istifad&#x259; edil&#x259;n parollar v&#x259; &#x15F;&#x259;xsi m&#x259;lumatlar&#x131; payla&#x15F;ma&#x11F;a t&#x259;r&#x259;f istiqam&#x259;tl&#x259;ndirir. &#x18F;n son kibert&#x259;hl&#xFC;k&#x259;sizlik al&#x259;tl&#x259;rin&#x259; v&#x259; ya &#x259;n m&#xFC;r&#x259;kk&#x259;b kibert&#x259;hl&#xFC;k&#x259;sizlik strategiyalar&#x131;na n&#x259; q&#x259;d&#x259;r s&#x259;rmay&#x259; qoyma&#x11F;&#x131;n&#x131;z&#x131;n &#x259;h&#x259;miyy&#x259;ti yoxdur. &#x18F;g&#x259;r istifad&#x259;&#xE7;il&#x259;riniz &#x15F;&#xFC;bh&#x259;li linki v&#x259; ya saxta e-po&#xE7;tu m&#xFC;&#x259;yy&#x259;nl&#x259;&#x15F;dir&#x259; bilmirl&#x259;rs&#x259;, m&#xFC;dafi&#x259;nin z&#x259;ifl&#x259;m&#x259;si ehtimal&#x131; y&#xFC;ks&#x259;kdir.&#xD;&#xA;
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="serviceModal">
+                    <div id="my-6-Modal" class="modal" data-aos="fade-up" data-aos-duration="2500">
+
+                        <!-- Modal content -->
+                        <div class="modal-content container-wrapper">
+                            <span class="closeFirst">&times;</span>
+                            <!-- <p>Some text in the Modal..</p> -->
+                            <div class="row container-wrapper "
+                                 style="display: flex;justify-content: center; align-items: center;">
+                                <div class="col-12 col-lg-6 imgSide">
+
+                                    <h3>&#x15E;&#x259;rti Kiberh&#xFC;cum Simulyasiyas&#x131;</h3>
+                                    <img src="/cyberpoint_files/service/nula3rlg.ktu/extc25du.gxg.png" alt="serviceImg" class="dark-photo">
+                                    <img src="/cyberpoint_files/service/i23msqlo.kh4/mhebveuw.vry.png" class="light-photo" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <ul class="modalUl">
+                                        <li>
+                                            &#x15E;&#x259;rti kiberh&#xFC;c&#xFC;m simulyasiyas&#x131; real kibercinay&#x259;tkar qrupla&#x15F;malar&#x131;n istifad&#x259; etdiyi texnikalara &#x259;saslanan kiber h&#xFC;cumlar&#x131;n simulyasiyas&#x131; xidm&#x259;tidir. &#x15E;&#x259;rti kiberh&#xFC;c&#xFC;m simulyasiyas&#x131;n&#x131;n &#x259;sas h&#x259;d&#x259;fi qar&#x15F;&#x131;la&#x15F;&#x131;la bil&#x259;n m&#x259;qs&#x259;dli h&#xFC;cumlara qar&#x15F;&#x131; &#x15F;&#x259;b&#x259;k&#x259; m&#xFC;dafi&#x259;si haz&#x131;rlamaqd&#x131;r. Bu xidm&#x259;td&#x259; &#x201C;Q&#x131;rm&#x131;z&#x131; Komanda&#x201D;, &#x201C;Mavi Komanda&#x201D; v&#x259; &#x201C;B&#x259;n&#xF6;v&#x15F;&#x259;yi Komanda&#x201D;-dan b&#x259;hs olunur. Q&#x131;rm&#x131;z&#x131; Komanda h&#xFC;cumu planla&#x15F;d&#x131;rmaq v&#x259; h&#x259;yata ke&#xE7;irm&#x259;k &#xFC;&#xE7;&#xFC;n m&#xFC;mk&#xFC;n yollar&#x131;n ara&#x15F;d&#x131;r&#x131;lmas&#x131;nda &#xF6;z t&#x259;cr&#xFC;b&#x259; sah&#x259;l&#x259;rind&#x259;n istifad&#x259; edir. Bel&#x259;likl&#x259;, potensial h&#xFC;cum&#xE7;ular&#x131;n d&#xFC;&#x15F;&#xFC;nc&#x259;l&#x259;rini m&#x259;nims&#x259;y&#x259;r&#x259;k h&#x259;r&#x259;k&#x259;t edilir.&#xD;&#xA;Mavi Komanda h&#x259;m h&#x259;qiqi h&#xFC;cum&#xE7;ulara, h&#x259;m d&#x259; Q&#x131;rm&#x131;z&#x131; Komandaya qar&#x15F;&#x131; m&#xFC;dafi&#x259;ni t&#x259;min edir. Onlar &#x259;ks&#x259;r &#x259;m&#x259;liyyatlarda standart t&#x259;hl&#xFC;k&#x259;sizlik qruplar&#x131;ndan ayr&#x131;lmal&#x131;d&#x131;r. B&#x259;n&#xF6;v&#x15F;&#x259;yi Komanda, Q&#x131;rm&#x131;z&#x131; Komanda v&#x259; Mavi Komandan&#x131;n &#x259;m&#x259;kda&#x15F;lar&#x131;d&#x131;r. Onlar birlikd&#x259; i&#x15F;l&#x259;dikd&#x259; h&#x259;r ikisinin bacar&#x131;qlar&#x131; v&#x259; prosesl&#x259;ri g&#xFC;cl&#x259;ndirilir. H&#x259;r bir komanda t&#x259;&#x15F;kilat&#x131;n t&#x259;hl&#xFC;k&#x259;sizliyini t&#x259;min etm&#x259;k &#xFC;&#xE7;&#xFC;n s&#x259;rh&#x259;dl&#x259;ri a&#x15F;ma&#x11F;a &#xE7;al&#x131;&#x15F;&#x131;r.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="serviceModal">
+                    <div id="my-7-Modal" class="modal" data-aos="fade-up" data-aos-duration="2500">
+
+                        <!-- Modal content -->
+                        <div class="modal-content container-wrapper">
+                            <span class="closeFirst">&times;</span>
+                            <!-- <p>Some text in the Modal..</p> -->
+                            <div class="row container-wrapper "
+                                 style="display: flex;justify-content: center; align-items: center;">
+                                <div class="col-12 col-lg-6 imgSide">
+
+                                    <h3>R&#x259;q&#x259;msal istintaq xidm&#x259;ti</h3>
+                                    <img src="/cyberpoint_files/service/dypixnd5.5sl/fkoa55z3.nnr.png" alt="serviceImg" class="dark-photo">
+                                    <img src="/cyberpoint_files/service/k33cnww2.wwj/5y24ui3u.bg3.png" class="light-photo" />
+
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <ul class="modalUl">
+                                        <li>
+                                             R&#x259;q&#x259;msal istintaq xidm&#x259;ti (Digital Forensics) kibert&#x259;hl&#xFC;k&#x259;sizlik hadis&#x259;l&#x259;rinin ara&#x15F;d&#x131;r&#x131;lmas&#x131;d&#x131;r. Bu xidm&#x259;t &#xE7;&#x259;r&#xE7;iv&#x259;sind&#x259; &#x15F;irk&#x259;tinizd&#x259; ba&#x15F; vermi&#x15F; kiber h&#xFC;cumlar&#x131;, t&#x259;hl&#xFC;k&#x259;sizlik pozuntular&#x131;n&#x131; ara&#x15F;d&#x131;r&#x131;r v&#x259; m&#x259;lumat itkil&#x259;rinin s&#x259;b&#x259;bl&#x259;rini ayd&#x131;nla&#x15F;d&#x131;r&#x131;r&#x131;q. Bunun &#xFC;&#xE7;&#xFC;n b&#xFC;t&#xFC;n r&#x259;q&#x259;msal cihazlar&#x131;n&#x131;zdan (komp&#xFC;terl&#x259;r, telefonlar, yadda&#x15F; qur&#x11F;ular&#x131; v&#x259; s.) v&#x259; &#x15F;&#x259;b&#x259;k&#x259;l&#x259;rinizd&#x259;n (bulud servisl&#x259;ri, serverl&#x259;r) m&#x259;lumatlar&#x131; toplay&#x131;r&#x131;q v&#x259; analiz edrik. &#x18F;ld&#x259; etdiyimiz m&#x259;lumatlar &#x259;sas&#x131;nda sizin &#xFC;&#xE7;&#xFC;n detall&#x131; hesabat haz&#x131;rlay&#x131;r&#x131;q. Xidm&#x259;t&#x259; qo&#x15F;ulmu&#x15F; &#x15F;irk&#x259;tl&#x259;rin sisteml&#x259;rind&#x259; t&#x259;hl&#xFC;k&#x259;sizlik hadis&#x259;l&#x259;ri il&#x259; &#xFC;zl&#x259;&#x15F;dikd&#x259; m&#x259;lumatlar&#x131;n&#x131;z&#x131; qorumaq, onlar&#x131;n m&#x259;nb&#x259;yini m&#xFC;&#x259;yy&#x259;nl&#x259;&#x15F;dirm&#x259;k v&#x259; h&#x259;r bir ad&#x131;m&#x131; a&#x15F;kar etm&#x259;k art&#x131;q bizim m&#x259;suliyy&#x259;timizdir. 
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="implementationBoxes">
+
+            <div class="mainBox" data-aos="fade-up">
+
+                <div class="row w-100" id="myThirdModalBtn">
+                    <div class="col-12  col-sm-6 col-lg-4">
+                        <h3 id="h3-element" data-aos-duration="1500" data-aos="fade-up">Kibert&#x259;hl&#xFC;k&#x259;sizlik H&#x259;ll&#x259;rinin T&#x259;tbiqi</h3>
+
+                    </div>
+                    <div class="col-12  col-sm-6 col-lg-4">
+                        <p id="h3-element" data-aos-duration="1500" data-aos="fade-up">
+                            Kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;rinin t&#x259;tbiqi &#x15F;&#x259;b&#x259;k&#x259;, sistem v&#x259; t&#x259;tbiq t&#x259;hl&#xFC;k&#x259;sizliyi h&#x259;ll&#x259;rinin qura&#x15F;d&#x131;r&#x131;lmas&#x131;, konfiqurasiya edilm&#x259;si h&#x259;m&#xE7;inin, t&#x259;hl&#xFC;k&#x259;siz infrastruktur dizayn&#x131;d&#x131;r. M&#xFC;&#x259;yy&#x259;n edilmi&#x15F; s&#x259;rh&#x259;d il&#x259; &#x15F;irk&#x259;t, sistem m&#x259;lumatlar&#x131;n&#x131; saxlayan v&#x259; ya emal ed&#x259;n b&#xFC;t&#xFC;n qurumlar&#x131;n ayd&#x131;n v&#x259; d&#x259;qiq t&#x259;msil&#xE7;iliyin&#x259; sahib olmal&#x131;d&#x131;r. Kibert&#x259;hl&#xFC;k&#x259;sizlik statistikas&#x131;na g&#xF6;r&#x259;, kiber h&#xFC;cumlar&#x131;n bir &#xE7;oxudaxild&#x259;n ger&#xE7;&#x259;kl&#x259;&#x15F;ir. Bu s&#x259;b&#x259;bd&#x259;n d&#x259; daxili t&#x259;hdidl&#x259;rinqar&#x15F;&#x131;s&#x131; al&#x131;nmal&#x131;d&#x131;r.
+                        </p>
+                    </div>
+                    <div class="col-12  col-lg-4">
+
+
+                        <img src="/cyberpoint_files/service/q0vctqfn.3qk/cpo5gaan.d3q.png" alt="img" class=" dark-photo" id="image-element" data-aos-duration="1500" data-aos="fade-up" />
+                        <img src="/cyberpoint_files/service/ooblvch0.ag5/x0n1q5yj.rso.png" alt="img" class="light-photo" id="image-element" data-aos-duration="1500" data-aos="fade-up" />
+                    </div>
+
+
+                </div>
+                <div class="serviceModal">
+                    <div id="myThirdModal" class="modal" data-aos="fade-up" data-aos-duration="2500">
+
+                        <!-- Modal content -->
+                        <div class="modal-content container-wrapper">
+                            <span class="closeThird">&times;</span>
+                            <!-- <p>Some text in the Modal..</p> -->
+                            <div class="row container-wrapper "
+                                 style="display: flex;justify-content: center; align-items: center;">
+                                <div class="col-12 col-lg-6 imgSide">
+
+                                     <h3>Kibert&#x259;hl&#xFC;k&#x259;sizlik H&#x259;ll&#x259;rinin T&#x259;tbiqi</h3> 
+                                    <img src="/cyberpoint_files/service/q0vctqfn.3qk/cpo5gaan.d3q.png" alt="img" class=" dark-photo modalPhoto" />
+                                    <img src="/cyberpoint_files/service/ooblvch0.ag5/x0n1q5yj.rso.png" alt="img" class="light-photo modalPhoto" />
+
+                                </div>
+                                <div class=" col-12 col-lg-6">
+                                    <ul class="modalUl">
+                                        <li>
+                                            Kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;rinin t&#x259;tbiqi &#x15F;&#x259;b&#x259;k&#x259;, sistem v&#x259; t&#x259;tbiq t&#x259;hl&#xFC;k&#x259;sizliyi h&#x259;ll&#x259;rinin qura&#x15F;d&#x131;r&#x131;lmas&#x131;, konfiqurasiya edilm&#x259;si h&#x259;m&#xE7;inin, t&#x259;hl&#xFC;k&#x259;siz infrastruktur dizayn&#x131;d&#x131;r. M&#xFC;&#x259;yy&#x259;n edilmi&#x15F; s&#x259;rh&#x259;d il&#x259; &#x15F;irk&#x259;t, sistem m&#x259;lumatlar&#x131;n&#x131; saxlayan v&#x259; ya emal ed&#x259;n b&#xFC;t&#xFC;n qurumlar&#x131;n ayd&#x131;n v&#x259; d&#x259;qiq t&#x259;msil&#xE7;iliyin&#x259; sahib olmal&#x131;d&#x131;r. Kibert&#x259;hl&#xFC;k&#x259;sizlik statistikas&#x131;na g&#xF6;r&#x259;, kiber h&#xFC;cumlar&#x131;n bir &#xE7;oxudaxild&#x259;n ger&#xE7;&#x259;kl&#x259;&#x15F;ir. Bu s&#x259;b&#x259;bd&#x259;n d&#x259; daxili t&#x259;hdidl&#x259;rinqar&#x15F;&#x131;s&#x131; al&#x131;nmal&#x131;d&#x131;r.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="lastBoxes">
+            <div class="auditBox">
+
+
+                <div class="row w-100">
+
+                    <div class="col-12 col-sm-6 col-lg-6">
+                        <div class="box" data-aos="fade-up" id="my-8-ModalBtn" data-aos-duration="1500">
+
+                            <h3  data-aos-duration="1500" data-aos="fade-up" id="h3-element"> Kibert&#x259;hl&#xFC;k&#x259;sizlik Auditi  Xidm&#x259;ti</h3>
+                            <img data-aos-duration="1500" data-aos="fade-up" src="/cyberpoint_files/service/kfmcsttj.ilv/qrq3kuof.p5r.png" class="dark-photo" id="image-element" />
+                            <img data-aos-duration="1500" data-aos="fade-up" src="/cyberpoint_files/service/w0a54gbk.x1y/izmwt4lq.tic.png" class="light-photo" id="image-element" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-6 ">
+                        <div class="box lastBox" data-aos="fade-up" id="my-9-ModalBtn" data-aos-duration="1500">
+                            <h3 class="slicedTitle" data-aos-duration="1500" data-aos="fade-up" id="h3-element"> Kibert&#x259;hl&#xFC;k&#x259;sizlik konsultasiyas&#x131;</h3>
+                            <img data-aos-duration="1500" data-aos="fade-up" src="/cyberpoint_files/service/av35pa5v.aj4/kmwntvmc.k2v.png" class="dark-photo" id="image-element" />
+                            <img data-aos-duration="1500" data-aos="fade-up" src="/cyberpoint_files/service/bet53wmx.ab2/hufemval.ezy.png" class="light-photo" id="image-element" />
+                        </div>
+
+                    </div>
+
+                    <div class="serviceModal">
+                        <div id="my-8-Modal" class="modal" data-aos-duration="1500" data-aos="fade-up">
+                            <!-- Modal content -->
+                            <div class="modal-content container-wrapper">
+                                <span class="closeFirst">&times;</span>
+                                <!-- <p>Some text in the Modal..</p> -->
+                                <div class="row container-wrapper "
+                                     style="display: flex;justify-content: center; align-items: center;">
+                                    <div class="col-12 col-lg-6 imgSide">
+
+                                        <h3> Kibert&#x259;hl&#xFC;k&#x259;sizlik Auditi  Xidm&#x259;ti</h3>
+                                        <img src="/cyberpoint_files/service/kfmcsttj.ilv/qrq3kuof.p5r.png" alt="serviceImg" class="dark-photo">
+                                        <img src="/cyberpoint_files/service/w0a54gbk.x1y/izmwt4lq.tic.png" class="light-photo" />
+
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <ul class="modalUl">
+                                            <li>
+                                                M&#xFC;&#x259;ssis&#x259;nin informasiya sisteml&#x259;rinin m&#xFC;&#x259;yy&#x259;n edilmi&#x15F; meyarlar toplusu il&#x259; m&#xFC;qayis&#x259; edil&#x259;r&#x259;k sistematik qiym&#x259;tl&#x259;ndirilm&#x259;si xidm&#x259;tidir. Kibert&#x259;hl&#xFC;k&#x259;sizlik auditi zaman&#x131; ill&#x259;rin t&#x259;cr&#xFC;b&#x259;sin&#x259; &#x259;saslanan t&#x259;tbiq, dizayn v&#x259; prinsipl&#x259;r, el&#x259;c&#x259; d&#x259; &#x201C;CIS Critical Security Controls&#x201D; kibert&#x259;hl&#xFC;k&#x259;sizlik standart&#x131; &#x259;sas al&#x131;n&#x131;r. Yoxlamalar zaman&#x131; &#x259;m&#x259;kda&#x15F;lar&#x131;m&#x131;z &#x201C;Adversary Mindset&#x201D; il&#x259; (real kibercinay&#x259;tkarlar kimi d&#xFC;&#x15F;&#xFC;n&#x259;r&#x259;k t&#x259;hdidl&#x259;ri modell&#x259;&#x15F;dirm&#x259;) sisteml&#x259;ri analizi edir v&#x259; laz&#x131;ml&#x131; d&#x259;y&#x259;rl&#x259;ndirm&#x259;l&#x259;ri apar&#x131;rlar.
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="serviceModal">
+                        <div id="my-9-Modal" class="modal"  data-aos-duration="1500" data-aos="fade-up">
+
+                            <!-- Modal content -->
+                            <div class="modal-content container-wrapper">
+                                <span class="closeFirst">&times;</span>
+                                <!-- <p>Some text in the Modal..</p> -->
+                                <div class="row container-wrapper "
+                                     style="display: flex;justify-content: center; align-items: center;">
+                                    <div class="col-12 col-lg-6 imgSide">
+
+                                        <h3> Kibert&#x259;hl&#xFC;k&#x259;sizlik konsultasiyas&#x131;</h3>
+                                        <img src="/cyberpoint_files/service/av35pa5v.aj4/kmwntvmc.k2v.png" alt="serviceImg" class="dark-photo">
+                                        <img src="/cyberpoint_files/service/bet53wmx.ab2/hufemval.ezy.png" class="light-photo" />
+
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <ul class="modalUl">
+                                            <li>
+                                                Kibert&#x259;hl&#xFC;k&#x259;sizlik konsultasiyas&#x131; m&#xFC;xt&#x259;lif kibert&#x259;hl&#xFC;k&#x259;sizlik xidm&#x259;tl&#x259;ri bar&#x259;d&#x259; konsultasiyad&#x131;r. Bir &#xE7;ox m&#xFC;&#x259;ssis&#x259;l&#x259;r g&#xFC;nd&#x259;lik olaraq m&#xFC;xt&#x259;lif kibert&#x259;hl&#xFC;k&#x259;sizlik probleml&#x259;ri il&#x259; qar&#x15F;&#x131;la&#x15F;a bilir. Bu probleml&#x259;rin b&#x259;zil&#x259;ri ki&#xE7;ik miqyasda&#xD;&#xA;olsa da, b&#x259;zil&#x259;rinin h&#x259;lli &#x259;trafl&#x131; ara&#x15F;d&#x131;rma, y&#xFC;ks&#x259;k analitika v&#x259; ekspertiza t&#x259;l&#x259;b edir. Bizim y&#xFC;ks&#x259;k ixtisasl&#x131; m&#xFC;t&#x259;x&#x259;ssisl&#x259;rimiz t&#x259;r&#x259;find&#x259;n t&#x259;qdim etdiyimiz konsultasiya xidm&#x259;tl&#x259;rimiz probleml&#x259;rin q&#x131;sa zamanda h&#x259;llini t&#x259;klif edir. &#x18F;lav&#x259; olaraq, yeni qurulacaq sisteml&#x259;rin, &#x15F;&#x259;b&#x259;k&#x259;l&#x259;rin v&#x259; haz&#x131;rlanan proqram t&#x259;minatlar&#x131;n&#x131;n t&#x259;hl&#xFC;k&#x259;sizlik t&#x259;l&#x259;bl&#x259;rin&#x259; uy&#x11F;un arxitekturas&#x131;n&#x131;n qurulmas&#x131;, m&#xF6;vcud t&#x259;hl&#xFC;k&#x259;sizlik mexanizml&#x259;rin&#x259; edil&#x259;c&#x259;k d&#x259;yi&#x15F;iklikl&#x259;rin m&#xFC;zakir&#x259;si d&#x259; bu xidm&#x259;t&#x259; daxildir.
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+        <div class="container-wrapper">
+            <h3 class="productsTitle">Kibert&#x259;hl&#xFC;k&#x259;sizlik m&#x259;hsullar&#x131;</h3>
+            <div class="productsBox">
+                <div>
+                    <img src="/cyberpoint_files/product/hqlrhchd.5vp/rznrvn45.gbn.png" class="productImg dark-photo" alt="advantage" />
+                    <img src="/cyberpoint_files/product/t22h5ifk.qv3/1vrfdkgs.grz.png" class="productImg light-photo" alt="advantage" />
+
+                </div>
+                <div>
+                    <p class="productsDescription">
+
+
+                        Kibert&#x259;hl&#xFC;k&#x259;sizlik m&#x259;hsullar&#x131;m&#x131;z, sizin m&#x259;lumat t&#x259;hl&#xFC;k&#x259;sizliyinizi n&#x259;zar&#x259;t alt&#x131;nda saxlamaq &#xFC;&#xE7;&#xFC;n ehtiyac duydu&#x11F;unuz b&#xFC;t&#xFC;n al&#x259;tl&#x259;ri ehtiva edir.&#xD;&#xA;&#x130;st&#x259;nil&#x259;n proqramla&#x15F;d&#x131;rma m&#xFC;hitini d&#x259;st&#x259;kl&#x259;y&#x259;n SAST v&#x259; DAST m&#x259;hsullar&#x131;m&#x131;zla kodlar&#x131;n&#x131;z&#x131;n t&#x259;hl&#xFC;k&#x259;sizliyini t&#x259;min edin. WAF il&#x259; veb t&#x259;tbiql&#x259;rinizi m&#xFC;dafi&#x259; edin. EDR v&#x259; XDR m&#x259;hsullar&#x131;m&#x131;zla h&#xFC;cumlara h&#x259;r an haz&#x131;rl&#x131;ql&#x131; olun. NGFW il&#x259; &#x15F;&#x259;b&#x259;k&#x259;nizi, PAM il&#x259; idar&#x259;etm&#x259; hakimiyy&#x259;tinizi, SIEM il&#x259; monitorinq v&#x259; hadis&#x259;l&#x259;rin t&#x259;hlilini, SOAR il&#x259; t&#x259;hl&#xFC;k&#x259;sizlik avtomatla&#x15F;d&#x131;rmas&#x131;n&#x131;, DLP il&#x259; m&#x259;lumat m&#xFC;hafiz&#x259;sini, DNS il&#x259; sistem ad&#x131; t&#x259;hl&#xFC;k&#x259;sizliyini v&#x259; TI m&#x259;hsullar&#x131; il&#x259; t&#x259;hdid&#x259; qar&#x15F;&#x131; f&#x259;aliyy&#x259;tinizi g&#xFC;cl&#x259;ndirin. Bizim m&#x259;hsullar&#x131;m&#x131;zla kibert&#x259;hl&#xFC;k&#x259;sizlik bax&#x131;m&#x131;ndan &#xF6;z&#xFC;n&#xFC;z&#xFC; daha g&#xFC;cl&#xFC; hiss edin.&#xD;&#xA;
+
+
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    <section class="section-one ">
+        <div class="tabs-content">
+            <div class="container">
+                <div class="tabBoxes prodNavNews d-flex">
+                    <div data-id="eTab-1" id="eTab-1"
+                         class="firstTabBox partnersTitle  ptItemNews tab-box list-box active filter-button7 ">
+                        <h1 class="tabTitle" id="partners" data-title="Partners">
+                            Partnerl&#x259;r
+                        </h1>
+                    </div>
+                   <div class="tabBorder firstBorderTab" >
+                    </div>
+                    <div data-id="eTab-2" id="eTab-2"
+                         class="ptItemNews partnersTitle a tab-box calendar-box filter-button7">
+                        <h1 class="tabTitle" id="clients" data-title="Clients">
+                            M&#xFC;&#x15F;t&#x259;ril&#x259;r
+                        </h1>
+
+                    </div>
+                   <div class="tabBorder">
+                    </div>
+                    <div data-id="eTab-3" id="eTab-3"
+                         class="ptItemNews partnersTitle tab-box calendar-box filter-button7">
+                        <h1 class="tabTitle" id="certificates" data-title="Certificates">
+                            Sertifikatlar
+                        </h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            <div class="prodMainNews active" id="eTab-1-CNews">
+                <p class="mt-3 sliderDesc">
+                    F&#x259;aliyy&#x259;timiz dair&#x259;sind&#x259; d&#xFC;nyan&#x131;n &#xF6;nd&#x259; g&#x259;l&#x259;n kibert&#x259;hl&#xFC;k&#x259;sizlik &#x15F;irk&#x259;tl&#x259;ri il&#x259; &#x259;m&#x259;kda&#x15F;l&#x131;q edirik. Bu &#x259;laq&#x259;, m&#xFC;&#x15F;t&#x259;ril&#x259;rimiz&#x259; yenilik&#xE7;i v&#x259; y&#xFC;ks&#x259;k s&#x259;viyy&#x259;li kibert&#x259;hl&#xFC;k&#x259;sizlik h&#x259;ll&#x259;ri t&#x259;min etm&#x259;k imkan&#x131; yarad&#x131;r. Partnyorlar&#x131;m&#x131;zla birg&#x259; biz, m&#xFC;&#x15F;t&#x259;ril&#x259;rimizin r&#x259;q&#x259;msal varl&#x131;qlar&#x131;n&#x131; t&#x259;hl&#xFC;k&#x259;l&#x259;rd&#x259;n m&#xFC;dafi&#x259; etm&#x259;k v&#x259; t&#x259;hl&#xFC;k&#x259;sizliyi t&#x259;min etm&#x259;k &#xFC;&#xE7;&#xFC;n kifay&#x259;t q&#x259;d&#x259;r bilik v&#x259; t&#x259;cr&#xFC;b&#x259;y&#x259; malikik. Bu &#x259;laq&#x259; bizim f&#x259;aliyy&#x259;t prosesl&#x259;rimizi geni&#x15F;l&#x259;ndirir, y&#xFC;ks&#x259;k ixtisasl&#x131; m&#x259;sl&#x259;h&#x259;tl&#x259;r t&#x259;min edir v&#x259; m&#xFC;&#x15F;t&#x259;ril&#x259;rimizin u&#x11F;urlu olma&#x11F;a davam etm&#x259;si &#xFC;&#xE7;&#xFC;n biz&#x259; etibarl&#x131; h&#x259;ll&#x259;r t&#x259;klif etm&#x259;k imkan&#x131; yarad&#x131;r.
+                </p>
+
+                <div class="owl-carousel owl-theme" id="owl-1">
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/bnzw4jaz.352/udvylzxb.qaa.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/jdcxcsbp.nte/utvyhcbe.qaa.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/n0wmos43.rul/t00j4onw.tnl.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/ysxiukgh.xj1/j13bmpu3.bp4.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/5dml1a40.p54/fjbafxgm.fld.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/ft5e0uz0.a21/qrrhbcsd.e1c.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/110xplbo.epc/dhroqydw.0ln.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/shdra23p.lfu/4s0ytrmj.c3d.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/01qatjj3.wz5/zyja0mno.ctv.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/vasbhaqb.x3c/feb1mrru.hbr.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/nvvhjvuk.jjl/hiwfrp04.b1w.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/e2alljc2.mh2/fi5twgep.uf2.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/uzna3iox.dxr/kjqtkbf2.klq.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/bnhoabjr.zci/zjnsrmlk.s5j.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/dols5htd.kib/zqjgfns3.ffk.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/bje01qla.kg1/ou2j2uu0.55k.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/zi2l5b2w.h0h/3nbshfza.zhe.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/v1btoece.py2/xkyai5uu.kfv.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/fzj2lpvf.hkm/353x3omk.ksz.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/wyr0zq2t.2gt/ib4mkcyk.avb.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/tkqyt0ip.z1v/cse2lhlx.hcv.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/ksexnsif.3d4/obcqpbd0.fay.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/me3mt4qd.a3r/1lkjbv3y.0lp.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/phj45hj3.q1c/5pnxeeck.mz2.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/c43uxadp.zl4/pnpgps5y.2ih.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/4zpplsvt.lku/s0g3fczf.ywq.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/zthoqjaf.o4a/k3lreh4w.lr2.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/ghwilbod.fis/hktsxj2u.qxc.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/dusul3gn.op1/yflbwn3t.knu.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/vjl015fo.sc1/eklz0ecl.fpr.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/2johtvh4.upb/2ajdhn01.kvn.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/j0f1hc3b.bt5/jzdp0z23.xut.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/lfv2silu.ukw/xw4fjofe.ijc.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/pvpv2rnj.vyh/n10jy5uv.m45.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/o1kw54oc.l4r/4twn5chd.iax.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/2cijn5fg.ruk/aebtfiu1.mss.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/rmmvphnr.okx/zeeven4i.h0n.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/1iyowvzj.3so/lpexjcbe.gk3.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/3fd11az2.q0j/lkkr54mb.pod.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/ia4dhdp0.lml/v2ntwwk5.t4h.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/twzkhwmv.vew/232nmwrd.zdd.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/xjfdroaz.0fh/zwsrqjkg.qz4.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/yqjs2y4s.qww/5ineko4n.eqp.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/ixgclnro.rzm/eckmfxry.5b3.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/w4ibkwwv.ldg/f4k34jsg.ccp.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/bwi5b4je.kqs/bmm0dp3i.ovs.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/zuq05uwf.up0/0uksh11p.1iw.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/4ornnmia.mnk/zmvq23el.n4u.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/cdkdp3en.5wp/itopqjoi.c5d.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/j5qgpqja.wrh/xleqe22r.bmf.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/yj24l5ps.elf/5ivujak5.rtk.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/rndxq1z2.3hh/b5sm4w1x.nus.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/dzt4ik1t.mp5/zixk3dgf.s1t.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/d4xkdswb.5ux/32vgfubz.afv.png" alt="" class="sliderImg light-photo">
+                        </div>
+
+
+                </div>
+            </div>
+            <div class="prodMainNews " id="eTab-2-CNews">
+                <p class="mt-3 sliderDesc">
+                    M&#xFC;&#x15F;t&#x259;ril&#x259;rimiz - u&#x11F;urumuzun &#x259;sas s&#xFC;tunlar&#x131;d&#x131;r. H&#x259;r bir m&#xFC;&#x15F;t&#x259;ri il&#x259; qurdu&#x11F;umuz m&#xFC;nasib&#x259;tl&#x259;r, onlar&#x131;n biz&#x259; etimad&#x131;, xidm&#x259;t v&#x259; m&#x259;hsullar&#x131;m&#x131;z&#x131; qiym&#x259;tl&#x259;ndirm&#x259;l&#x259;ri bizi q&#xFC;rurland&#x131;r&#x131;r. &#x18F;m&#x259;kda&#x15F;l&#x131;&#x11F;&#x131;m&#x131;z&#x131;n n&#x259;tic&#x259;si olaraq, m&#xFC;&#x15F;t&#x259;ril&#x259;rimizin r&#x259;q&#x259;msal t&#x259;hl&#xFC;k&#x259;sizlikl&#x259;rinin y&#xFC;ks&#x259;ldiyini v&#x259; t&#x259;&#x15F;kilatlar&#x131;n&#x131;n u&#x11F;urla geni&#x15F;l&#x259;ndiyini g&#xF6;r&#xFC;r&#xFC;k.&#xD;&#xA;H&#x259;r bir m&#xFC;&#x15F;t&#x259;ri bizim &#xFC;&#xE7;&#xFC;n ayr&#x131; bir partnyordur, onlar&#x131;n u&#x11F;uru is&#x259; bizim &#x259;n b&#xF6;y&#xFC;k nailiyy&#x259;timizdir. H&#x259;r biri il&#x259; qurdu&#x11F;umuz m&#xFC;nasib&#x259;tl&#x259;r bizim h&#x259;m q&#xFC;rurumuz, h&#x259;m d&#x259; u&#x11F;urumuzdur!&#xD;&#xA;
+                </p>
+
+                <div class="owl-carousel owl-theme" id="owl-2">
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/nslvakfd.uao/vfw130ut.wz5.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/f3oq2q54.stk/0g4p5hvu.0qm.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/q4leb5rj.0ze/ef5fzaj5.3rb.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/h1a5exau.smt/40prpfhj.gy1.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/jl1tmc3y.e4n/mpooj01o.oi4.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/almydwlz.tyd/lvyvekso.dvb.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/okbwz2o3.prj/omswirkd.bbl.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/xdpi2e14.wwc/11r4xq0r.efd.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/br31al2e.vph/4ipns314.0ao.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/xhyygxjd.lr0/rt251gml.ygs.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/s0l1yf3e.zf3/a3dye0bh.hrz.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/in2v0tp2.2ok/hbgjn2nm.kdq.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/w3lpkvxy.ps4/asa5qwza.qid.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/hzts5vcg.e1k/cdnuznue.vzi.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/rjmuzjsi.xuk/3ht0k1yf.hg0.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/mfe1hea1.qjt/droqtmec.rua.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/1crmtmhk.spe/m1vog0vs.m4k.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/jtpnfj2i.xti/f1eugptk.do2.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/xlal13nt.hai/tsgtmnav.qh0.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/xzaoson5.qdo/32npztf5.hke.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/mnqcuzdn.n5r/uryqa2ar.53t.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/ih2yiv0c.trv/umecub34.fhg.png" alt="" class="sliderImg light-photo">
+                        </div>
+
+
+                </div>
+            </div>
+            <div class="prodMainNews " id="eTab-3-CNews">
+                <p class="mt-3 sliderDesc">
+                    Sertifikatlar&#x131;m&#x131;z, &#x259;m&#x259;kda&#x15F;lar&#x131;m&#x131;z&#x131;n pe&#x15F;&#x259;karl&#x131;q s&#x259;viyy&#x259;sinin t&#x259;sdiqidir. M&#xFC;&#x15F;t&#x259;ril&#x259;rimiz&#x259; &#xE7;ox m&#xFC;nasib v&#x259; effektiv h&#x259;ll&#x259;r t&#x259;klif ed&#x259; bilm&#x259;k &#xFC;&#xE7;&#xFC;n &#x259;m&#x259;kda&#x15F;lar&#x131;m&#x131;z m&#xFC;xt&#x259;lif kibert&#x259;hl&#xFC;k&#x259;sizlik sah&#x259;l&#x259;rind&#x259; geni&#x15F; t&#x259;hsil alm&#x131;&#x15F;d&#x131;rlar. &#x130;nnovativ texnologiyalar&#x131; v&#x259; yenilikl&#x259;ri izl&#x259;m&#x259;y&#x259; h&#x259;mi&#x15F;&#x259; haz&#x131;r olan komandam&#x131;z&#x131;n h&#x259;r bir &#xFC;zv&#xFC;, sektorun t&#x259;l&#x259;bl&#x259;rin&#x259; cavab verm&#x259;k &#xFC;&#xE7;&#xFC;n laz&#x131;mi sertifikatlar&#x131; &#x259;ld&#x259; etmi&#x15F;dir. Bu, bizim xidm&#x259;tl&#x259;rimizin keyfiyy&#x259;tinin v&#x259; m&#xFC;&#x15F;t&#x259;ril&#x259;rimizin biz&#x259; olan etimad&#x131;n&#x131;n t&#x259;sdiqidir.
+                </p>
+
+                <div class="owl-carousel owl-theme" id="owl-3">
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/u2uhhg2t.14g/h2kxkjft.aoe.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/p5j31b54.sgj/k3s1disg.4xl.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/0ilhtgbx.wnn/ilue0dsp.kzs.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/lmrh1xgi.glq/btrqpjiw.h1f.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/0grsa4yq.m1c/k55eod00.ziw.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/urkmh1uy.az3/i4edjfdt.awb.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/hl1gplaz.z4g/2s0ghpz5.5af.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/dzxosovc.a2o/aimwghfy.3ew.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/guzi5x22.mhu/vg1dippk.ixy.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/rfn5u4rz.jzt/vhxazc1y.cim.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/ymtmzyoi.4q2/0hnouimk.501.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/pk0yd1rm.v2d/tozwiuqi.joo.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/ofrq52mh.53r/lythanid.kzu.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/llauxuaa.ze5/y0kativd.zkv.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/q0elsku5.vch/nroxnm3p.usg.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/1iv0x22k.tel/wpu5ixga.5qi.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/qkfy5cqr.ueg/s4g4araj.5jp.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/v51zukuj.mu2/4jeocnsn.0sj.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/ys4t0mch.pjp/4nyashs0.1pr.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/pofkormd.5qx/hsszuwnv.pep.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/2cwsti3a.yhb/y3bj4axm.zcf.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/bqp5iqf3.c4w/yji15mvj.2td.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/kyvfh0ke.llv/sk1ogmdt.j4t.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/nzvyhbpz.klc/q0adjimr.gtv.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/pr40oiac.1wg/w5lmoiq3.azx.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/2qtp1sra.ns1/fxtoubiy.oyv.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/vkfn5vie.q5r/qkcu0wkm.uvz.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/qe3pm2nx.d0g/evn5yt13.fej.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/v1rdq42h.ktn/ofdpubly.k1a.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/lx2cop5q.ae5/wtq45syq.ijb.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/bokojsti.klu/1ubainr2.j11.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/u2mbtmnx.4zb/yxsobrd0.h1k.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/euxz0c4v.s5w/vm4w10mj.ynm.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/zmw4ekx1.kkq/gxsxkxfk.5wi.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/az1ikoxj.ykc/2b5eyytc.niu.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/oyxugajg.cvi/2ln2qgq4.qnd.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/2hqss0r2.vys/qbajawvd.r1g.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/ttldggpa.ne2/jy1pbw0c.5b2.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/vjo2zm0w.dp2/jzhazvhe.jbe.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/qtw1c0ab.3rf/1djoe5f2.0pd.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/5za1pkou.kf5/mmpunoxx.133.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/viovxjn1.r0q/urzfecn0.11p.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/jck1d0pz.h1s/3g5jybzr.afw.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/4c1qbprz.22v/djqxl1z4.gri.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/ps4e13iz.4i2/130xqjs5.u4j.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/my4z3rsu.lnn/wofrxg0f.o1k.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/vekqzspk.bg2/m5jc4rjy.1fr.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/ecjpx04u.gcc/wgfkssgp.nbh.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/iata0c0e.cqz/vovpy1qm.4ne.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/wysvuazq.5pr/pqipdkgn.gle.png" alt="" class="sliderImg light-photo">
+                        </div>
+                        <div class="item ">
+                            <img src="/cyberpoint_files/achievement/3byfxmst.li3/gxtjgcis.fgp.png" alt="" class="sliderImg dark-photo">
+                            <img src="/cyberpoint_files/achievement/o1isuf5c.bol/2fiq42q2.ryv.png" alt="" class="sliderImg light-photo">
+                        </div>
+
+
+                </div>
+            </div>
+
+    </section>
+
+
+  
+
+
+
+
+</main>
+
+
+
+
+    <!-- =========================
+        Section - Footer
+    ============================== -->
+    
+<footer>
+    <div class="row container-wrapper d-flex flex-column flex-lg-row">
+        <div class="col-sm-12 col-lg-6">
+            <h2 class="footerTitle">Biziml&#x259; &#x259;laq&#x259;</h2>
+            <p class="footerMainDescription">
+                H&#x259;r hans&#x131; bir sual&#x131;n&#x131;z varsa v&#x259; ya  h&#x259;r hans&#x131; yard&#x131;ma ehtiyac&#x131;n&#x131;z varsa, &#x259;laq&#x259; saxlay&#x131;n
+            </p>
+            <div class="footerLabelsBox">
+                <div class="row w-100">
+                    <div class="col-12  col-lg-3">
+                        <div class="mt-3 tabletBox">
+                            <p class="footerLabel">E-po&#xE7;t</p>
+                            <a href="/cdn-cgi/l/email-protection#02226b6c646d42617b606770726d6b6c762c6378" class="footerDescription"><span class="__cf_email__" data-cfemail="b8d1d6ded7f8dbc1daddcac8d7d1d6cc96d9c2">[email&#160;protected]</span></a>
+                        </div>
+                    </div>
+                    <div class="col-12  col-lg-9">
+                        <div class="styledLabel mt-3 tabletBox">
+                            <p class="footerLabel">&#x130;&#x15F; saatlar&#x131;</p>
+                            <p class="footerDescription">7/24</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row w-100">
+                    <div class="col-12  col-lg-3">
+                        <div class="mt-md-5 mt-3 tabletBox">
+                            <p class="footerLabel" id="contacts">Telefon</p>
+                            <a href="tel:&#x2B;99412 526 33 33" class="footerDescription">&#x2B;99412 526 33 33</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-9 ">
+                        <div class="styledLabel mt-3  mt-md-5 tabletBox">
+                            <p class="footerLabel">M&#x259;kan</p>
+                            <p class="footerDescription">Bak&#x131; &#x15F;&#x259;h&#x259;ri, Nizami rayonu, Heyd&#x259;r &#x18F;liyev prospekti 189 B</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div> -->
+                <div class="socialIconsFooterMobile ">
+                        <a href="https://www.facebook.com/cyberpoint.az" target="_blank">
+                            <img src="/img/Facebook (3).png" alt="map" class="fb dark-photo" />
+                            <img src="/img/Facebook (4)Light.png" alt="map" class="fb light-photo" />
+                        </a>
+                        <a href="https://twitter.com/cyberpointaz" target="_blank">
+                            <img src="/img/twitter-dark.png" alt="map" class="tw dark-photo" />
+                            <img src="/img/twitter-light.png" alt="map" class="tw light-photo" />
+                        </a>
+                        <a href="https://www.linkedin.com/company/cyberpoint-az" target="_blank">
+                            <img src="/img/Linkedin.png" alt="map" class="linkedin dark-photo" />
+                            <img src="/img/Linkedin (1)Light.png" alt="map" class="linkedin light-photo" />
+                        </a>
+                        <a href="https://instagram.com/cyberpoint.az?igshid=MzRlODBiNWFlZA==" target="_blank">
+                            <img src="/img/Instagram (2).png" alt="map" class="insta dark-photo" />
+                            <img src="/img/InstagramLight.png" alt="map" class="insta light-photo" />
+                        </a>
+
+                </div>
+                <!-- </div> -->
+
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-5 mt-0 mt-sm-5 mt-lg-0">
+            <iframe style="filter: invert(90%); border:0;" class="dark-photo"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.556098832186!2d49.9088632!3d40.41868360000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab46defd82568e27%3A0xc333559db39fdf27!2sCyberpoint!5e0!3m2!1sru!2saz!4v1687245611052!5m2!1sru!2saz"
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="light-photo"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.556098832186!2d49.9088632!3d40.41868360000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xab46defd82568e27%3A0xc333559db39fdf27!2sCyberpoint!5e0!3m2!1sru!2saz!4v1687245611052!5m2!1sru!2saz"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div class="footerLastPart container-wrapper">
+        <p class="copyRight">
+            © 2026 Copyright Cyberpoint All Rights Reserved.
+        </p>
+        <a href="https://crocusoft.com/" target="_blank">
+            <p class="developed">Developed by <span>Crocusoft</span> </p>
+
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/js/jquery-last.js"></script>
+
+
+
+    <script src="/js/popper.min.js"></script>
+
+
+
+    <script src="/js/bootstrap.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="/js/bootstrap-select.min.js"></script>
+    <script src="/js/jquery.cookie.min.js"></script>
+    
+   
+
+
+    
+    <script src="/js/common.js"></script>
+    <script src="/js/owlCarousel.js"></script>
+    <script src="/js/languages.js"></script>
+    <script src="/js/tabMenu.js"></script>
+    <script src="/js/flag.js"></script>
+
+
+
+
+    <script src="/js/initMap.js"></script>
+
+
+
+
+
+
+
+
+
+
+   
+ 
+ <script src="/js/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+
+    
+<script>
+        function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    //document.getElementById("tabLondon").className += " active";
+
+    
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,394 @@
+/* ---------- Page hero ---------- */
+.pageHero {
+  padding-top: clamp(32px, 5vw, 64px);
+  padding-bottom: clamp(48px, 6vw, 88px);
+}
+.crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  margin: 0 0 clamp(28px, 4vw, 48px);
+  padding: 0;
+  font-size: 14px;
+  color: var(--ink-3);
+}
+.crumbs li + li::before {
+  content: "/";
+  margin-right: 6px;
+  color: var(--line-2);
+}
+.crumbs a:hover {
+  color: var(--ink);
+}
+.crumbs [aria-current] {
+  color: var(--ink-2);
+}
+.pageHeroGrid {
+  display: grid;
+  gap: 40px;
+}
+.withAside {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: end;
+}
+.pageHeroText {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 980px;
+  min-width: 0;
+}
+.pageHeroAside {
+  min-width: 0;
+}
+
+/* ---------- Section head ---------- */
+.sectionHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: clamp(36px, 5vw, 64px);
+}
+.sectionHeadText {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 820px;
+  min-width: 0;
+}
+.onFeature :global(.h2) {
+  color: #fff;
+}
+.onFeature :global(.lede) {
+  color: var(--on-feature-2);
+}
+.onFeature :global(.eyebrow) {
+  color: #8db8ff;
+}
+
+/* ---------- Logo tiles ---------- */
+.logoTile {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  background: var(--bg-2);
+  overflow: hidden;
+  transition: background 0.3s var(--ease), transform 0.4s var(--ease);
+  min-width: 0;
+}
+a.logoTile:hover,
+.logoTile:hover {
+  background: var(--surface-2);
+}
+.logoMedia {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+}
+.logoSquare {
+  aspect-ratio: 4 / 3;
+}
+.logoMedia img {
+  position: absolute;
+  inset: 10% 14%;
+  width: 72%;
+  height: 80%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.logoSquare img {
+  inset: 6%;
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+}
+.logoTile:hover .logoMedia img {
+  transform: scale(1.05);
+}
+.logoCaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0 18px 16px;
+}
+.logoCaption strong {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.logoCaption span {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+/* ---------- Grids ---------- */
+.grid2,
+.grid3,
+.grid4 {
+  display: grid;
+  gap: clamp(14px, 1.6vw, 22px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.grid2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Service card (JIS "directions" style) ---------- */
+.serviceCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  min-height: 300px;
+  padding: clamp(24px, 2.4vw, 34px);
+  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+  overflow: hidden;
+  isolation: isolate;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease), transform 0.5s var(--ease);
+}
+.serviceCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--feature);
+  clip-path: circle(0% at 100% 100%);
+  transition: clip-path 0.7s var(--ease);
+}
+.serviceCard:hover::after {
+  clip-path: circle(150% at 100% 100%);
+}
+.serviceCard:hover,
+.serviceCard:hover h3 {
+  color: #fff;
+}
+.serviceCard:hover .serviceText {
+  color: var(--on-feature-2);
+}
+.serviceTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.servicePhase {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  transition: color 0.4s;
+}
+.serviceCard:hover .servicePhase {
+  color: #8db8ff;
+}
+.serviceText {
+  color: var(--ink-2);
+  font-size: 15.5px;
+  transition: color 0.4s;
+}
+.serviceIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--accent);
+  flex: none;
+  transition: background 0.4s, color 0.4s, transform 0.6s var(--ease);
+}
+.serviceIcon svg {
+  width: 26px;
+  height: 26px;
+}
+.serviceCard:hover .serviceIcon {
+  background: var(--accent);
+  color: #fff;
+  transform: rotate(-12deg);
+}
+.serviceMore {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.serviceMore svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.35s var(--ease);
+}
+.serviceCard:hover .serviceMore svg {
+  transform: translateX(5px);
+}
+
+/* ---------- Product card ---------- */
+.productCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  padding: 26px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition: box-shadow 0.3s var(--ease), transform 0.4s var(--ease);
+}
+.productCard:hover {
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+  transform: translateY(-4px);
+}
+.productGroup {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.productName {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-top: 18px;
+}
+.productFull {
+  font-size: 13.5px;
+  color: var(--accent);
+  font-weight: 600;
+}
+.productDesc {
+  margin-top: 6px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+
+/* ---------- News card (JIS project card) ---------- */
+.newsCard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+}
+.newsMedia {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 10;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-2);
+}
+.newsMedia img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
+.newsCard:hover .newsMedia img {
+  transform: scale(1.05);
+}
+.newsMeta {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-3);
+  letter-spacing: 0.03em;
+}
+.newsTitle {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  transition: color 0.2s;
+}
+.newsCard:hover .newsTitle {
+  color: var(--accent);
+}
+
+/* ---------- Filter chips ---------- */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+/* ---------- CTA panel ---------- */
+.ctaPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) auto;
+  gap: 32px;
+  align-items: center;
+  padding: clamp(28px, 4vw, 56px);
+  border-radius: var(--radius-lg);
+  background: #0a5bd2;
+  color: #fff;
+}
+.ctaPanel h2 {
+  color: #fff;
+  font-size: clamp(24px, 2.6vw, 36px);
+  letter-spacing: -0.02em;
+}
+.ctaPanel p {
+  margin-top: 10px;
+  color: #fff;
+  max-width: 56ch;
+}
+
+@media (max-width: 1100px) {
+  .grid4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .grid3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .withAside {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 680px) {
+  .grid2,
+  .grid3 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .grid4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .logoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ctaPanel {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .serviceCard {
+    min-height: 0;
+  }
+}
