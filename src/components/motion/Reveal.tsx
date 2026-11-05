@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useInView, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -86,37 +86,52 @@ export function Parallax({ children, offset = 60, className }: { children: React
   );
 }
 
-/** Counts up to a number when visible; non-numeric values render as-is. */
+/**
+ * Counts up to a number when it scrolls into view. Only plain numbers (optionally "+" or "%")
+ * animate; values like "7/24" render as-is. The server renders the real value (crawlers, no-JS).
+ */
 export function CountUp({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true });
+  const inView = useInView(ref, { once: true, margin: "0px 0px -10% 0px" });
   const reduce = useReducedMotion();
-  const match = value.match(/^(\d+)(.*)$/);
-  const target = match ? Number(match[1]) : 0;
-  const [n, setN] = useState(match ? 0 : target);
+  const m = /^(\d+)([+%]?)$/.exec(value.trim());
+  const animate = m !== null;
+  const target = m ? Number(m[1]) : 0;
+  const suffix = m ? m[2] : "";
+  const [n, setN] = useState(target);
+  const started = useRef(false);
+
+  // Before first paint on the client: start from 0 if it will animate and hasn't been seen yet
+  useLayoutEffect(() => {
+    if (animate && !reduce && !started.current) setN(0);
+  }, [animate, reduce]);
 
   useEffect(() => {
-    if (!match || !inView) return;
+    if (!animate || !inView || started.current) return;
+    started.current = true;
     if (reduce) {
       setN(target);
       return;
     }
     let raf = 0;
-    const start = performance.now();
+    const t0 = performance.now();
     const tick = (t: number) => {
-      const p = Math.min(1, (t - start) / 1400);
+      const p = Math.min(1, (t - t0) / 1400);
       setN(Math.round(target * (1 - Math.pow(1 - p, 3))));
       if (p < 1) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [inView, target, reduce, match]);
+    return () => {
+      cancelAnimationFrame(raf);
+      started.current = false;
+    };
+  }, [animate, inView, target, reduce]);
 
-  if (!match) return <span ref={ref}>{value}</span>;
+  if (!animate) return <span ref={ref}>{value}</span>;
   return (
-    <span ref={ref}>
+    <span ref={ref} style={{ fontVariantNumeric: "tabular-nums" }}>
       {n}
-      {match[2]}
+      {suffix}
     </span>
   );
 }

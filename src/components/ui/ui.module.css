@@ -152,6 +152,12 @@ a.logoTile:hover,
   margin: 0;
   padding: 0;
 }
+.logoGrid > li {
+  display: flex;
+}
+.logoGrid > li > .logoTile {
+  flex: 1;
+}
 
 /* ---------- Service card (JIS "directions" style) ---------- */
 .serviceCard {

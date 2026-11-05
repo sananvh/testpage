@@ -5,7 +5,7 @@ import type { DatabaseSync } from "node:sqlite";
 import { certificates, clients, partners } from "@/content/logos";
 import { products } from "@/content/services";
 import { seedNews } from "./seed-news";
-import { seedFaq } from "./seed-faq";
+import { FAQ_SEED_VERSION, FAQ_V2_FROM, seedFaq } from "./seed-faq";
 import { seedServices } from "./seed-services";
 import { hashPassword } from "./password";
 
@@ -161,9 +161,16 @@ export function seedIfEmpty(db: DatabaseSync) {
 /** Seeds the FAQ separately so existing databases get it too. */
 export function seedFaqIfEmpty(db: DatabaseSync) {
   const n = (db.prepare("SELECT COUNT(*) AS n FROM faqs").get() as { n: number }).n;
-  if (n > 0) return;
+  const ver = (db.prepare("SELECT value FROM settings WHERE key = 'faq_seed_version'").get() as { value: string } | undefined)?.value;
+  if (n > 0 && ver === FAQ_SEED_VERSION) return;
   const st = db.prepare(`INSERT INTO faqs (service_slug, sort, home, question_az, question_en, question_ru, answer_az, answer_en, answer_ru)
     VALUES (?,?,?,?,?,?,?,?,?)`);
+  const exists = db.prepare("SELECT 1 FROM faqs WHERE question_az = ?");
   const homeIdx = new Set([0, 1, 2, 3, 8, 11]);
-  seedFaq.forEach((f, i) => st.run(f.service ?? "", i, homeIdx.has(i) ? 1 : 0, f.q.az, f.q.en, f.q.ru, f.a.az, f.a.en, f.a.ru));
+  seedFaq.forEach((f, i) => {
+    // Empty DB: insert everything. Existing DB: only entries added since its seed version (once, never re-adding deleted ones later).
+    if (n > 0 && (i < FAQ_V2_FROM || exists.get(f.q.az))) return;
+    st.run(f.service ?? "", i, homeIdx.has(i) ? 1 : 0, f.q.az, f.q.en, f.q.ru, f.a.az, f.a.en, f.a.ru);
+  });
+  db.prepare("INSERT INTO settings (key, value) VALUES ('faq_seed_version', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").run(FAQ_SEED_VERSION);
 }

@@ -11,7 +11,7 @@ export async function GET() {
   const u = (p: string) => `${SITE}${p}`;
   const body = `# Cyberpoint
 
-> Cyberpoint (Cyberpoint MMC) is a cybersecurity company in Baku, Azerbaijan. It runs a 24/7 Security Operations Center (SOC) and provides penetration testing, secure code review, adversary simulation (Red/Blue/Purple Team), digital forensics, cybersecurity audits (CIS Controls), consulting, security awareness training and deployment of products from 27 global vendors. Its management systems are certified to ISO/IEC 27001 and ISO 9001 (Intertek), and its R&D team has registered three CVEs.
+> Cyberpoint (Cyberpoint MMC) is a cybersecurity company in Baku, Azerbaijan. It runs a 24/7 Security Operations Center (SOC) and provides penetration testing, secure code review, adversary simulation (Red/Blue/Purple Team), digital forensics, cybersecurity audits (CIS Controls), consulting, security awareness training and deployment of products from 28 global vendors. Its management systems are certified to ISO/IEC 27001 and ISO 9001 (Intertek), and its R&D team has registered three CVEs.
 
 Website languages: Azerbaijani (/az, default), English (/en), Russian (/ru). Every page has a Markdown version at /md/{locale}/{path}. Contact: ${s.phone} · ${s.email} · ${s.address} · available ${s.hours}.
 
