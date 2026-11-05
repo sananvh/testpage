@@ -14,7 +14,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ path: s
       "Content-Type": "text/markdown; charset=utf-8",
       "Cache-Control": "public, max-age=600",
       "Access-Control-Allow-Origin": "*",
-      Link: `<${(process.env.SITE_URL ?? "https://cyberpoint.az").replace(/\/$/, "")}/${locale}${rest.length ? `/${rest.join("/")}` : ""}>; rel="canonical"`,
+      Link: `<${(process.env.SITE_URL || process.env.RENDER_EXTERNAL_URL || "https://cyberpoint.az").replace(/\/$/, "")}/${locale}${rest.length ? `/${rest.join("/")}` : ""}>; rel="canonical"`,
     },
   });
 }

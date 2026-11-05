@@ -1,0 +1,33 @@
+# Render Blueprint: full test deployment straight from GitHub (free plan).
+# Render -> New -> Blueprint -> pick this repo. Every push to main redeploys.
+# Free plan: the disk is temporary, so admin edits/uploads reset on each redeploy or restart.
+services:
+  - type: web
+    name: cyberpoint-test
+    runtime: docker
+    plan: free
+    region: frankfurt
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /llms.txt
+    envVars:
+      - key: NOINDEX            # keep the test copy out of Google
+        value: "1"
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@cyberpoint.az
+      - key: ADMIN_PASSWORD     # you type it when creating the Blueprint
+        sync: false
+      - key: ANTHROPIC_API_KEY  # optional: full AI answers (leave empty for basic mode)
+        sync: false
+      - key: SMTP_HOST          # optional: leave empty, requests still land in the admin inbox
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: MAIL_TO
+        value: info@cyberpoint.az

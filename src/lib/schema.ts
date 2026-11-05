@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/config";
 import type { Faq, NewsItem, Product, Service, Settings } from "./content";
 
-export const SITE = (process.env.SITE_URL ?? "https://cyberpoint.az").replace(/\/$/, "");
+export const SITE = (process.env.SITE_URL || process.env.RENDER_EXTERNAL_URL || "https://cyberpoint.az").replace(/\/$/, "");
 export const ORG_ID = `${SITE}/#organization`;
 export const WEBSITE_ID = `${SITE}/#website`;
 const LANG: Record<Locale, string> = { az: "az-AZ", en: "en", ru: "ru-RU" };

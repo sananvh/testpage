@@ -26,7 +26,7 @@ export default async function ResearchPage({ params }: LocaleParams) {
   const news = getNews(locale).filter((n) => RND_SLUGS.includes(n.slug));
   return (
     <>
-      <JsonLd data={[webPage("WebPage", locale, `/${locale}/research`, r.title, r.lede), { "@context": "https://schema.org", "@type": "ItemList", name: r.cvesTitle, itemListElement: cves.map((c, i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "CreativeWork", name: `${c.id}: ${c.product} (${c.driver})`, description: r.impacts[i], url: `https://www.cve.org/CVERecord?id=${c.id}`, creator: { "@id": `${process.env.SITE_URL ?? "https://cyberpoint.az"}/#organization` } } })) }]} />
+      <JsonLd data={[webPage("WebPage", locale, `/${locale}/research`, r.title, r.lede), { "@context": "https://schema.org", "@type": "ItemList", name: r.cvesTitle, itemListElement: cves.map((c, i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "CreativeWork", name: `${c.id}: ${c.product} (${c.driver})`, description: r.impacts[i], url: `https://www.cve.org/CVERecord?id=${c.id}`, creator: { "@id": `${process.env.SITE_URL || process.env.RENDER_EXTERNAL_URL || "https://cyberpoint.az"}/#organization` } } })) }]} />
       <PageHero eyebrow={r.eyebrow} title={r.title} lede={r.lede} crumbs={[{ label: t.nav.home, href: `/${locale}` }, { label: t.nav.research }]} />
       <section className="container">
         <SectionHead title={r.cvesTitle} />

@@ -4,7 +4,7 @@ import { all } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
 
-const SITE = (process.env.SITE_URL ?? "https://cyberpoint.az").replace(/\/$/, "");
+const SITE = (process.env.SITE_URL || process.env.RENDER_EXTERNAL_URL || "https://cyberpoint.az").replace(/\/$/, "");
 const STATIC: [string, number, MetadataRoute.Sitemap[number]["changeFrequency"]][] = [
   ["", 1, "weekly"], ["/services", 0.9, "monthly"], ["/products", 0.8, "monthly"], ["/about", 0.8, "monthly"],
   ["/partners", 0.7, "monthly"], ["/clients", 0.7, "monthly"], ["/certificates", 0.7, "monthly"], ["/research", 0.7, "monthly"],

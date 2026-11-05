@@ -21,7 +21,7 @@ export const dynamic = "force-dynamic";
 const manrope = Manrope({ subsets: ["latin", "latin-ext", "cyrillic"], weight: ["400", "500", "600", "700", "800"], variable: "--font-manrope", display: "swap" });
 const plexMono = IBM_Plex_Mono({ subsets: ["latin", "latin-ext", "cyrillic"], weight: ["400", "500"], variable: "--font-plex-mono", display: "swap" });
 
-const SITE = process.env.SITE_URL ?? "https://cyberpoint.az";
+const SITE = process.env.SITE_URL || process.env.RENDER_EXTERNAL_URL || "https://cyberpoint.az";
 
 export const viewport: Viewport = {
   viewportFit: "cover",
@@ -47,7 +47,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     category: "Cybersecurity",
     keywords: ["kibertəhlükəsizlik", "cybersecurity Azerbaijan", "кибербезопасность Азербайджан", "SOC", "pentest", "penetration testing Baku", "SIEM", "digital forensics", "ISO 27001", "Cyberpoint"],
     formatDetection: { telephone: true, email: true, address: true },
-    robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
+    // NOINDEX=1 (test/staging deployments) keeps search engines out
+    robots: process.env.NOINDEX === "1"
+      ? { index: false, follow: false }
+      : { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
     icons: { icon: "/icon.svg", apple: "/brand/apple-touch-icon.png" },
     manifest: "/manifest.webmanifest",
     other: { "ai-content-index": "/llms.txt" },

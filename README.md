@@ -39,6 +39,9 @@ npm run dev            # http://localhost:3000  → /az
 On first start the database is created in `./data` and filled with the migrated content.
 If `ADMIN_PASSWORD` is not set, a random admin password is written to `data/initial-admin.txt`.
 
+## Test link (Render, free)
+New → Blueprint on render.com, pick this repo; `render.yaml` does the rest. Steps and limits: `docs/04-test-deploy-render.md`.
+
 ## Deploy on a VPS (Docker)
 ```bash
 cp .env.example .env   # fill in SITE_URL, ADMIN_*, SESSION_SECRET, SMTP_*
@@ -59,6 +62,7 @@ docker compose up -d --build
 | `ANTHROPIC_API_KEY` | Enables full AI answers in the assistant (basic mode without it) |
 | `ASSISTANT_MODEL` | Optional model override (default `claude-opus-5-5`) |
 | `DATA_DIR` | Data folder (default `./data`, Docker `/app/data`) |
+| `NOINDEX` | `1` on test/staging copies: robots.txt blocks all crawlers, pages get `noindex` |
 
 ## Structure
 ```
