@@ -69,9 +69,15 @@
   display: block;
   color: #7fb2ff;
 }
-.accent i {
-  font-style: normal;
-  color: #b07de6;
+/* Round full stop, like the dot in the Cyberpoint logo */
+.dot {
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  margin-left: 0.07em;
+  border-radius: 50%;
+  background: #9b4fd6; /* logo purple (reversed artwork) */
+  vertical-align: baseline;
 }
 .lede {
   color: var(--on-feature-2);
