@@ -85,9 +85,9 @@ export const seedFaq: { service?: string; q: L; a: L }[] = [
   {
     q: { az: "Hansı vendorların məhsullarını təqdim edirsiniz?", en: "Which vendors' products do you supply?", ru: "Продукты каких вендоров вы поставляете?" },
     a: {
-      az: "Palo Alto Networks, Fortinet, Check Point, Cisco, CrowdStrike, Splunk, Elastic, CyberArk, Imperva, F5, Forcepoint, Tenable, Rapid7 və digərləri daxil olmaqla 28 qlobal vendorla tərəfdaşıq. Məhsulun seçimi, quraşdırılması və konfiqurasiyasını komandamız həyata keçirir.",
-      en: "We partner with 28 global vendors, including Palo Alto Networks, Fortinet, Check Point, Cisco, CrowdStrike, Splunk, Elastic, CyberArk, Imperva, F5, Forcepoint, Tenable and Rapid7. Our team handles selection, deployment and configuration.",
-      ru: "Мы сотрудничаем с 28 глобальными вендорами, включая Palo Alto Networks, Fortinet, Check Point, Cisco, CrowdStrike, Splunk, Elastic, CyberArk, Imperva, F5, Forcepoint, Tenable и Rapid7. Подбор, внедрение и настройку выполняет наша команда.",
+      az: "Palo Alto Networks, Fortinet, Check Point, Cisco, CrowdStrike, Splunk, Elastic, CyberArk, Imperva, F5, Forcepoint, Tenable, Rapid7 və digərləri daxil olmaqla 27 qlobal vendorla tərəfdaşıq. Məhsulun seçimi, quraşdırılması və konfiqurasiyasını komandamız həyata keçirir.",
+      en: "We partner with 27 global vendors, including Palo Alto Networks, Fortinet, Check Point, Cisco, CrowdStrike, Splunk, Elastic, CyberArk, Imperva, F5, Forcepoint, Tenable and Rapid7. Our team handles selection, deployment and configuration.",
+      ru: "Мы сотрудничаем с 27 глобальными вендорами, включая Palo Alto Networks, Fortinet, Check Point, Cisco, CrowdStrike, Splunk, Elastic, CyberArk, Imperva, F5, Forcepoint, Tenable и Rapid7. Подбор, внедрение и настройку выполняет наша команда.",
     },
   },
   {
@@ -128,17 +128,17 @@ export const seedFaq: { service?: string; q: L; a: L }[] = [
   {
     q: { az: "Hansı sahələrdən olan müştərilərlə işləyirsiniz?", en: "Which sectors do your clients come from?", ru: "С клиентами из каких отраслей вы работаете?" },
     a: {
-      az: "Müştərilərimiz maliyyə (Kapital Bank, AFB Bank), telekommunikasiya (Azerconnect, AZnet), dövlət (MİDA, İcbari Tibbi Sığorta üzrə Dövlət Agentliyi, İqtisadiyyat Nazirliyinin İnformasiya Texnologiyaları və Məlumat İdarəetmə Mərkəzi), səhiyyə (Respublika Diaqnostika Mərkəzi), sənaye (Norm Sement) və texnologiya sahələrini əhatə edir. Bu günədək 35 layihə uğurla icra olunub.",
-      en: "Our clients span finance (Kapital Bank, AFB Bank), telecoms (Azerconnect, AZnet), government (MİDA, the State Agency on Mandatory Health Insurance, the Ministry of Economy's IT and Data Management Center), healthcare (Republican Diagnostic Center), industry (Norm Cement) and technology. We have successfully delivered 35 projects to date.",
-      ru: "Наши клиенты — это финансы (Kapital Bank, AFB Bank), телеком (Azerconnect, AZnet), госсектор (MİDA, Государственное агентство по обязательному медицинскому страхованию, Центр информационных технологий и управления данными Министерства экономики), здравоохранение (Республиканский диагностический центр), промышленность (Norm Cement) и технологии. На сегодня успешно реализовано 35 проектов.",
+      az: "Müştərilərimiz müxtəlif sahələri təmsil edir: dövlət qurumları, bank sektoru, tikinti, təhlükəsizlik və digər sahələr.",
+      en: "Our clients come from a variety of sectors, including government, banking, construction, security and others.",
+      ru: "Наши клиенты представляют самые разные отрасли: государственный сектор, банки, строительство, безопасность и другие.",
     },
   },
   {
     q: { az: "Cyberpoint-də işləmək üçün necə müraciət edə bilərəm?", en: "How can I apply for a job at Cyberpoint?", ru: "Как устроиться на работу в Cyberpoint?" },
     a: {
-      az: "Saytın “Karyera” səhifəsindəki formu doldurun və CV-nizi (PDF və ya DOCX) əlavə edin. Müraciətiniz birbaşa komandamıza çatır. Hər əməkdaşın inkişafını dəstəkləyir, təlimlər və komfortlu iş mühiti yaradırıq.",
-      en: "Fill in the form on the Careers page and attach your CV (PDF or DOCX). Your application goes straight to our team. We support every employee's growth with training and a comfortable working environment.",
-      ru: "Заполните форму на странице «Карьера» и приложите резюме (PDF или DOCX). Заявка поступит напрямую нашей команде. Мы поддерживаем развитие каждого сотрудника, проводим обучение и создаём комфортные условия работы.",
+      az: "“Karyera” səhifəsində qısa formu doldurun, CV-nizi (PDF və ya DOCX) əlavə edin və “Göndər” düyməsini sıxın. Müraciətiniz birbaşa komandamıza çatacaq.",
+      en: "On the Careers page, fill in the short form, attach your CV (PDF or DOCX) and click “Send”. Your application goes straight to our team.",
+      ru: "На странице «Карьера» заполните короткую форму, приложите резюме (PDF или DOCX) и нажмите «Отправить». Заявка поступит напрямую нашей команде.",
     },
   },
 ];

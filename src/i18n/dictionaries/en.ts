@@ -34,7 +34,7 @@ const en: Dictionary = {
     stats: [
       { value: "24/7", label: "SOC monitoring and support" },
       { value: "3", label: "official CVEs from our R&D" },
-      { value: "28", label: "global technology partners" },
+      { value: "27", label: "global technology partners" },
       { value: "35", label: "successfully delivered projects" },
     ],
     trustLabel: "Our leading technology partners",

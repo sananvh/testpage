@@ -32,7 +32,7 @@ const az = {
     stats: [
       { value: "7/24", label: "SOC monitorinqi və dəstək" },
       { value: "3", label: "rəsmi CVE: R&D tapıntıları" },
-      { value: "28", label: "qlobal texnologiya tərəfdaşı" },
+      { value: "27", label: "qlobal texnologiya tərəfdaşı" },
       { value: "35", label: "uğurla icra olunmuş layihə" },
     ],
     trustLabel: "Lider texnologiya tərəfdaşlarımız",
