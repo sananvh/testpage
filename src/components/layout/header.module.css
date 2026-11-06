@@ -59,6 +59,7 @@
 }
 .navLink {
   padding: 10px 12px;
+  white-space: nowrap;
   font-size: 15.5px;
   font-weight: 500;
   color: var(--ink-2);
@@ -376,6 +377,20 @@
   background: var(--accent);
 }
 
+/* Narrower laptops: tighter nav; language switch stays available in the full menu */
+@media (max-width: 1365px) {
+  .nav {
+    gap: 0;
+    margin-left: 12px;
+  }
+  .navLink {
+    padding: 9px 9px;
+    font-size: 14.5px;
+  }
+  .header .langs {
+    display: none;
+  }
+}
 @media (max-width: 1180px) {
   .nav {
     display: none;

@@ -48,7 +48,7 @@ export default function Header({ locale, t, services, contact }: Props) {
     { label: t.partners, path: "/partners" },
     { label: t.clients, path: "/clients" },
     { label: t.about, path: "/about" },
-    { label: t.news, path: "/news" },
+    { label: t.researchNav, path: "/research" },
   ];
   const isActive = (p: string) => pathname === href(p) || pathname.startsWith(href(p) + "/");
 
@@ -99,7 +99,7 @@ export default function Header({ locale, t, services, contact }: Props) {
             t={t}
             services={services}
             contact={contact}
-            main={[...main, { label: t.certificates, path: "/certificates" }, { label: t.research, path: "/research" }, { label: t.faq, path: "/faq" }, { label: t.careers, path: "/careers" }, { label: t.contact, path: "/contact" }]}
+            main={[...main, { label: t.news, path: "/news" }, { label: t.certificates, path: "/certificates" }, { label: t.faq, path: "/faq" }, { label: t.careers, path: "/careers" }, { label: t.contact, path: "/contact" }]}
             switchTo={switchTo}
             onClose={() => setOpen(false)}
           />

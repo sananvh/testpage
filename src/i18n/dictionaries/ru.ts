@@ -7,7 +7,7 @@ const ru: Dictionary = {
   },
   nav: {
     faq: "Вопросы и ответы", home: "Главная", services: "Услуги", products: "Продукты", partners: "Партнёры", clients: "Клиенты",
-    certificates: "Сертификаты", research: "Исследования (R&D)", news: "Новости", about: "О нас", careers: "Карьера",
+    certificates: "Сертификаты", research: "Исследования (R&D)", researchNav: "Исследования и разработки", news: "Новости", about: "О нас", careers: "Карьера",
     contact: "Контакты", privacy: "Политика конфиденциальности", menu: "Меню", close: "Закрыть", search: "Поиск",
     searchPlaceholder: "Поиск услуг, продуктов или новостей", cta: "Получить консультацию", language: "Язык",
     skip: "Перейти к содержанию", themeLight: "Светлая тема", themeDark: "Тёмная тема", company: "Компания", menuGroups: { main: "Меню", services: "Услуги" },

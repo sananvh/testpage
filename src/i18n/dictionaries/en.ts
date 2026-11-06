@@ -7,7 +7,7 @@ const en: Dictionary = {
   },
   nav: {
     faq: "FAQ", home: "Home", services: "Services", products: "Products", partners: "Partners", clients: "Clients",
-    certificates: "Certifications", research: "Research (R&D)", news: "News", about: "About", careers: "Careers",
+    certificates: "Certifications", research: "Research (R&D)", researchNav: "Research & Development", news: "News", about: "About", careers: "Careers",
     contact: "Contact", privacy: "Privacy policy", menu: "Menu", close: "Close", search: "Search",
     searchPlaceholder: "Search services, products or news", cta: "Get a consultation", language: "Language",
     skip: "Skip to content", themeLight: "Light mode", themeDark: "Dark mode", company: "Company", menuGroups: { main: "Menu", services: "Services" },

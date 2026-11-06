@@ -5,7 +5,7 @@ const az = {
   },
   nav: {
     faq: "Tez-tez verilən suallar", home: "Ana səhifə", services: "Xidmətlər", products: "Məhsullar", partners: "Tərəfdaşlar", clients: "Müştərilər",
-    certificates: "Sertifikatlar", research: "Tədqiqat (R&D)", news: "Xəbərlər", about: "Haqqımızda", careers: "Karyera",
+    certificates: "Sertifikatlar", research: "Tədqiqat (R&D)", researchNav: "Tədqiqat və inkişaf", news: "Xəbərlər", about: "Haqqımızda", careers: "Karyera",
     contact: "Əlaqə", privacy: "Məxfilik siyasəti", menu: "Menyu", close: "Bağla", search: "Axtarış",
     searchPlaceholder: "Xidmət, məhsul və ya xəbər axtarın", cta: "Konsultasiya al", language: "Dil",
     skip: "Məzmuna keç", themeLight: "İşıqlı rejim", themeDark: "Qaranlıq rejim", company: "Şirkət", menuGroups: { main: "Menyu", services: "Xidmətlər" },
