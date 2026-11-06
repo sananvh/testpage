@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     robots: process.env.NOINDEX === "1"
       ? { index: false, follow: false }
       : { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
-    icons: { icon: "/icon.svg", apple: "/brand/apple-touch-icon.png" },
+    icons: { icon: [{ url: "/favicon.ico", sizes: "48x48" }, { url: "/icon.svg", type: "image/svg+xml" }], apple: "/brand/apple-touch-icon.png" },
     manifest: "/manifest.webmanifest",
     other: { "ai-content-index": "/llms.txt" },
   };
