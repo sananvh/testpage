@@ -101,6 +101,19 @@ CREATE TABLE IF NOT EXISTS assistant_chats (
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+CREATE TABLE IF NOT EXISTS cves (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sort INTEGER NOT NULL DEFAULT 0,
+  published INTEGER NOT NULL DEFAULT 1,
+  cve_id TEXT NOT NULL DEFAULT '', product TEXT NOT NULL DEFAULT '', driver TEXT NOT NULL DEFAULT '',
+  impact_az TEXT NOT NULL DEFAULT '', impact_en TEXT NOT NULL DEFAULT '', impact_ru TEXT NOT NULL DEFAULT ''
+);
+CREATE TABLE IF NOT EXISTS texts (
+  locale TEXT NOT NULL,
+  path TEXT NOT NULL,
+  value TEXT NOT NULL,
+  PRIMARY KEY (locale, path)
+);
 CREATE TABLE IF NOT EXISTS faqs (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   service_slug TEXT NOT NULL DEFAULT '',
@@ -153,6 +166,7 @@ export function db(): DatabaseSync {
     const seed = require("./seed");
     seed.seedIfEmpty(g.__cpdb);
     seed.seedFaqIfEmpty(g.__cpdb);
+    seed.seedCvesOnce(g.__cpdb);
   }
   return g.__cpdb;
 }

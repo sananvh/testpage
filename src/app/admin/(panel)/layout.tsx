@@ -13,7 +13,7 @@ export default async function PanelLayout({ children }: { children: React.ReactN
     <div className="shell">
       <aside className="side">
         <Link href="/admin" className="side-logo">
-          <img src="/brand/logo-reversed.svg" alt="Cyberpoint" height={28} />
+          <img src="/brand/live/logo-reversed" alt="Cyberpoint" height={28} />
         </Link>
         <nav>
           <Link href="/admin">İcmal</Link>
@@ -29,6 +29,12 @@ export default async function PanelLayout({ children }: { children: React.ReactN
               {r.label}
             </Link>
           ))}
+          <p className="side-label">Sayt</p>
+          <Link href="/admin/texts">Saytın mətnləri</Link>
+          <Link href="/admin/menu">Yuxarı menyu</Link>
+          <Link href="/admin/seo">SEO</Link>
+          <Link href="/admin/brand">Logo və paylaşım şəkli</Link>
+          <Link href="/admin/privacy">Məxfilik siyasəti</Link>
           <p className="side-label">Sistem</p>
           <Link href="/admin/settings">Əlaqə və sosial şəbəkələr</Link>
           <Link href="/admin/account">Hesab və istifadəçilər</Link>

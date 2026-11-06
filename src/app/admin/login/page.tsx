@@ -9,7 +9,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   return (
     <main className="login">
       <form action={login} className="card login-card">
-        <img src="/brand/logo.svg" alt="Cyberpoint" height={36} />
+        <img src="/brand/live/logo" alt="Cyberpoint" height={36} />
         <h1>İdarəetmə paneli</h1>
         {error && <p className="alert alert-error">{error}</p>}
         <label className="field">

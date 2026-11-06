@@ -1,8 +1,7 @@
 import "server-only";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { cves } from "@/content/research";
-import { getCertificates, getClients, getFaqs, getNews, getPartners, getProducts, getServices, getSettings } from "@/lib/content";
+import { getCertificates, getClients, getCves, getFaqs, getNews, getPartners, getProducts, getServices, getSettings } from "@/lib/content";
 
 /** Site pages the assistant may open, with their path suffix (prefixed by /{locale}). */
 export const STATIC_PAGES = [
@@ -76,7 +75,7 @@ export function buildKnowledge(locale: Locale): string {
 
   out.push("\n# RESEARCH (R&D) — path /research");
   out.push(t.pages.research.lede);
-  cves.forEach((c, i) => out.push(`- ${c.id}: ${c.product} (${c.driver}) — ${t.pages.research.impacts[i]}`));
+  getCves(locale).forEach((c) => out.push(`- ${c.id}: ${c.product} (${c.driver}) — ${c.impact}`));
   const ac = t.pages.research.academy;
   out.push(`\n## ${ac.title} (${ac.badge}) — path /research; interest form: /contact?topic=academy`, ac.lede, ac.text);
 

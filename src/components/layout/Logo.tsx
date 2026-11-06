@@ -15,16 +15,16 @@ export default function Logo({
   className?: string;
   height?: number;
 }) {
-  const base = slogan ? "/brand/logo-slogan" : "/brand/logo";
+  const base = slogan ? "/brand/live/logo-slogan" : "/brand/live/logo"; // admin-uploadable (Logo və şəkillər)
   const ratio = slogan ? 3612 / 732 : 3612 / 561;
   const w = Math.round(height * ratio);
   if (variant === "reversed") {
-    return <img src={`${base}-reversed.svg`} alt="Cyberpoint" width={w} height={height} className={className} />;
+    return <img src={`${base}-reversed`} alt="Cyberpoint" width={w} height={height} className={className} style={{ width: "auto" }} />;
   }
   return (
     <span className={className} style={{ display: "inline-flex" }}>
-      <img src={`${base}.svg`} alt="Cyberpoint" width={w} height={height} className="logo-light" />
-      <img src={`${base}-reversed.svg`} alt="" aria-hidden="true" width={w} height={height} className="logo-dark" />
+      <img src={base} alt="Cyberpoint" width={w} height={height} className="logo-light" style={{ width: "auto" }} />
+      <img src={`${base}-reversed`} alt="" aria-hidden="true" width={w} height={height} className="logo-dark" style={{ width: "auto" }} />
     </span>
   );
 }

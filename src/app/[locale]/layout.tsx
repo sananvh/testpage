@@ -7,6 +7,7 @@ import { getCertificates, getServices, getSettings } from "@/lib/content";
 import { organization, website } from "@/lib/schema";
 import JsonLd from "@/components/seo/JsonLd";
 import { meta } from "@/lib/page";
+import { getMenu } from "@/lib/site";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { ThemeSync, themeScript } from "@/components/layout/Theme";
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     ...base,
     metadataBase: new URL(SITE),
-    title: { default: t.meta.title, template: "%s · Cyberpoint" },
+    title: { default: String(base.title ?? t.meta.title), template: "%s · Cyberpoint" },
     applicationName: "Cyberpoint",
     authors: [{ name: "Cyberpoint", url: SITE }],
     creator: "Cyberpoint",
@@ -92,6 +93,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
             locale={locale}
             t={t.nav}
             services={services}
+            menu={getMenu()}
             contact={{ phone: settings.phone, email: settings.email, socials: settings.socials }}
           />
           <main id="main">{children}</main>

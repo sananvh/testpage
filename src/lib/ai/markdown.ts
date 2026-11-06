@@ -2,10 +2,10 @@ import "server-only";
 import type { Locale } from "@/i18n/config";
 import { locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { cves } from "@/content/research";
-import { privacy } from "@/content/privacy";
+import { getPrivacy } from "@/lib/site";
 import {
   getCertificates, getClients, getFaqs, getNews, getNewsItem, getPartners, getProduct, getProducts, getService, getServices, getSettings, productGroups,
+  getCves,
 } from "@/lib/content";
 import { SITE } from "@/lib/schema";
 
@@ -72,7 +72,7 @@ export function pageMarkdown(locale: Locale, path: string): string | null {
     md = `# ${t.pages.certificates.title}\n\n${t.pages.certificates.lede}\n\n## ${t.pages.certificates.company}\n${c.filter((x) => x.kind === "company").map((x) => `- ${x.name}${x.issuer ? ` (${x.issuer})` : ""}`).join("\n")}\n\n## ${t.pages.certificates.team}\n${c.filter((x) => x.kind === "team").map((x) => `- ${x.name}`).join("\n")}`;
   } else if (section === "research" && !slug) {
     const r = t.pages.research;
-    md = `# ${r.title}\n\n${r.lede}\n\n## ${r.cvesTitle}\n| ${r.cols.id} | ${r.cols.product} | ${r.cols.driver} | ${r.cols.impact} |\n|---|---|---|---|\n${cves.map((c, i) => `| [${c.id}](https://www.cve.org/CVERecord?id=${c.id}) | ${c.product} | ${c.driver} | ${r.impacts[i]} |`).join("\n")}\n\n## ${r.academy.title} (${r.academy.badge})\n${r.academy.lede}\n\n${r.academy.text}\n\n[${r.academy.button}](${url(`/${locale}/contact?topic=academy`)})`;
+    md = `# ${r.title}\n\n${r.lede}\n\n## ${r.cvesTitle}\n| ${r.cols.id} | ${r.cols.product} | ${r.cols.driver} | ${r.cols.impact} |\n|---|---|---|---|\n${getCves(locale).map((c) => `| [${c.id}](https://www.cve.org/CVERecord?id=${c.id}) | ${c.product} | ${c.driver} | ${c.impact} |`).join("\n")}\n\n## ${r.academy.title} (${r.academy.badge})\n${r.academy.lede}\n\n${r.academy.text}\n\n[${r.academy.button}](${url(`/${locale}/contact?topic=academy`)})`;
   } else if (section === "news" && !slug) {
     md = `# ${t.pages.news.title}\n\n${t.pages.news.lede}\n\n${getNews(locale).map((n) => `- ${n.date} — [${n.title}](${url(`/${locale}/news/${n.slug}`)})`).join("\n")}`;
   } else if (section === "news" && slug) {
@@ -86,7 +86,7 @@ export function pageMarkdown(locale: Locale, path: string): string | null {
   } else if (section === "contact" && !slug) {
     md = `# ${t.pages.contact.title}\n\n${t.pages.contact.lede}\n\n${contactBlock(locale)}\n\n${t.pages.contact.formTitle}: ${url(`/${locale}/contact`)}`;
   } else if (section === "privacy" && !slug) {
-    md = `# ${t.pages.privacy.title}\n\n${t.pages.privacy.updated}\n\n${privacy[locale]}`;
+    md = `# ${t.pages.privacy.title}\n\n${t.pages.privacy.updated}\n\n${getPrivacy(locale)}`;
   }
   return md ? md + footer(locale, path) : null;
 }

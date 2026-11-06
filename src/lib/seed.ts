@@ -5,6 +5,7 @@ import type { DatabaseSync } from "node:sqlite";
 import { certificates, clients, partners } from "@/content/logos";
 import { products } from "@/content/services";
 import { seedNews } from "./seed-news";
+import { cves, cveImpacts } from "@/content/research";
 import { FAQ_SEED_VERSION, FAQ_V2_FROM, seedFaq } from "./seed-faq";
 import { seedServices } from "./seed-services";
 import { hashPassword } from "./password";
@@ -173,4 +174,14 @@ export function seedFaqIfEmpty(db: DatabaseSync) {
     st.run(f.service ?? "", i, homeIdx.has(i) ? 1 : 0, f.q.az, f.q.en, f.q.ru, f.a.az, f.a.en, f.a.ru);
   });
   db.prepare("INSERT INTO settings (key, value) VALUES ('faq_seed_version', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value").run(FAQ_SEED_VERSION);
+}
+
+/** CVE rows are seeded once (a settings flag), so deleting them all in the admin is respected. */
+export function seedCvesOnce(db: DatabaseSync) {
+  if (db.prepare("SELECT 1 FROM settings WHERE key = 'cves_seeded'").get()) return;
+  if ((db.prepare("SELECT COUNT(*) AS n FROM cves").get() as { n: number }).n === 0) {
+    const st = db.prepare("INSERT INTO cves (sort, cve_id, product, driver, impact_az, impact_en, impact_ru) VALUES (?,?,?,?,?,?,?)");
+    cves.forEach((c, i) => st.run(i, c.id, c.product, c.driver, cveImpacts.az[i] ?? "", cveImpacts.en[i] ?? "", cveImpacts.ru[i] ?? ""));
+  }
+  db.prepare("INSERT INTO settings (key, value) VALUES ('cves_seeded', '1') ON CONFLICT(key) DO NOTHING").run();
 }

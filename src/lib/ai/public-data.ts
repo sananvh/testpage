@@ -1,8 +1,7 @@
 import "server-only";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { cves } from "@/content/research";
-import { getCertificates, getClients, getFaqs, getNews, getPartners, getProducts, getServices, getSettings } from "@/lib/content";
+import { getCertificates, getClients, getCves, getFaqs, getNews, getPartners, getProducts, getServices, getSettings } from "@/lib/content";
 import { SITE } from "@/lib/schema";
 
 export const RESOURCES = ["company", "services", "products", "partners", "clients", "certificates", "research", "news", "faq"] as const;
@@ -45,7 +44,7 @@ export function publicData(name: ResourceName, locale: Locale) {
     case "certificates":
       return getCertificates().map((c) => ({ name: c.name, type: c.kind, issuer: c.issuer || null, image: u(c.logo) }));
     case "research":
-      return cves.map((c, i) => ({ id: c.id, product: c.product, driver: c.driver, impact: t.pages.research.impacts[i], record: `https://www.cve.org/CVERecord?id=${c.id}` }));
+      return getCves(locale).map((c) => ({ id: c.id, product: c.product, driver: c.driver, impact: c.impact, record: `https://www.cve.org/CVERecord?id=${c.id}` }));
     case "news":
       return getNews(locale).map((n) => ({
         slug: n.slug, date: n.date, title: n.title, body: n.body, body_language: n.translated ? locale : "az",

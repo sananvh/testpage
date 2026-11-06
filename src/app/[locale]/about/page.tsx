@@ -1,6 +1,6 @@
 import JsonLd from "@/components/seo/JsonLd";
 import { webPage } from "@/lib/schema";
-import { getPartners } from "@/lib/content";
+import { getCves, getPartners } from "@/lib/content";
 import { meta, resolve, type LocaleParams } from "@/lib/page";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -65,7 +65,7 @@ export default async function AboutPage({ params }: LocaleParams) {
           </Reveal>
         </div>
       </section>
-      <Approach locale={locale} t={t} />
+      <Approach locale={locale} t={t} cves={getCves(locale)} />
       <section className="section bg-2">
         <div className="container">
           <SectionHead title={a.mvvTitle} />

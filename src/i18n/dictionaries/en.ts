@@ -55,9 +55,9 @@ const en: Dictionary = {
       eyebrow: "Our approach",
       lede: "We build defenses by thinking like an attacker. Understanding the attack is the most reliable way to strengthen protection.",
       steps: [
-        { title: "Preventive defense", text: "We configure the most effective preventive solutions to best practice and stop targeted attacks." },
-        { title: "Detection and monitoring", text: "24/7 monitoring and incident response let us spot and stop attacks early." },
-        { title: "Training and awareness", text: "We raise your staff’s awareness of cyber threats and turn the human factor into a strong line of defense." },
+        { icon: "shield", title: "Preventive defense", text: "We configure the most effective preventive solutions to best practice and stop targeted attacks." },
+        { icon: "eye", title: "Detection and monitoring", text: "24/7 monitoring and incident response let us spot and stop attacks early." },
+        { icon: "graduation", title: "Training and awareness", text: "We raise your staff’s awareness of cyber threats and turn the human factor into a strong line of defense." },
       ],
       rndLabel: "Research & Development", rndValue: "3 CVEs",
       rndText: "Our R&D team discovered three new vulnerabilities in Windows kernel drivers. Each one has been registered with an official CVE identifier.",
@@ -116,7 +116,6 @@ const en: Dictionary = {
       eyebrow: "Research & Development", title: "We find vulnerabilities before attackers do",
       lede: "Our R&D Center builds national cybersecurity solutions on local knowledge and engineering, and researches software down to the kernel level.",
       cvesTitle: "Officially registered CVEs", cols: { id: "CVE", product: "Product", driver: "Driver", impact: "Impact" },
-      impacts: ["Resource-management flaw that can affect system stability and availability.", "High-risk flaw that can allow local privilege escalation.", "Memory leak that can exhaust resources and cause denial of service."],
       newsTitle: "R&D news",
       academy: {
         badge: "Coming soon", title: "Cyberpoint Academy",

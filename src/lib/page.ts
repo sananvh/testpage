@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, locales, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
+import { seoFor } from "@/lib/site";
 
 export type LocaleParams = { params: Promise<{ locale: string }> };
 
@@ -23,7 +24,11 @@ export function meta(
   opts: { type?: "website" | "article"; publishedTime?: string } = {},
 ): Metadata {
   const url = `/${locale}${path}`;
-  const images = [{ url: image || "/brand/og.png", width: image ? undefined : 1200, height: image ? undefined : 630, alt: title }];
+  // SEO title/description set in the admin (SEO) win over the page defaults
+  const seo = seoFor(path, locale);
+  title = seo.title || title;
+  description = seo.description || description;
+  const images = [{ url: image || "/brand/live/og", width: image ? undefined : 1200, height: image ? undefined : 630, alt: title }];
   const desc = description?.replace(/\s+/g, " ").trim().slice(0, 300);
   return {
     title,

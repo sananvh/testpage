@@ -16,6 +16,7 @@ const publicPath: Record<string, (row: Row) => string> = {
   clients: () => "/az/clients",
   certificates: () => "/az/certificates",
   faqs: (r) => `/az/faq#faq-${r.id}`,
+  cves: () => "/az/research",
 };
 
 export default async function EditPage({ params, searchParams }: P) {
@@ -33,7 +34,7 @@ export default async function EditPage({ params, searchParams }: P) {
           <h1>{String(row[r.titleColumn] ?? r.singular)}</h1>
         </div>
         <div className="actions">
-          <a href={publicPath[r.key](row)} target="_blank" rel="noreferrer" className="abtn abtn-sm">Saytda bax ↗</a>
+          <a href={publicPath[r.key]?.(row) ?? "/az"} target="_blank" rel="noreferrer" className="abtn abtn-sm">Saytda bax ↗</a>
           <form action={deleteResource.bind(null, r.key, Number(id))}>
             <ConfirmButton>Sil</ConfirmButton>
           </form>

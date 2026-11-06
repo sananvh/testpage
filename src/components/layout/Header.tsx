@@ -12,15 +12,17 @@ import Logo from "./Logo";
 import { Roll } from "../ui/Roll";
 import { ThemeToggle } from "./Theme";
 import s from "./header.module.css";
+import { MENU_PAGES } from "@/lib/menu";
 
 type Props = {
   locale: Locale;
   t: Dictionary["nav"];
   services: { slug: string; title: string }[];
   contact: { phone: string; email: string; socials: { name: string; href: string }[] };
+  menu: string[];
 };
 
-export default function Header({ locale, t, services, contact }: Props) {
+export default function Header({ locale, t, services, contact, menu }: Props) {
   const pathname = usePathname() ?? `/${locale}`;
   const [compact, setCompact] = useState(false);
   const [open, setOpen] = useState(false);
@@ -42,14 +44,10 @@ export default function Header({ locale, t, services, contact }: Props) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const main = [
-    { label: t.services, path: "/services" },
-    { label: t.products, path: "/products" },
-    { label: t.partners, path: "/partners" },
-    { label: t.clients, path: "/clients" },
-    { label: t.about, path: "/about" },
-    { label: t.researchNav, path: "/research" },
-  ];
+  // Top menu: pages and order chosen in the admin (Menyu); the full-screen menu lists the rest after them
+  const item = (p: (typeof MENU_PAGES)[number]) => ({ label: t[p.nav], path: p.path });
+  const main = menu.flatMap((k) => MENU_PAGES.filter((p) => p.key === k)).map(item);
+  const rest = MENU_PAGES.filter((p) => !menu.includes(p.key)).map(item);
   const isActive = (p: string) => pathname === href(p) || pathname.startsWith(href(p) + "/");
 
   return (
@@ -99,7 +97,7 @@ export default function Header({ locale, t, services, contact }: Props) {
             t={t}
             services={services}
             contact={contact}
-            main={[...main, { label: t.news, path: "/news" }, { label: t.certificates, path: "/certificates" }, { label: t.faq, path: "/faq" }, { label: t.careers, path: "/careers" }, { label: t.contact, path: "/contact" }]}
+            main={[...main, ...rest]}
             switchTo={switchTo}
             onClose={() => setOpen(false)}
           />
@@ -111,7 +109,7 @@ export default function Header({ locale, t, services, contact }: Props) {
 
 function MenuOverlay({
   locale, t, services, contact, main, switchTo, onClose,
-}: Omit<Props, never> & { main: { label: string; path: string }[]; switchTo: (l: Locale) => string; onClose: () => void }) {
+}: Omit<Props, "menu"> & { main: { label: string; path: string }[]; switchTo: (l: Locale) => string; onClose: () => void }) {
   const navigate = useNavigate();
   const input = useRef<HTMLInputElement>(null);
   const href = (p = "") => `/${locale}${p}`;

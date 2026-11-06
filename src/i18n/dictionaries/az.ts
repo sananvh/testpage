@@ -53,9 +53,9 @@ const az = {
       eyebrow: "Yanaşmamız",
       lede: "Müdafiə mexanizmlərini qurarkən hücumçu kimi düşünürük. Hücumu anlamaq müdafiəni gücləndirməyin ən etibarlı yoludur.",
       steps: [
-        { title: "Qabaqlayıcı müdafiə", text: "Ən effektiv preventiv həlləri ən yaxşı praktikalar əsasında konfiqurasiya edir, hədəfli hücumların qarşısını alırıq." },
-        { title: "Aşkarlama və izləmə", text: "7/24 monitorinq və insidentlərə cavab ilə hücumları erkən aşkarlayır və dayandırırıq." },
-        { title: "Təlim və maarifləndirmə", text: "Əməkdaşlarınızın kibertəhdidlərə həssaslığını artırır, insan faktorunu güclü müdafiə xəttinə çeviririk." },
+        { icon: "shield", title: "Qabaqlayıcı müdafiə", text: "Ən effektiv preventiv həlləri ən yaxşı praktikalar əsasında konfiqurasiya edir, hədəfli hücumların qarşısını alırıq." },
+        { icon: "eye", title: "Aşkarlama və izləmə", text: "7/24 monitorinq və insidentlərə cavab ilə hücumları erkən aşkarlayır və dayandırırıq." },
+        { icon: "graduation", title: "Təlim və maarifləndirmə", text: "Əməkdaşlarınızın kibertəhdidlərə həssaslığını artırır, insan faktorunu güclü müdafiə xəttinə çeviririk." },
       ],
       rndLabel: "Tədqiqat və İnkişaf", rndValue: "3 CVE",
       rndText: "R&D komandamız Windows kernel drayverlərində üç yeni zəiflik aşkarlayıb. Hər biri rəsmi CVE identifikatoru ilə qeydiyyata alınıb.",
@@ -114,7 +114,6 @@ const az = {
       eyebrow: "Tədqiqat və İnkişaf", title: "Zəiflikləri hücumçulardan əvvəl tapırıq",
       lede: "R&D Mərkəzimiz yerli bilik və mühəndislik potensialına əsaslanan milli kibertəhlükəsizlik həlləri hazırlayır və proqram təminatının nüvə səviyyəsində tədqiqatlar aparır.",
       cvesTitle: "Rəsmi qeydiyyatdan keçmiş CVE-lər", cols: { id: "CVE", product: "Məhsul", driver: "Drayver", impact: "Təsir" },
-      impacts: ["Resursların idarəsi ilə bağlı zəiflik; sistemin sabitliyinə və əlçatanlığına təsir edə bilər.", "Yüksək riskli boşluq; lokal səlahiyyətlərin artırılmasına (privilege escalation) imkan yarada bilər.", "Yaddaş sızması; resursların tükənməsinə və xidmətin dayanmasına səbəb ola bilər."],
       newsTitle: "R&D xəbərləri",
       academy: {
         badge: "Tezliklə", title: "Cyberpoint Academy",

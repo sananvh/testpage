@@ -138,3 +138,6 @@ export default function Icon({ name, className }: { name: string; className?: st
     </svg>
   );
 }
+
+/** Icon names offered in the admin (texts editor selects). */
+export const ICON_NAMES = Object.keys(paths).filter((n) => !["arrow", "phone", "mail", "pin"].includes(n));

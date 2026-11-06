@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries/az";
-import type { Certificate, Client, Faq, NewsItem, Partner, Product, Service } from "@/lib/content";
+import type { Certificate, Client, Cve, Faq, NewsItem, Partner, Product, Service } from "@/lib/content";
 import FaqList from "../ui/FaqList";
-import { cves } from "@/content/research";
 import { Link } from "../motion/ViewTransitions";
 import { Reveal, RevealWords } from "../motion/Reveal";
 import Icon from "../Icon";
@@ -120,7 +119,7 @@ export function Products({ locale, t, products }: L & { products: Product[] }) {
   );
 }
 
-export function Approach({ locale, t }: L) {
+export function Approach({ locale, t, cves }: L & { cves: Cve[] }) {
   const a = t.home.approach;
   const icons = ["shield", "eye", "graduation"];
   return (
@@ -143,7 +142,7 @@ export function Approach({ locale, t }: L) {
                 <span className={s.stepNum}>0{i + 1}</span>
                 <div>
                   <h3 className="h3">
-                    <Icon name={icons[i]} className={s.stepIcon} /> {st.title}
+                    <Icon name={st.icon || icons[i % icons.length]} className={s.stepIcon} /> {st.title}
                   </h3>
                   <p>{st.text}</p>
                 </div>

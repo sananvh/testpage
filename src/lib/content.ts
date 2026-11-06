@@ -84,6 +84,14 @@ export function getNewsItem(slug: string, l: Locale) {
   return r ? toNews(r, l) : null;
 }
 
+/* ---------- CVEs (R&D) ---------- */
+export type Cve = { id: string; product: string; driver: string; impact: string };
+export function getCves(l: Locale): Cve[] {
+  return all("SELECT * FROM cves WHERE published = 1 ORDER BY sort, id").map((r) => ({
+    id: String(r.cve_id), product: String(r.product), driver: String(r.driver), impact: pick(r, "impact", l),
+  }));
+}
+
 /* ---------- FAQ ---------- */
 export type Faq = { id: number; question: string; answer: string; service: string; home: boolean };
 export function getFaqs(l: Locale, opts: { service?: string; home?: boolean } = {}): Faq[] {

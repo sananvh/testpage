@@ -13,9 +13,14 @@ Home · About · Services (+9 detail pages) · Products (+12) · Partners · Cli
 - Swiper carousels, logo marquee, filterable partner/client grids
 - Light/dark mode toggle with circular reveal; respects `prefers-reduced-motion`
 
-**Admin panel** (`/admin`)
-- News, services, products, partners, clients, certificates: add / edit / delete / publish, AZ-EN-RU tabs, image upload
-- Inbox for contact and career requests (CV download), contact details & social links, users and password change
+**Admin panel** (`/admin`): everything on the site is editable
+- Content: news, services, products, partners, clients, certificates, CVEs (R&D), FAQ: add / edit / delete / publish, AZ-EN-RU tabs, image upload
+- **Saytın mətnləri**: every text on the site grouped by page (hero, statistics, about, approach, Academy, careers, footer, menu labels, forms, AI assistant…), AZ/EN/RU side by side, "restore original" per field and per page; lists (statistics, cards, steps, SOC events, suggestions) can be added to, removed and reordered. Stored as overrides on top of `src/i18n/dictionaries`, so code updates never overwrite edits
+- **Yuxarı menyu**: which pages appear in the top menu and in what order
+- **SEO**: Google title and description per page (AZ/EN/RU)
+- **Logo və paylaşım şəkli**: upload logos (light/dark, with/without slogan) and the social share image; served from `/brand/live/*`
+- **Məxfilik siyasəti**: full policy text in AZ/EN/RU
+- Inbox for contact, career and Academy requests (CV download), AI chats, contact details & social links, users and password change
 
 **AI assistant** (bottom-right on every page)
 - Chat in AZ / EN / RU powered by Claude (`claude-opus-5-5`, low effort for fast replies; refusal fallbacks enabled), answering only from the site's own content (services, products, partners, clients, certificates, research, news, contacts — rebuilt from the database on each request, so admin edits are picked up immediately)

@@ -19,5 +19,5 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // Skip Next internals, API routes, admin, uploads and files with an extension.
-  matcher: ["/((?!_next|api|admin|uploads|md/|\\.well-known|favicon.ico|icon.svg|robots.txt|sitemap.xml|.*\\..*).*)"],
+  matcher: ["/((?!_next|api|admin|uploads|brand/|md/|\\.well-known|favicon.ico|icon.svg|robots.txt|sitemap.xml|.*\\..*).*)"],
 };

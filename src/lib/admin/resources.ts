@@ -113,6 +113,18 @@ export const resources: Record<string, Resource> = {
       { name: "published", label: "Saytda göstər", type: "checkbox" },
     ],
   },
+  cves: {
+    key: "cves", table: "cves", label: "CVE-lər (R&D)", singular: "CVE", order: "sort, id", titleColumn: "cve_id",
+    listColumns: [{ name: "cve_id", label: "CVE" }, { name: "product", label: "Məhsul" }, { name: "driver", label: "Drayver" }, { name: "published", label: "Dərc", type: "bool" }],
+    fields: [
+      { name: "cve_id", label: "CVE identifikatoru", type: "text", required: true, help: "Məs: CVE-2026-19380. Saytda cve.org qeydinə link olur." },
+      { name: "product", label: "Məhsul", type: "text", required: true },
+      { name: "driver", label: "Drayver / komponent", type: "text" },
+      { name: "impact", label: "Təsir", type: "textarea", localized: true, rows: 3 },
+      { name: "sort", label: "Sıra", type: "number", help: "Kiçik rəqəm yuxarıda göstərilir." },
+      { name: "published", label: "Saytda göstər", type: "checkbox" },
+    ],
+  },
   faqs: {
     key: "faqs", table: "faqs", label: "FAQ", singular: "Sual", order: "sort, id", titleColumn: "question_az",
     listColumns: [{ name: "question_az", label: "Sual" }, { name: "service_slug", label: "Xidmət" }, { name: "home", label: "Ana səhifə", type: "bool" }, { name: "published", label: "Dərc", type: "bool" }],
