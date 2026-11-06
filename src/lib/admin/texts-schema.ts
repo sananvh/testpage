@@ -40,7 +40,7 @@ const SECTION_TITLES: Record<string, string> = {
   home: "Ana səhifə: ümumi", "home.hero": "Əsas ekran (hero)", "home.about": "“Biz kimik” bloku", "home.services": "Xidmətlər bloku",
   "home.products": "Məhsullar bloku", "home.approach": "“Yanaşmamız” bloku", "home.partners": "Tərəfdaşlar bloku", "home.clients": "Müştərilər bloku",
   "home.certificates": "Sertifikatlar bloku", "home.faq": "FAQ bloku", "home.news": "Xəbərlər bloku", "home.cta": "Səhifə sonundakı çağırış (CTA)",
-  soc: "SOC paneli (hero illüstrasiyası)", "soc.severity": "SOC paneli: səviyyə adları",
+  soc: "SOC paneli (hero): başlıq", "soc.sources": "SOC paneli: mənbələr (xəritənin yuxarısı)", "soc.systems.edr": "SOC paneli: EDR göstəricisi", "soc.systems.siem": "SOC paneli: SIEM göstəricisi", "soc.systems.soar": "SOC paneli: SOAR göstəricisi", "soc.actions": "SOC paneli: cavab tədbirləri (xəritənin aşağısı)", "soc.steps": "SOC paneli: addımların adları", "soc.edr": "SOC paneli: EDR addımı", "soc.siem": "SOC paneli: SIEM addımı", "soc.soar": "SOC paneli: SOAR addımı", "soc.analyst": "SOC paneli: analitik addımı", "soc.severity": "SOC paneli: səviyyə adları",
   "pages.about": "Haqqımızda səhifəsi", "pages.services": "Xidmətlər: siyahı səhifəsi", "pages.service": "Xidmət səhifəsi (hər xidmət üçün ümumi)",
   "pages.products": "Məhsullar: siyahı səhifəsi", "pages.product": "Məhsul səhifəsi (hər kateqoriya üçün ümumi)", "pages.partners": "Tərəfdaşlar səhifəsi",
   "pages.clients": "Müştərilər səhifəsi", "pages.certificates": "Sertifikatlar səhifəsi", "pages.research": "Tədqiqat və inkişaf səhifəsi",
@@ -54,7 +54,7 @@ const SECTION_TITLES: Record<string, string> = {
 };
 const LIST_TITLES: Record<string, string> = {
   "home.stats": "Statistika zolağı (hero altında)", "home.about.advantages": "Üstünlük kartları", "home.approach.steps": "Yanaşma addımları",
-  "soc.events": "SOC hadisə axını (sətirlər)", "pages.about.who": "“Bizi fərqləndirənlər” kartları", "pages.about.mvv": "Missiya, vizyon, dəyərlər kartları",
+  "soc.soar.tasks": "SOAR playbook addımları", "soc.analyst.metrics": "Analitik addımı: göstəricilər", "pages.about.who": "“Bizi fərqləndirənlər” kartları", "pages.about.mvv": "Missiya, vizyon, dəyərlər kartları",
   "pages.careers.why": "“Niyə Cyberpoint” kartları", "assistant.suggestions": "Təklif olunan suallar (düymələr)",
 };
 const KEY_LABELS: Record<string, string> = {

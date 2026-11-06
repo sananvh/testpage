@@ -69,18 +69,39 @@ const az = {
     cta: { title: "Təhlükəsizliyinizi bir addım öndə aparaq", text: "Ehtiyaclarınızı danışın, mütəxəssislərimiz sizə uyğun həll təklif etsin.", button: "Bizimlə əlaqə" },
   },
   soc: {
-    aria: "SOC monitorinq paneli (illüstrasiya)", title: "SOC · SIEM hadisə axını", live: "CANLI",
-    eventsPerHour: "hadisə / saat", openIncidents: "açıq insident", responseTime: "reaksiya müddəti", responseValue: "< 15 dəq",
-    footer: "Bütün sistemlər monitorinq altında", status: "Qorunur",
+    aria: "Cyberpoint SOC ekosistemi: EDR, SIEM, SOAR və 7/24 analitiklər (illüstrasiya)", title: "Cyberpoint SOC ekosistemi", live: "CANLI",
+    core: "SOC", analysts: "7/24 analitiklər",
+    sources: { laptops: "Noutbuklar", servers: "Serverlər", email: "E-poçt", network: "Şəbəkə", cloud: "Bulud" },
+    systems: {
+      edr: { value: "85", label: "son nöqtə" },
+      siem: { value: "1000+", label: "hadisə / saat" },
+      soar: { value: "15 san", label: "avtomatik cavab" },
+    },
+    actions: { isolate: "Hostu təcrid et", block: "IP-ni blokla", ticket: "Tiket + hesabat" },
+    steps: { edr: "Aşkarlama", siem: "Korrelyasiya", soar: "Avtomatik cavab", analyst: "Analitik təsdiqi" },
+    edr: { host: "FIN-LT-042 · Maliyyə şöbəsi", suspicious: "şübhəli", behaviourLabel: "Davranış", behaviour: "Makrodan gizli PowerShell icrası" },
+    siem: {
+      summary: "3 mənbə · 1 insident", risk: "RİSK", proxy: "naməlum domen", mail: "xarici qoşma",
+      ruleTitle: "Fişinq → ilkin giriş", ruleText: "Korrelyasiya qaydası işə düşdü, insident SOAR-a ötürüldü.",
+    },
+    soar: {
+      playbook: "Playbook: fişinq insidenti",
+      tasks: [
+        { text: "Hostu şəbəkədən təcrid et", tool: "EDR" },
+        { text: "Domeni və IP-ni blokla", tool: "NGFW · Proxy" },
+        { text: "E-poçtu bütün qutulardan sil", tool: "E-poçt" },
+        { text: "Hesabın parolunu sıfırla", tool: "AD" },
+      ],
+    },
+    analyst: {
+      title: "İnsident bağlandı", text: "Analitik avtomatik addımları yoxladı, insidenti təsdiqlədi və müştəriyə hesabat göndərdi.",
+      metrics: [
+        { value: "30 san", label: "aşkarlama" },
+        { value: "15 san", label: "avtomatik cavab" },
+        { value: "02:10", label: "tam bağlanma" },
+      ],
+    },
     severity: { crit: "KRİT", warn: "ORTA", ok: "AŞAĞI" },
-    events: [
-      ["crit", "Brute-force cəhdi bloklandı · VPN gateway"], ["warn", "Şübhəli PowerShell icrası · EDR"],
-      ["ok", "Fişinq e-poçtu karantinə alındı"], ["warn", "WAF: SQL injection cəhdi · /api/login"],
-      ["ok", "DLP siyasəti tətbiq edildi · USB"], ["crit", "Zərərli IP ünvanından skan · NGFW"],
-      ["ok", "PAM sessiyası qeydə alındı"], ["warn", "Anomal DNS sorğusu · DNS təhlükəsizliyi"],
-      ["ok", "Təhdid kəşfiyyatı (TI) bazası yeniləndi"], ["warn", "XDR: lateral movement əlaməti araşdırılır"],
-      ["crit", "Ransomware imzası bloklandı · son nöqtə"], ["ok", "SOAR playbook avtomatik icra olundu"],
-    ] as [string, string][],
   },
   pages: {
     about: {

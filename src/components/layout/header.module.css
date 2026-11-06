@@ -426,7 +426,34 @@
   .menuBtn {
     padding: 0 16px;
   }
+  /* compact (scrolled) header: the logo pill must leave room for the buttons on narrow phones */
   .compact .logo {
-    padding: 8px 12px;
+    padding: 8px 10px;
+  }
+  .compact .logo img {
+    height: 24px;
+  }
+}
+@media (max-width: 380px) {
+  .menuBtn {
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .compact .logo img {
+    height: 22px;
+  }
+}
+@media (max-width: 340px) {
+  /* very small phones: dots only, label stays available to screen readers */
+  .menuBtn {
+    padding: 0 15px;
+  }
+  .menuBtn :global(.roll) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 }

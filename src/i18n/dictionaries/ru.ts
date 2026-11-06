@@ -71,18 +71,39 @@ const ru: Dictionary = {
     cta: { title: "Будем на шаг впереди вместе", text: "Расскажите о задачах, и наши специалисты предложат подходящее решение.", button: "Связаться с нами" },
   },
   soc: {
-    aria: "Панель мониторинга SOC (иллюстрация)", title: "SOC · поток событий SIEM", live: "LIVE",
-    eventsPerHour: "событий / час", openIncidents: "открытых инцидента", responseTime: "время реакции", responseValue: "< 15 мин",
-    footer: "Все системы под мониторингом", status: "Защищено",
+    aria: "Экосистема SOC Cyberpoint: EDR, SIEM, SOAR и аналитики 24/7 (иллюстрация)", title: "Экосистема SOC Cyberpoint", live: "LIVE",
+    core: "SOC", analysts: "аналитики 24/7",
+    sources: { laptops: "Ноутбуки", servers: "Серверы", email: "Почта", network: "Сеть", cloud: "Облако" },
+    systems: {
+      edr: { value: "85", label: "конечных точек" },
+      siem: { value: "1000+", label: "событий / час" },
+      soar: { value: "15 с", label: "автоответ" },
+    },
+    actions: { isolate: "Изоляция хоста", block: "Блок IP", ticket: "Тикет + отчёт" },
+    steps: { edr: "Обнаружение", siem: "Корреляция", soar: "Автоматический ответ", analyst: "Проверка аналитиком" },
+    edr: { host: "FIN-LT-042 · Финансовый отдел", suspicious: "подозрительно", behaviourLabel: "Поведение", behaviour: "Скрытый запуск PowerShell из макроса" },
+    siem: {
+      summary: "3 источника · 1 инцидент", risk: "РИСК", proxy: "неизвестный домен", mail: "внешнее вложение",
+      ruleTitle: "Фишинг → первичный доступ", ruleText: "Сработало правило корреляции, инцидент передан в SOAR.",
+    },
+    soar: {
+      playbook: "Плейбук: фишинговый инцидент",
+      tasks: [
+        { text: "Изолировать хост от сети", tool: "EDR" },
+        { text: "Заблокировать домен и IP", tool: "NGFW · Proxy" },
+        { text: "Удалить письмо из всех ящиков", tool: "Почта" },
+        { text: "Сбросить пароль учётной записи", tool: "AD" },
+      ],
+    },
+    analyst: {
+      title: "Инцидент закрыт", text: "Аналитик проверил автоматические шаги, подтвердил инцидент и отправил клиенту отчёт.",
+      metrics: [
+        { value: "30 с", label: "обнаружение" },
+        { value: "15 с", label: "автоответ" },
+        { value: "02:10", label: "полное закрытие" },
+      ],
+    },
     severity: { crit: "КРИТ", warn: "СРЕД", ok: "НИЗК" },
-    events: [
-      ["crit", "Попытка brute-force заблокирована · VPN-шлюз"], ["warn", "Подозрительный запуск PowerShell · EDR"],
-      ["ok", "Фишинговое письмо помещено в карантин"], ["warn", "WAF: попытка SQL-инъекции · /api/login"],
-      ["ok", "Применена политика DLP · USB"], ["crit", "Сканирование с вредоносного IP · NGFW"],
-      ["ok", "Сессия PAM записана"], ["warn", "Аномальный DNS-запрос · DNS-защита"],
-      ["ok", "База threat intelligence (TI) обновлена"], ["warn", "XDR: признак lateral movement на проверке"],
-      ["crit", "Сигнатура ransomware заблокирована · endpoint"], ["ok", "Плейбук SOAR выполнен автоматически"],
-    ],
   },
   pages: {
     about: {

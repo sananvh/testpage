@@ -170,108 +170,6 @@
   height: 6px;
   background: #2bd49a;
 }
-.kpis {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.kpi {
-  padding: 14px 20px;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  min-width: 0;
-}
-.kpi:last-child {
-  border-right: 0;
-}
-.kpi b {
-  display: block;
-  font-size: 22px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-.kpi span {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.55);
-}
-.spark {
-  height: 56px;
-  padding: 10px 20px 0;
-}
-.spark svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.feed {
-  list-style: none;
-  margin: 0;
-  padding: 6px 0 10px;
-  font-family: var(--font-mono);
-  font-size: 12.5px;
-}
-.feed li {
-  display: grid;
-  grid-template-columns: 64px 62px minmax(0, 1fr);
-  gap: 10px;
-  align-items: center;
-  padding: 8px 20px;
-  color: rgba(255, 255, 255, 0.78);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  animation: rowIn 0.5s var(--ease) both;
-}
-.feed li:first-child {
-  border-top: 0;
-}
-.feed time {
-  color: rgba(255, 255, 255, 0.45);
-  font-variant-numeric: tabular-nums;
-}
-.msg {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.sev {
-  font-size: 10.5px;
-  letter-spacing: 0.06em;
-  text-align: center;
-  padding: 3px 0;
-  border-radius: 6px;
-  font-weight: 500;
-}
-.crit {
-  color: #ff6b7a;
-  background: rgba(255, 93, 108, 0.15);
-}
-.warn {
-  color: #f5b83d;
-  background: rgba(245, 184, 61, 0.15);
-}
-.ok {
-  color: #2bd49a;
-  background: rgba(43, 212, 154, 0.15);
-}
-@keyframes rowIn {
-  from {
-    opacity: 0.2;
-    transform: translateY(-4px);
-  }
-}
-.panelFoot {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 12px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.55);
-}
-.panelFoot b {
-  color: #2bd49a;
-  font-weight: 500;
-  white-space: nowrap;
-}
 
 @media (max-width: 1100px) {
   .grid {
@@ -290,16 +188,5 @@
 @media (max-width: 560px) {
   .wrap {
     padding: 4px 10px 0;
-  }
-  .feed li {
-    grid-template-columns: 56px 54px minmax(0, 1fr);
-    gap: 8px;
-    padding-inline: 14px;
-  }
-  .kpi {
-    padding: 12px 14px;
-  }
-  .kpi b {
-    font-size: 17px;
   }
 }

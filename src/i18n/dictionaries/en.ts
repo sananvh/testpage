@@ -71,18 +71,39 @@ const en: Dictionary = {
     cta: { title: "Let’s keep your security one step ahead", text: "Tell us what you need and our specialists will propose the right solution.", button: "Contact us" },
   },
   soc: {
-    aria: "SOC monitoring panel (illustration)", title: "SOC · SIEM event stream", live: "LIVE",
-    eventsPerHour: "events / hour", openIncidents: "open incidents", responseTime: "response time", responseValue: "< 15 min",
-    footer: "All systems under monitoring", status: "Protected",
+    aria: "Cyberpoint SOC ecosystem: EDR, SIEM, SOAR and 24/7 analysts (illustration)", title: "Cyberpoint SOC ecosystem", live: "LIVE",
+    core: "SOC", analysts: "24/7 analysts",
+    sources: { laptops: "Laptops", servers: "Servers", email: "Email", network: "Network", cloud: "Cloud" },
+    systems: {
+      edr: { value: "85", label: "endpoints" },
+      siem: { value: "1,000+", label: "events / hour" },
+      soar: { value: "15 s", label: "automated response" },
+    },
+    actions: { isolate: "Isolate host", block: "Block IP", ticket: "Ticket + report" },
+    steps: { edr: "Detection", siem: "Correlation", soar: "Automated response", analyst: "Analyst review" },
+    edr: { host: "FIN-LT-042 · Finance dept.", suspicious: "suspicious", behaviourLabel: "Behaviour", behaviour: "Hidden PowerShell launched from a macro" },
+    siem: {
+      summary: "3 sources · 1 incident", risk: "RISK", proxy: "unknown domain", mail: "external attachment",
+      ruleTitle: "Phishing → initial access", ruleText: "Correlation rule fired; the incident was handed to SOAR.",
+    },
+    soar: {
+      playbook: "Playbook: phishing incident",
+      tasks: [
+        { text: "Isolate the host from the network", tool: "EDR" },
+        { text: "Block the domain and IP", tool: "NGFW · Proxy" },
+        { text: "Purge the email from all mailboxes", tool: "Email" },
+        { text: "Reset the account password", tool: "AD" },
+      ],
+    },
+    analyst: {
+      title: "Incident closed", text: "An analyst reviewed the automated steps, confirmed the incident and sent the client a report.",
+      metrics: [
+        { value: "30 s", label: "detection" },
+        { value: "15 s", label: "automated response" },
+        { value: "02:10", label: "fully closed" },
+      ],
+    },
     severity: { crit: "CRIT", warn: "MED", ok: "LOW" },
-    events: [
-      ["crit", "Brute-force attempt blocked · VPN gateway"], ["warn", "Suspicious PowerShell execution · EDR"],
-      ["ok", "Phishing email quarantined"], ["warn", "WAF: SQL injection attempt · /api/login"],
-      ["ok", "DLP policy enforced · USB"], ["crit", "Scan from malicious IP · NGFW"],
-      ["ok", "PAM session recorded"], ["warn", "Anomalous DNS query · DNS security"],
-      ["ok", "Threat intelligence (TI) feed updated"], ["warn", "XDR: lateral movement indicator under review"],
-      ["crit", "Ransomware signature blocked · endpoint"], ["ok", "SOAR playbook executed automatically"],
-    ],
   },
   pages: {
     about: {
