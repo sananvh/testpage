@@ -118,6 +118,12 @@ const en: Dictionary = {
       cvesTitle: "Officially registered CVEs", cols: { id: "CVE", product: "Product", driver: "Driver", impact: "Impact" },
       impacts: ["Resource-management flaw that can affect system stability and availability.", "High-risk flaw that can allow local privilege escalation.", "Memory leak that can exhaust resources and cause denial of service."],
       newsTitle: "R&D news",
+      academy: {
+        badge: "Coming soon", title: "Cyberpoint Academy",
+        lede: "Cybersecurity training for corporate companies is coming soon.",
+        text: "Cyberpoint Academy is our training programme, built on the experience of our R&D Center and our hands-on projects. If you are interested in training for your team, register your interest and we will let you know first when programmes are announced.",
+        button: "Register interest", topic: "Cyberpoint Academy — corporate training",
+      },
     },
     news: { eyebrow: "In the media", title: "News", lede: "The latest on Cyberpoint’s projects, events and research.", notTranslated: "This article is currently available in Azerbaijani only.", more: "More news", prev: "Previous", next: "Next" },
     careers: {

@@ -77,6 +77,8 @@ export function buildKnowledge(locale: Locale): string {
   out.push("\n# RESEARCH (R&D) — path /research");
   out.push(t.pages.research.lede);
   cves.forEach((c, i) => out.push(`- ${c.id}: ${c.product} (${c.driver}) — ${t.pages.research.impacts[i]}`));
+  const ac = t.pages.research.academy;
+  out.push(`\n## ${ac.title} (${ac.badge}) — path /research; interest form: /contact?topic=academy`, ac.lede, ac.text);
 
   out.push("\n# CAREERS — path /careers");
   out.push(`${t.pages.careers.lede} ${t.pages.careers.formText}`);

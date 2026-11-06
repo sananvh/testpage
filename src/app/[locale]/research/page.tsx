@@ -9,6 +9,8 @@ import PageHero from "@/components/ui/PageHero";
 import SectionHead from "@/components/ui/SectionHead";
 import { NewsCard, ui } from "@/components/ui/Cards";
 import { Reveal } from "@/components/motion/Reveal";
+import { Link } from "@/components/motion/ViewTransitions";
+import Icon from "@/components/Icon";
 import s from "../pages.module.css";
 
 export async function generateMetadata({ params }: LocaleParams) {
@@ -56,6 +58,35 @@ export default async function ResearchPage({ params }: LocaleParams) {
             </tbody>
           </table>
         </Reveal>
+      </section>
+      <section className="section" aria-labelledby="academy-title">
+        <div className="container">
+          <Reveal className={s.academy}>
+            <div className={s.academyLogo}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/academy-logo.svg" alt="Cyberpoint Academy" className="logo-light" width={3616} height={840} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/academy-logo-reversed.svg" alt="" aria-hidden="true" className="logo-dark" width={3616} height={840} />
+            </div>
+            <div className={s.academyText}>
+              <span className={s.soon}>
+                <i aria-hidden="true" />
+                {r.academy.badge}
+              </span>
+              <h2 id="academy-title" className="h2">
+                {r.academy.title}
+              </h2>
+              <p className={s.academyLede}>{r.academy.lede}</p>
+              <p>{r.academy.text}</p>
+              <Link href={`/${locale}/contact?topic=academy`} className="btn btn-primary">
+                {r.academy.button}
+                <span className="btn-icon">
+                  <Icon name="arrow" />
+                </span>
+              </Link>
+            </div>
+          </Reveal>
+        </div>
       </section>
       {news.length > 0 && (
         <section className="section">

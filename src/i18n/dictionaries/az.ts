@@ -116,6 +116,12 @@ const az = {
       cvesTitle: "Rəsmi qeydiyyatdan keçmiş CVE-lər", cols: { id: "CVE", product: "Məhsul", driver: "Drayver", impact: "Təsir" },
       impacts: ["Resursların idarəsi ilə bağlı zəiflik; sistemin sabitliyinə və əlçatanlığına təsir edə bilər.", "Yüksək riskli boşluq; lokal səlahiyyətlərin artırılmasına (privilege escalation) imkan yarada bilər.", "Yaddaş sızması; resursların tükənməsinə və xidmətin dayanmasına səbəb ola bilər."],
       newsTitle: "R&D xəbərləri",
+      academy: {
+        badge: "Tezliklə", title: "Cyberpoint Academy",
+        lede: "Korporativ şirkətlər üçün kibertəhlükəsizlik təlimləri tezliklə başlayır.",
+        text: "Cyberpoint Academy R&D Mərkəzimizin və praktik layihələrimizin təcrübəsinə əsaslanan təlim istiqamətimizdir. Komandanız üçün təlimlərlə maraqlanırsınızsa, müraciət edin: proqramlar elan olunanda sizə ilk olaraq xəbər verəcəyik.",
+        button: "Maraq bildir", topic: "Cyberpoint Academy — korporativ təlimlər",
+      },
     },
     news: { eyebrow: "Mediada biz", title: "Xəbərlər", lede: "Cyberpoint-in layihələri, tədbirləri və tədqiqatları haqqında son yeniliklər.", notTranslated: "Bu xəbər hələlik yalnız Azərbaycan dilindədir.", more: "Digər xəbərlər", prev: "Əvvəlki", next: "Növbəti" },
     careers: {

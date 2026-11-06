@@ -67,14 +67,14 @@ export async function POST(request: Request) {
 
   // Resolve service slug to its title for the email.
   const service = lead.topic && kind === "contact" ? get<{ title_az: string }>("SELECT title_az FROM services WHERE slug = ?", lead.topic) : undefined;
-  const topicLabel = service?.title_az ?? lead.topic;
+  const topicLabel = lead.topic === "academy" && kind === "contact" ? "Cyberpoint Academy — korporativ təlimlər" : service?.title_az ?? lead.topic;
 
   const info = run(
     "INSERT INTO submissions (type, name, email, phone, company, topic, message, attachment, locale) VALUES (?,?,?,?,?,?,?,?,?)",
     kind, lead.name, lead.email, lead.phone, lead.company, topicLabel, lead.message, attachment, lead.locale,
   );
 
-  const subject = kind === "career" ? `Karyera müraciəti: ${lead.name}` : `Saytdan sorğu: ${lead.name}${lead.company ? ` (${lead.company})` : ""}`;
+  const subject = kind === "career" ? `Karyera müraciəti: ${lead.name}` : lead.topic === "academy" ? `Cyberpoint Academy — maraq bildirildi: ${lead.name}${lead.company ? ` (${lead.company})` : ""}` : `Saytdan sorğu: ${lead.name}${lead.company ? ` (${lead.company})` : ""}`;
   const fields: [string, string][] = [
     ["Ad", lead.name],
     ["E-poçt", lead.email],

@@ -509,3 +509,81 @@
     grid-column: 1 / -1;
   }
 }
+
+/* Cyberpoint Academy (research page) */
+.academy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+  padding: clamp(20px, 3vw, 40px);
+  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+}
+.academyLogo {
+  display: grid;
+  place-items: center;
+  padding: clamp(28px, 4vw, 56px) clamp(20px, 3vw, 44px);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.academyLogo img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+.academyText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.academyText p {
+  color: var(--ink-2);
+  max-width: 60ch;
+}
+.academyText .academyLede {
+  color: var(--ink);
+  font-size: clamp(17px, 1.4vw, 20px);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.academyText :global(.btn) {
+  margin-top: 6px;
+}
+.soon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0a5be2, #8201b6);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.soon i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #fff;
+  animation: soonPulse 1.8s ease-in-out infinite;
+}
+@keyframes soonPulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .soon i {
+    animation: none;
+  }
+}
+@media (max-width: 900px) {
+  .academy {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

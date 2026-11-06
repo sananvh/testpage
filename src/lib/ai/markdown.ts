@@ -72,7 +72,7 @@ export function pageMarkdown(locale: Locale, path: string): string | null {
     md = `# ${t.pages.certificates.title}\n\n${t.pages.certificates.lede}\n\n## ${t.pages.certificates.company}\n${c.filter((x) => x.kind === "company").map((x) => `- ${x.name}${x.issuer ? ` (${x.issuer})` : ""}`).join("\n")}\n\n## ${t.pages.certificates.team}\n${c.filter((x) => x.kind === "team").map((x) => `- ${x.name}`).join("\n")}`;
   } else if (section === "research" && !slug) {
     const r = t.pages.research;
-    md = `# ${r.title}\n\n${r.lede}\n\n## ${r.cvesTitle}\n| ${r.cols.id} | ${r.cols.product} | ${r.cols.driver} | ${r.cols.impact} |\n|---|---|---|---|\n${cves.map((c, i) => `| [${c.id}](https://www.cve.org/CVERecord?id=${c.id}) | ${c.product} | ${c.driver} | ${r.impacts[i]} |`).join("\n")}`;
+    md = `# ${r.title}\n\n${r.lede}\n\n## ${r.cvesTitle}\n| ${r.cols.id} | ${r.cols.product} | ${r.cols.driver} | ${r.cols.impact} |\n|---|---|---|---|\n${cves.map((c, i) => `| [${c.id}](https://www.cve.org/CVERecord?id=${c.id}) | ${c.product} | ${c.driver} | ${r.impacts[i]} |`).join("\n")}\n\n## ${r.academy.title} (${r.academy.badge})\n${r.academy.lede}\n\n${r.academy.text}\n\n[${r.academy.button}](${url(`/${locale}/contact?topic=academy`)})`;
   } else if (section === "news" && !slug) {
     md = `# ${t.pages.news.title}\n\n${t.pages.news.lede}\n\n${getNews(locale).map((n) => `- ${n.date} — [${n.title}](${url(`/${locale}/news/${n.slug}`)})`).join("\n")}`;
   } else if (section === "news" && slug) {

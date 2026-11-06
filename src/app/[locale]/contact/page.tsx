@@ -24,7 +24,7 @@ export default async function ContactPage({ params, searchParams }: P) {
   const { topic = "" } = await searchParams;
   const st = getSettings(locale);
   const services = getServices(locale);
-  const initial = services.some((x) => x.slug === topic) ? topic : "";
+  const initial = topic === "academy" || services.some((x) => x.slug === topic) ? topic : "";
 
   return (
     <>
@@ -75,7 +75,7 @@ export default async function ContactPage({ params, searchParams }: P) {
               t={t.form}
               locale={locale}
               title={t.pages.contact.formTitle}
-              topics={services.map((x) => ({ value: x.slug, label: x.title }))}
+              topics={[...services.map((x) => ({ value: x.slug, label: x.title })), { value: "academy", label: t.pages.research.academy.topic }]}
               initialTopic={initial}
             />
           </Reveal>
