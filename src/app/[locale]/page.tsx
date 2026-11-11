@@ -6,7 +6,7 @@ import { faqLd, webPage } from "@/lib/schema";
 import JsonLd from "@/components/seo/JsonLd";
 import Hero from "@/components/sections/hero/Hero";
 import {
-  About, Approach, CertificatesSection, ClientsSection, FaqSection, LatestNews, PartnersSection, Products, Services, TrustMarquee,
+  About, Approach, CertificatesSection, ClientsSection, FaqSection, GlobalEvents, LatestNews, PartnersSection, Products, Services, TrustMarquee,
 } from "@/components/sections/Home";
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -20,6 +20,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
     <>
       <JsonLd data={[webPage("WebPage", locale, `/${locale}`, t.meta.title, t.meta.description), ...(faqs.length ? [faqLd(faqs, locale, `/${locale}`)] : [])]} />
       <Hero locale={locale} t={t} />
+      <GlobalEvents t={t} />
       <TrustMarquee t={t} partners={partners} />
       <About locale={locale} t={t} />
       <Services locale={locale} t={t} services={getServices(locale)} />

@@ -42,6 +42,7 @@ export function buildKnowledge(locale: Locale): string {
   out.push(`Approach "Think red, act blue": ${t.home.approach.lede}`);
   for (const s of t.home.approach.steps) out.push(`- ${s.title}: ${s.text}`);
   out.push(`Key figures: ${t.home.stats.map((s) => `${s.value} ${s.label}`).join("; ")}`);
+  out.push(`${t.home.events.title}: ${t.home.events.role}: ${t.home.events.items.map((e) => `${e.name} (${e.full}, ${e.place})`).join("; ")}`);
 
   out.push("\n# CONTACT");
   out.push(`Phone: ${st.phone} | Email: ${st.email} | Hours: ${st.hours} | Address: ${st.address}`);

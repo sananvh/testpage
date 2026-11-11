@@ -14,6 +14,45 @@ import s from "./home.module.css";
 
 type L = { locale: Locale; t: Dictionary };
 
+/** Global events where Cyberpoint provided cybersecurity services (texts: Saytın mətnləri → Ana səhifə). */
+export function GlobalEvents({ t }: { t: Dictionary }) {
+  const e = t.home.events;
+  if (!e.items.length) return null;
+  return (
+    <section className={s.events} aria-labelledby="events-title">
+      <div className="container">
+        <div className={s.eventsHead}>
+          <div>
+            <p className="eyebrow">{e.eyebrow}</p>
+            <h2 id="events-title" className="h2">
+              <RevealWords text={e.title} />
+            </h2>
+          </div>
+          <Reveal delay={0.1}>
+            <p className={s.eventsLede}>{e.lede}</p>
+          </Reveal>
+        </div>
+        <ul className={s.eventGrid}>
+          {e.items.map((ev, i) => (
+            <Reveal as="li" key={`${ev.name}-${i}`} delay={i * 0.08} className={s.eventCard}>
+              <span className={s.eventRole}>
+                <Icon name="shield" />
+                {e.role}
+              </span>
+              <strong className={s.eventName}>{ev.name}</strong>
+              <span className={s.eventFull}>{ev.full}</span>
+              <span className={s.eventPlace}>
+                <Icon name="pin" />
+                {ev.place}
+              </span>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 export function TrustMarquee({ t, partners }: { t: Dictionary; partners: Partner[] }) {
   return (
     <section className={s.trust} aria-label={t.home.trustLabel}>

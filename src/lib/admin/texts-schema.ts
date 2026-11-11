@@ -37,7 +37,7 @@ export const TEXT_GROUPS: { key: string; label: string; hint: string; roots: str
 
 /* ---------- Labels ---------- */
 const SECTION_TITLES: Record<string, string> = {
-  home: "Ana səhifə: ümumi", "home.hero": "Əsas ekran (hero)", "home.about": "“Biz kimik” bloku", "home.services": "Xidmətlər bloku",
+  home: "Ana səhifə: ümumi", "home.hero": "Əsas ekran (hero)", "home.events": "Qlobal tədbirlər bloku (hero altında)", "home.about": "“Biz kimik” bloku", "home.services": "Xidmətlər bloku",
   "home.products": "Məhsullar bloku", "home.approach": "“Yanaşmamız” bloku", "home.partners": "Tərəfdaşlar bloku", "home.clients": "Müştərilər bloku",
   "home.certificates": "Sertifikatlar bloku", "home.faq": "FAQ bloku", "home.news": "Xəbərlər bloku", "home.cta": "Səhifə sonundakı çağırış (CTA)",
   soc: "SOC paneli (hero): başlıq", "soc.sources": "SOC paneli: mənbələr (xəritənin yuxarısı)", "soc.systems.edr": "SOC paneli: EDR göstəricisi", "soc.systems.siem": "SOC paneli: SIEM göstəricisi", "soc.systems.soar": "SOC paneli: SOAR göstəricisi", "soc.actions": "SOC paneli: cavab tədbirləri (xəritənin aşağısı)", "soc.steps": "SOC paneli: addımların adları", "soc.edr": "SOC paneli: EDR addımı", "soc.siem": "SOC paneli: SIEM addımı", "soc.soar": "SOC paneli: SOAR addımı", "soc.analyst": "SOC paneli: analitik addımı", "soc.severity": "SOC paneli: səviyyə adları",
@@ -53,7 +53,7 @@ const SECTION_TITLES: Record<string, string> = {
   form: "Formalar", assistant: "AI köməkçi", footer: "Footer",
 };
 const LIST_TITLES: Record<string, string> = {
-  "home.stats": "Statistika zolağı (hero altında)", "home.about.advantages": "Üstünlük kartları", "home.approach.steps": "Yanaşma addımları",
+  "home.stats": "Statistika zolağı (hero altında)", "home.events.items": "Qlobal tədbirlər (kartlar)", "home.about.advantages": "Üstünlük kartları", "home.approach.steps": "Yanaşma addımları",
   "soc.soar.tasks": "SOAR playbook addımları", "soc.analyst.metrics": "Analitik addımı: göstəricilər", "pages.about.who": "“Bizi fərqləndirənlər” kartları", "pages.about.mvv": "Missiya, vizyon, dəyərlər kartları",
   "pages.careers.why": "“Niyə Cyberpoint” kartları", "assistant.suggestions": "Təklif olunan suallar (düymələr)",
 };
@@ -68,7 +68,7 @@ const KEY_LABELS: Record<string, string> = {
   vendors: "Vendorlar bölməsinin başlığı", company: "“Şirkət” bölməsi", team: "“Komanda” bölməsi", map: "Xəritə linkinin yazısı", updated: "Yenilənmə tarixi yazısı",
   notTranslated: "Tərcümə olunmayıb bildirişi", prev: "“Əvvəlki”", next: "“Növbəti”", empty: "Nəticə yoxdur mesajı", hint: "İpucu", results: "“nəticə” sözü",
   home: "Ana səhifə", ask: "Sual bölməsinin başlığı", askText: "Sual bölməsinin mətni", tagline: "Şüar (footer)", rights: "Hüquqlar sətri",
-  greeting: "Salamlama mesajı", placeholder: "Yazı sahəsində ipucu", privacy: "Məxfilik", launcher: "Açma düyməsinin adı (ekran oxuyucu)",
+  greeting: "Salamlama mesajı", full: "Tam adı", place: "Şəhər · il", role: "Rol (hər kartda)", placeholder: "Yazı sahəsində ipucu", privacy: "Məxfilik", launcher: "Açma düyməsinin adı (ekran oxuyucu)",
 };
 const human = (k: string) => KEY_LABELS[k] ?? k.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, (c) => c.toUpperCase());
 

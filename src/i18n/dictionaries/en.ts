@@ -37,6 +37,17 @@ const en: Dictionary = {
       { value: "27", label: "global technology partners" },
       { value: "35", label: "successfully delivered projects" },
     ],
+    events: {
+      eyebrow: "Global events", title: "Trusted by world-class events",
+      lede: "Cyberpoint has been the cybersecurity service provider for major international events held by the UN and international organisations.",
+      role: "Cybersecurity service provider",
+      items: [
+        { name: "COP29", full: "UN Climate Change Conference", place: "Baku · 2024" },
+        { name: "COP31", full: "UN Climate Change Conference", place: "Antalya · 2026" },
+        { name: "WUF13", full: "World Urban Forum (UN-Habitat)", place: "Baku · 2026" },
+        { name: "WTDC-25", full: "ITU World Telecommunication Development Conference", place: "Baku · 2025" },
+      ],
+    },
     trustLabel: "Our leading technology partners",
     about: {
       eyebrow: "Who we are", title: "Next-generation cyber defense",

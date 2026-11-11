@@ -35,6 +35,17 @@ const az = {
       { value: "27", label: "qlobal texnologiya tərəfdaşı" },
       { value: "35", label: "uğurla icra olunmuş layihə" },
     ],
+    events: {
+      eyebrow: "Qlobal tədbirlər", title: "Dünya səviyyəli tədbirlər bizə etibar edir",
+      lede: "Cyberpoint BMT və beynəlxalq təşkilatların keçirdiyi böyük beynəlxalq tədbirlərdə kibertəhlükəsizlik xidmətləri təminatçısı olub.",
+      role: "Kibertəhlükəsizlik xidmətləri təminatçısı",
+      items: [
+        { name: "COP29", full: "BMT-nin İqlim Dəyişmələri Konfransı", place: "Bakı · 2024" },
+        { name: "COP31", full: "BMT-nin İqlim Dəyişmələri Konfransı", place: "Antalya · 2026" },
+        { name: "WUF13", full: "Ümumdünya Şəhərsalma Forumu (BMT-Habitat)", place: "Bakı · 2026" },
+        { name: "WTDC-25", full: "BTİ Ümumdünya Telekommunikasiyanın İnkişafı Konfransı", place: "Bakı · 2025" },
+      ],
+    },
     trustLabel: "Lider texnologiya tərəfdaşlarımız",
     about: {
       eyebrow: "Biz kimik", title: "Yeni nəsil kibermüdafiə",

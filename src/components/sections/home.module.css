@@ -415,3 +415,129 @@
     position: static;
   }
 }
+
+/* ---------- Global events (under the hero) ---------- */
+.events {
+  padding-block: clamp(48px, 6vw, 88px) clamp(24px, 3vw, 40px);
+}
+.eventsHead {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(20px, 4vw, 64px);
+  align-items: end;
+  margin-bottom: clamp(28px, 3.5vw, 44px);
+}
+.eventsLede {
+  color: var(--ink-2);
+  font-size: clamp(16px, 1.25vw, 18px);
+  max-width: 52ch;
+}
+.eventGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 18px);
+}
+.eventCard {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: clamp(22px, 2.2vw, 30px);
+  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+  overflow: hidden;
+  transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.eventCard::before {
+  content: "";
+  position: absolute;
+  inset: auto -30% -60% auto;
+  z-index: -1;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(123, 42, 184, 0.18), transparent);
+  transition: transform 0.6s var(--ease);
+}
+.eventCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+.eventCard:hover::before {
+  transform: scale(1.3);
+}
+.eventRole {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  padding: 6px 12px 6px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.eventRole svg {
+  width: 15px;
+  height: 15px;
+  flex: none;
+}
+.eventName {
+  margin-top: clamp(14px, 2vw, 28px);
+  font-family: var(--font-display);
+  font-size: clamp(38px, 3.3vw, 56px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+  background: linear-gradient(120deg, var(--accent-text) 10%, var(--purple-text) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.eventFull {
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.4;
+}
+.eventPlace {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-3);
+}
+.eventPlace svg {
+  width: 15px;
+  height: 15px;
+}
+@media (max-width: 1100px) {
+  .eventGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .eventsHead {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}
+@media (max-width: 480px) {
+  .eventGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eventCard,
+  .eventCard::before {
+    transition: none;
+  }
+}
