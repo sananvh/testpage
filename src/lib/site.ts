@@ -65,7 +65,7 @@ export const BRAND_ASSETS: Record<string, { file: string; label: string; help: s
   logo: { file: "logo.svg", label: "Logo (işıqlı fon üçün)", help: "Header və işıqlı rejim. SVG və ya şəffaf PNG.", svg: true },
   "logo-reversed": { file: "logo-reversed.svg", label: "Logo (tünd fon üçün)", help: "Qaranlıq rejim, menyu və admin paneli. SVG və ya şəffaf PNG.", dark: true, svg: true },
   "logo-slogan": { file: "logo-slogan.svg", label: "Şüarlı logo (işıqlı fon)", help: "Hazırda ehtiyat üçün. SVG və ya şəffaf PNG.", svg: true },
-  "logo-slogan-reversed": { file: "logo-slogan-reversed.svg", label: "Şüarlı logo (tünd fon)", help: "Footer-də göstərilir. SVG və ya şəffaf PNG.", dark: true, svg: true },
+  "logo-slogan-reversed": { file: "logo-slogan-reversed.svg", label: "Şüarlı logo (tünd fon)", help: "Hazırda saytda istifadə olunmur (ehtiyat). SVG və ya şəffaf PNG.", dark: true, svg: true },
   og: { file: "og.png", label: "Paylaşım şəkli (sosial şəbəkələr)", help: "Link Facebook, LinkedIn, WhatsApp və s.-də paylaşılanda görünür. PNG və ya JPG, 1200×630.", svg: false },
 };
 export function brandUpload(name: string): string {

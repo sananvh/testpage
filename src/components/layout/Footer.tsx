@@ -43,7 +43,7 @@ export default function Footer({ locale, t, settings }: Props) {
 
         <div className={s.grid}>
           <div className={s.brand}>
-            <Logo variant="reversed" slogan height={64} />
+            <Logo variant="reversed" height={48} />
             <p>{t.footer.tagline}</p>
             <ul className={s.socials} aria-label={t.footer.follow}>
               {settings.socials.map((so) => (

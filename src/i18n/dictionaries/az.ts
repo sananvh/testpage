@@ -25,7 +25,6 @@ const az = {
     hero: {
       eyebrow: "7/24 Təhlükəsizlik Əməliyyatları Mərkəzi",
       title: "Biznesinizi qoruyan etibarlı kibertəhlükəsizlik tərəfdaşı.",
-      accent: "Bir addım öndə",
       lede: "Beynəlxalq sertifikatlı mütəxəssislər, dünya standartlarına uyğun həllər və fasiləsiz monitorinqlə özəl və dövlət sektorunun kritik infrastrukturunu qoruyuruq.",
       primary: "Konsultasiya al", secondary: "Xidmətlərimiz",
     },

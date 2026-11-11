@@ -23,10 +23,6 @@ export default function Hero({ locale, t }: { locale: Locale; t: Dictionary }) {
             </Reveal>
             <h1 id="hero-title" className={s.title}>
               <RevealWords text={h.title} />
-              <span className={s.accent}>
-                <RevealWords text={h.accent} delay={0.35} />
-                <i className={s.dot} aria-hidden="true" />
-              </span>
             </h1>
             <Reveal delay={0.45}>
               <p className={s.lede}>{h.lede}</p>

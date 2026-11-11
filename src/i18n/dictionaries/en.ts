@@ -27,7 +27,6 @@ const en: Dictionary = {
     hero: {
       eyebrow: "24/7 Security Operations Center",
       title: "A trusted cybersecurity partner that protects your business.",
-      accent: "One step ahead",
       lede: "With internationally certified specialists, solutions built to global standards and round-the-clock monitoring, we protect critical infrastructure in the private and public sector.",
       primary: "Get a consultation", secondary: "Our services",
     },
