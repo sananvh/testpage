@@ -131,9 +131,9 @@ const en: Dictionary = {
       audience: "Both private companies and government organisations benefit from our services. Our core clients are medium and large organisations, but we encourage smaller companies to strengthen their defenses too: statistically, they are targeted more often.",
       mvvTitle: "Mission, vision and values",
       mvv: [
-        { key: "mission", title: "Mission", text: "We continuously research and apply innovative solutions to secure our clients, so you can operate in a safe and comfortable environment." },
-        { key: "vision", title: "Vision", text: "To become a global cybersecurity leader, applying innovation and following standards so our clients succeed safely in the digital world." },
-        { key: "values", title: "Values", text: "Innovation, reliability and excellence are the core values that define us. We uphold them on every project." },
+        { key: "mission", title: "Mission", text: "We explore and apply innovative solutions to keep clients secure in a safe and comfortable operating environment." },
+        { key: "vision", title: "Vision", text: "Become a global cybersecurity leader through innovation, proven standards and reliable service." },
+        { key: "values", title: "Values", text: "Innovation, reliability and excellence guide every engagement." },
       ],
     },
     services: { eyebrow: "Services", title: "Cybersecurity services", lede: "From assessment to incident response: professional services for every stage of your organisation’s security." },

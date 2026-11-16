@@ -129,9 +129,9 @@ const az = {
       audience: "Xidmətlərimizdən həm özəl, həm də dövlət qurumları faydalana bilər. Əsas hədəfimiz orta və böyük müəssisələr olsa da, kiçik müəssisələrə də kibermüdafiələrini gücləndirməyi tövsiyə edirik: statistikaya görə, onlar daha tez-tez hədəfə çevrilir.",
       mvvTitle: "Missiya, vizyon və dəyərlər",
       mvv: [
-        { key: "mission", title: "Missiya", text: "Müştərilərimizin kibertəhlükəsizliyini təmin etmək üçün daim yenilikçi həlləri araşdırır və tətbiq edirik. Sizin təhlükəsiz və rahat mühitdə qalmağınız üçün fəaliyyət göstəririk." },
-        { key: "vision", title: "Vizyon", text: "Qlobal miqyasda kibertəhlükəsizlik lideri olmaq, yenilikləri tətbiq edərək və standartlara əməl edərək müştərilərimizin elektron dünyada uğurlu və təhlükəsiz olmasını təmin etmək." },
-        { key: "values", title: "Dəyərlər", text: "Yenilikçilik, etibarlılıq və mükəmməllik bizi biz edən əsas dəyərlərdir. Hər layihədə bu dəyərlərə sadiq qalırıq." },
+        { key: "mission", title: "Missiya", text: "Müştərilərimizin təhlükəsiz və rahat iş mühitində qorunması üçün innovativ həlləri araşdırır və tətbiq edirik." },
+        { key: "vision", title: "Vizyon", text: "İnnovasiya, sübut olunmuş standartlar və etibarlı xidmət vasitəsilə qlobal kibertəhlükəsizlik lideri olmaq." },
+        { key: "values", title: "Dəyərlər", text: "İnnovasiya, etibarlılıq və mükəmməllik hər bir əməkdaşlığımıza istiqamət verir." },
       ],
     },
     services: { eyebrow: "Xidmətlər", title: "Kibertəhlükəsizlik xidmətləri", lede: "Qiymətləndirmədən insidentlərə cavaba qədər: təşkilatınızın təhlükəsizliyinin hər mərhələsi üçün peşəkar xidmətlər." },
