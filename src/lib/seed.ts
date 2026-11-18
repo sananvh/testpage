@@ -185,3 +185,17 @@ export function seedCvesOnce(db: DatabaseSync) {
   }
   db.prepare("INSERT INTO settings (key, value) VALUES ('cves_seeded', '1') ON CONFLICT(key) DO NOTHING").run();
 }
+
+/**
+ * Makes sure the admin named in ADMIN_EMAIL / ADMIN_PASSWORD exists (also on an existing database).
+ * Only creates a missing account; never changes the password of an existing one, so a password
+ * changed in the admin panel stays valid. The new admin sets up two-factor login at first login.
+ */
+export function ensureEnvAdmin(db: DatabaseSync) {
+  const email = process.env.ADMIN_EMAIL?.trim().toLowerCase();
+  const password = process.env.ADMIN_PASSWORD;
+  if (!email || !password || password.length < 10) return;
+  if (db.prepare("SELECT 1 FROM users WHERE lower(email) = ?").get(email)) return;
+  db.prepare("INSERT INTO users (email, password_hash) VALUES (?, ?)").run(email, hashPassword(password));
+  console.warn(`[cyberpoint] Created admin ${email} from ADMIN_EMAIL`);
+}

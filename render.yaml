@@ -17,8 +17,8 @@ services:
         value: true-client-ip,cf-connecting-ip
       - key: ASSISTANT_DAILY_LIMIT
         value: "300"
-      - key: ADMIN_EMAIL
-        value: admin@cyberpoint.az
+      - key: ADMIN_EMAIL        # you type it when creating the Blueprint (kept out of the public repo)
+        sync: false
       - key: ADMIN_PASSWORD     # you type it when creating the Blueprint
         sync: false
       - key: ANTHROPIC_API_KEY  # optional: full AI answers (leave empty for basic mode)

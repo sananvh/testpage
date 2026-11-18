@@ -182,6 +182,7 @@ export function db(): DatabaseSync {
     seed.seedIfEmpty(g.__cpdb);
     seed.seedFaqIfEmpty(g.__cpdb);
     seed.seedCvesOnce(g.__cpdb);
+    seed.ensureEnvAdmin(g.__cpdb);
   }
   return g.__cpdb;
 }
