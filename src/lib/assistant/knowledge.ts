@@ -1,7 +1,7 @@
 import "server-only";
 import type { Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
-import { getCertificates, getClients, getCves, getFaqs, getNews, getPartners, getProducts, getServices, getSettings } from "@/lib/content";
+import { getCertificates, getClients, getCves, getFaqs, getOwnProducts, getNews, getPartners, getProducts, getServices, getSettings } from "@/lib/content";
 
 /** Site pages the assistant may open, with their path suffix (prefixed by /{locale}). */
 export const STATIC_PAGES = [
@@ -55,6 +55,11 @@ export function buildKnowledge(locale: Locale): string {
     if (s.features.length) out.push(`Includes: ${s.features.join("; ")}`);
   }
 
+  const own = getOwnProducts(locale);
+  if (own.length) {
+    out.push("\n# CYBERPOINT'S OWN PRODUCTS (built by the R&D Center; shown at the top of /products and on /research; each has its own website)");
+    for (const p of own) out.push(`- ${p.name}: ${p.tagline}. ${p.description} Features: ${p.features.join("; ")}. Website: ${p.url}${p.appIos ? `; iOS app: ${p.appIos}` : ""}${p.appAndroid ? `; Android app: ${p.appAndroid}` : ""}`);
+  }
   out.push("\n# PRODUCTS (path /products/{slug})");
   const partners = getPartners();
   for (const p of getProducts(locale)) {

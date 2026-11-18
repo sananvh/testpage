@@ -1,6 +1,6 @@
 import JsonLd from "@/components/seo/JsonLd";
-import { webPage } from "@/lib/schema";
-import { getCves, getNews } from "@/lib/content";
+import { softwareLd, webPage } from "@/lib/schema";
+import { getCves, getNews, getOwnProducts } from "@/lib/content";
 import { meta, resolve, type LocaleParams } from "@/lib/page";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -10,6 +10,7 @@ import { NewsCard, ui } from "@/components/ui/Cards";
 import { Reveal } from "@/components/motion/Reveal";
 import { Link } from "@/components/motion/ViewTransitions";
 import Icon from "@/components/Icon";
+import OwnProducts from "@/components/ui/OwnProducts";
 import s from "../pages.module.css";
 
 export async function generateMetadata({ params }: LocaleParams) {
@@ -26,10 +27,18 @@ export default async function ResearchPage({ params }: LocaleParams) {
   const r = t.pages.research;
   const news = getNews(locale).filter((n) => RND_SLUGS.includes(n.slug));
   const cves = getCves(locale);
+  const own = getOwnProducts(locale);
   return (
     <>
-      <JsonLd data={[webPage("WebPage", locale, `/${locale}/research`, r.title, r.lede), { "@context": "https://schema.org", "@type": "ItemList", name: r.cvesTitle, itemListElement: cves.map((c, i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "CreativeWork", name: `${c.id}: ${c.product} (${c.driver})`, description: c.impact, url: `https://www.cve.org/CVERecord?id=${c.id}`, creator: { "@id": `${process.env.SITE_URL || process.env.RENDER_EXTERNAL_URL || "https://cyberpoint.az"}/#organization` } } })) }]} />
+      <JsonLd data={[webPage("WebPage", locale, `/${locale}/research`, r.title, r.lede), { "@context": "https://schema.org", "@type": "ItemList", name: r.cvesTitle, itemListElement: cves.map((c, i) => ({ "@type": "ListItem", position: i + 1, item: { "@type": "CreativeWork", name: `${c.id}: ${c.product} (${c.driver})`, description: c.impact, url: `https://www.cve.org/CVERecord?id=${c.id}`, creator: { "@id": `${process.env.SITE_URL || process.env.RENDER_EXTERNAL_URL || "https://cyberpoint.az"}/#organization` } } })) }, ...softwareLd(own)]} />
       <PageHero eyebrow={r.eyebrow} title={r.title} lede={r.lede} crumbs={[{ label: t.nav.home, href: `/${locale}` }, { label: t.nav.research }]} />
+      {own.length > 0 && (
+        <section className="container" aria-labelledby="rnd-products-title">
+          <SectionHead id="rnd-products-title" eyebrow={t.pages.products.own.badge} title={r.own.title} lede={r.own.lede} />
+          <OwnProducts products={own} t={t.pages.products.own} />
+          <div className="section-tight" />
+        </section>
+      )}
       <section className="container">
         <SectionHead title={r.cvesTitle} />
         <Reveal className={s.tableWrap}>

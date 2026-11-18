@@ -6,6 +6,7 @@ import { getPrivacy } from "@/lib/site";
 import {
   getCertificates, getClients, getFaqs, getNews, getNewsItem, getPartners, getProduct, getProducts, getService, getServices, getSettings, productGroups,
   getCves,
+  getOwnProducts,
 } from "@/lib/content";
 import { SITE } from "@/lib/schema";
 
@@ -49,7 +50,9 @@ export function pageMarkdown(locale: Locale, path: string): string | null {
     }
   } else if (section === "products" && !slug) {
     const prods = getProducts(locale);
-    md = `# ${t.pages.products.title}\n\n${t.pages.products.lede}\n\n${productGroups
+    const own = getOwnProducts(locale);
+    const ownMd = own.length ? `## ${t.pages.products.own.title}\n${own.map((p) => `- **[${p.name}](${p.url})**: ${p.tagline}. ${p.description}`).join("\n")}\n\n` : "";
+    md = `# ${t.pages.products.title}\n\n${t.pages.products.lede}\n\n${ownMd}${productGroups
       .filter((g) => prods.some((p) => p.group === g))
       .map((g) => `## ${t.common.groups[g]}\n${prods.filter((p) => p.group === g).map((p) => `- [${p.name} — ${p.full}](${url(`/${locale}/products/${p.slug}`)}): ${p.desc}`).join("\n")}`)
       .join("\n\n")}`;
@@ -72,7 +75,9 @@ export function pageMarkdown(locale: Locale, path: string): string | null {
     md = `# ${t.pages.certificates.title}\n\n${t.pages.certificates.lede}\n\n## ${t.pages.certificates.company}\n${c.filter((x) => x.kind === "company").map((x) => `- ${x.name}${x.issuer ? ` (${x.issuer})` : ""}`).join("\n")}\n\n## ${t.pages.certificates.team}\n${c.filter((x) => x.kind === "team").map((x) => `- ${x.name}`).join("\n")}`;
   } else if (section === "research" && !slug) {
     const r = t.pages.research;
-    md = `# ${r.title}\n\n${r.lede}\n\n## ${r.cvesTitle}\n| ${r.cols.id} | ${r.cols.product} | ${r.cols.driver} | ${r.cols.impact} |\n|---|---|---|---|\n${getCves(locale).map((c) => `| [${c.id}](https://www.cve.org/CVERecord?id=${c.id}) | ${c.product} | ${c.driver} | ${c.impact} |`).join("\n")}\n\n## ${r.academy.title} (${r.academy.badge})\n${r.academy.lede}\n\n${r.academy.text}\n\n[${r.academy.button}](${url(`/${locale}/contact?topic=academy`)})`;
+    const own = getOwnProducts(locale);
+    const ownMd = own.length ? `## ${r.own.title}\n${own.map((p) => `- **[${p.name}](${p.url})**: ${p.tagline}. ${p.description}`).join("\n")}\n\n` : "";
+    md = `# ${r.title}\n\n${r.lede}\n\n${ownMd}## ${r.cvesTitle}\n| ${r.cols.id} | ${r.cols.product} | ${r.cols.driver} | ${r.cols.impact} |\n|---|---|---|---|\n${getCves(locale).map((c) => `| [${c.id}](https://www.cve.org/CVERecord?id=${c.id}) | ${c.product} | ${c.driver} | ${c.impact} |`).join("\n")}\n\n## ${r.academy.title} (${r.academy.badge})\n${r.academy.lede}\n\n${r.academy.text}\n\n[${r.academy.button}](${url(`/${locale}/contact?topic=academy`)})`;
   } else if (section === "news" && !slug) {
     md = `# ${t.pages.news.title}\n\n${t.pages.news.lede}\n\n${getNews(locale).map((n) => `- ${n.date} — [${n.title}](${url(`/${locale}/news/${n.slug}`)})`).join("\n")}`;
   } else if (section === "news" && slug) {

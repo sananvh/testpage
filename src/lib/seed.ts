@@ -6,6 +6,7 @@ import { certificates, clients, partners } from "@/content/logos";
 import { products } from "@/content/services";
 import { seedNews } from "./seed-news";
 import { cves, cveImpacts } from "@/content/research";
+import { mediaRadarNews, mediaRadarProduct } from "./seed-mediaradar";
 import { FAQ_SEED_VERSION, FAQ_V2_FROM, seedFaq } from "./seed-faq";
 import { seedServices } from "./seed-services";
 import { hashPassword } from "./password";
@@ -198,4 +199,27 @@ export function ensureEnvAdmin(db: DatabaseSync) {
   if (db.prepare("SELECT 1 FROM users WHERE lower(email) = ?").get(email)) return;
   db.prepare("INSERT INTO users (email, password_hash) VALUES (?, ?)").run(email, hashPassword(password));
   console.warn(`[cyberpoint] Created admin ${email} from ADMIN_EMAIL`);
+}
+
+/**
+ * MEDIA RADAR (R&D product) and its launch article: added once, also to existing databases.
+ * A settings flag records it, so deleting either in the admin is respected.
+ */
+export function seedMediaRadarOnce(db: DatabaseSync) {
+  if (db.prepare("SELECT 1 FROM settings WHERE key = 'seed_mediaradar'").get()) return;
+  const p = mediaRadarProduct;
+  if (!db.prepare("SELECT 1 FROM own_products WHERE name = ?").get(p.name)) {
+    db.prepare(
+      `INSERT INTO own_products (sort, published, is_new, name, url, logo, logo_dark, tagline_az, tagline_en, tagline_ru,
+        description_az, description_en, description_ru, features_az, features_en, features_ru, app_ios, app_android)
+       VALUES (0, 1, 1, ?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`,
+    ).run(p.name, p.url, p.logo, p.logo_dark, p.tagline.az, p.tagline.en, p.tagline.ru, p.description.az, p.description.en, p.description.ru,
+      p.features.az, p.features.en, p.features.ru, p.app_ios, p.app_android);
+  }
+  const n = mediaRadarNews;
+  if (!db.prepare("SELECT 1 FROM news WHERE slug = ?").get(n.slug)) {
+    db.prepare("INSERT INTO news (slug, date, image, title_az, title_en, title_ru, body_az, body_en, body_ru) VALUES (?,?,?,?,?,?,?,?,?)")
+      .run(n.slug, n.date, n.image, n.title.az, n.title.en, n.title.ru, n.body.az, n.body.en, n.body.ru);
+  }
+  db.prepare("INSERT INTO settings (key, value) VALUES ('seed_mediaradar', '1') ON CONFLICT(key) DO NOTHING").run();
 }

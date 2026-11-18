@@ -138,7 +138,7 @@ const en: Dictionary = {
     },
     services: { eyebrow: "Services", title: "Cybersecurity services", lede: "From assessment to incident response: professional services for every stage of your organisation’s security." },
     service: { faqTitle: "Questions about this service", includes: "What’s included", phase: "Stage", ctaTitle: "Let’s talk about this service", ctaText: "Our specialists are ready to discuss the right approach for your organisation." },
-    products: { eyebrow: "Products", title: "Cybersecurity products", lede: "Every tool you need to keep information security under control: solutions from leading vendors, deployed and supported by our team." },
+    products: { eyebrow: "Products", title: "Cybersecurity products", lede: "Every tool you need to keep information security under control: solutions from leading vendors, deployed and supported by our team." , own: { eyebrow: "Cyberpoint products", title: "Our own products", lede: "Solutions built by our R&D Center with local knowledge and engineering.", badge: "Cyberpoint R&D", newBadge: "New", visit: "Visit the website", apps: "Apps:" } },
     product: { vendors: "Partner vendors in this area", ctaTitle: "Let’s choose the right solution together", ctaText: "We help you select, deploy and configure the product that fits your environment." },
     partners: { eyebrow: "Partners", title: "Our technology partners", lede: "We work with the world’s leading cybersecurity companies, which lets us offer our clients innovative, high-end solutions." },
     clients: { eyebrow: "Clients", title: "Our clients", lede: "Our clients are the foundation of our success. Their trust and their stronger digital security are our greatest achievement." },
@@ -148,6 +148,7 @@ const en: Dictionary = {
       lede: "Our R&D Center builds national cybersecurity solutions on local knowledge and engineering, and researches software down to the kernel level.",
       cvesTitle: "Officially registered CVEs", cols: { id: "CVE", product: "Product", driver: "Driver", impact: "Impact" },
       newsTitle: "R&D news",
+      own: { title: "Products of our R&D Center", lede: "Products that grew out of our research and serve users today." },
       academy: {
         badge: "Coming soon", title: "Cyberpoint Academy",
         lede: "Cybersecurity training for corporate companies is coming soon.",

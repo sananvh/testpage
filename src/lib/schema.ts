@@ -149,3 +149,19 @@ export function itemList(name: string, items: { name: string; url: string }[]) {
     itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, url: abs(it.url) })),
   };
 }
+
+/** Cyberpoint's own software products (R&D), linked to their external websites. */
+export function softwareLd(products: { name: string; url: string; description: string; tagline: string; appIos: string; appAndroid: string }[]) {
+  return products.map((p) => ({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: p.name,
+    url: p.url,
+    description: p.description || p.tagline,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: ["Web", ...(p.appIos ? ["iOS"] : []), ...(p.appAndroid ? ["Android"] : [])].join(", "),
+    ...(p.appIos || p.appAndroid ? { sameAs: [p.appIos, p.appAndroid].filter(Boolean) } : {}),
+    publisher: { "@id": ORG_ID },
+    creator: { "@id": ORG_ID },
+  }));
+}

@@ -1,12 +1,14 @@
 import JsonLd from "@/components/seo/JsonLd";
-import { itemList, webPage } from "@/lib/schema";
-import { getProducts, productGroups } from "@/lib/content";
+import { itemList, softwareLd, webPage } from "@/lib/schema";
+import { getOwnProducts, getProducts, productGroups } from "@/lib/content";
 import { meta, resolve, type LocaleParams } from "@/lib/page";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
 import PageHero from "@/components/ui/PageHero";
 import { CtaPanel, ProductCard, ui } from "@/components/ui/Cards";
 import { Reveal } from "@/components/motion/Reveal";
+import OwnProducts from "@/components/ui/OwnProducts";
+import SectionHead from "@/components/ui/SectionHead";
 import s from "../pages.module.css";
 
 export async function generateMetadata({ params }: LocaleParams) {
@@ -19,15 +21,24 @@ export async function generateMetadata({ params }: LocaleParams) {
 export default async function ProductsPage({ params }: LocaleParams) {
   const { locale, t } = await resolve(params);
   const products = getProducts(locale);
+  const own = getOwnProducts(locale);
+  const o = t.pages.products.own;
   return (
     <>
-      <JsonLd data={[webPage("CollectionPage", locale, `/${locale}/products`, t.pages.products.title, t.pages.products.lede), itemList(t.pages.products.title, products.map((x) => ({ name: `${x.name} — ${x.full}`, url: `/${locale}/products/${x.slug}` })))]} />
+      <JsonLd data={[webPage("CollectionPage", locale, `/${locale}/products`, t.pages.products.title, t.pages.products.lede), itemList(t.pages.products.title, products.map((x) => ({ name: `${x.name} — ${x.full}`, url: `/${locale}/products/${x.slug}` }))), ...softwareLd(own)]} />
       <PageHero
         eyebrow={t.pages.products.eyebrow}
         title={t.pages.products.title}
         lede={t.pages.products.lede}
         crumbs={[{ label: t.nav.home, href: `/${locale}` }, { label: t.nav.products }]}
       />
+      {own.length > 0 && (
+        <section className="container" aria-labelledby="own-products-title">
+          <SectionHead id="own-products-title" eyebrow={o.eyebrow} title={o.title} lede={o.lede} />
+          <OwnProducts products={own} t={o} />
+          <div className="section-tight" />
+        </section>
+      )}
       <div className="container">
         {productGroups
           .filter((g) => products.some((p) => p.group === g))

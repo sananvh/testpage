@@ -17,6 +17,7 @@ const publicPath: Record<string, (row: Row) => string> = {
   certificates: () => "/az/certificates",
   faqs: (r) => `/az/faq#faq-${r.id}`,
   cves: () => "/az/research",
+  own_products: () => "/az/products",
 };
 
 export default async function EditPage({ params, searchParams }: P) {

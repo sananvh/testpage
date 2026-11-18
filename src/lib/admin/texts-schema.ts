@@ -42,7 +42,7 @@ const SECTION_TITLES: Record<string, string> = {
   "home.certificates": "Sertifikatlar bloku", "home.faq": "FAQ bloku", "home.news": "Xəbərlər bloku", "home.cta": "Səhifə sonundakı çağırış (CTA)",
   soc: "SOC paneli (hero): başlıq", "soc.sources": "SOC paneli: mənbələr (xəritənin yuxarısı)", "soc.systems.edr": "SOC paneli: EDR göstəricisi", "soc.systems.siem": "SOC paneli: SIEM göstəricisi", "soc.systems.soar": "SOC paneli: SOAR göstəricisi", "soc.actions": "SOC paneli: cavab tədbirləri (xəritənin aşağısı)", "soc.steps": "SOC paneli: addımların adları", "soc.edr": "SOC paneli: EDR addımı", "soc.siem": "SOC paneli: SIEM addımı", "soc.soar": "SOC paneli: SOAR addımı", "soc.analyst": "SOC paneli: analitik addımı", "soc.severity": "SOC paneli: səviyyə adları",
   "pages.about": "Haqqımızda səhifəsi", "pages.services": "Xidmətlər: siyahı səhifəsi", "pages.service": "Xidmət səhifəsi (hər xidmət üçün ümumi)",
-  "pages.products": "Məhsullar: siyahı səhifəsi", "pages.product": "Məhsul səhifəsi (hər kateqoriya üçün ümumi)", "pages.partners": "Tərəfdaşlar səhifəsi",
+  "pages.products": "Məhsullar: siyahı səhifəsi", "pages.products.own": "Cyberpoint məhsulları bloku (Məhsullar və R&D səhifələri)", "pages.research.own": "R&D səhifəsi: məhsullar bloku", "pages.product": "Məhsul səhifəsi (hər kateqoriya üçün ümumi)", "pages.partners": "Tərəfdaşlar səhifəsi",
   "pages.clients": "Müştərilər səhifəsi", "pages.certificates": "Sertifikatlar səhifəsi", "pages.research": "Tədqiqat və inkişaf səhifəsi",
   "pages.research.cols": "CVE cədvəlinin sütun adları", "pages.research.academy": "Cyberpoint Academy bloku", "pages.news": "Xəbərlər səhifəsi",
   "pages.careers": "Karyera səhifəsi", "pages.contact": "Əlaqə səhifəsi", "pages.faq": "FAQ səhifəsi", "pages.privacy": "Məxfilik siyasəti səhifəsi",
@@ -68,7 +68,7 @@ const KEY_LABELS: Record<string, string> = {
   vendors: "Vendorlar bölməsinin başlığı", company: "“Şirkət” bölməsi", team: "“Komanda” bölməsi", map: "Xəritə linkinin yazısı", updated: "Yenilənmə tarixi yazısı",
   notTranslated: "Tərcümə olunmayıb bildirişi", prev: "“Əvvəlki”", next: "“Növbəti”", empty: "Nəticə yoxdur mesajı", hint: "İpucu", results: "“nəticə” sözü",
   home: "Ana səhifə", ask: "Sual bölməsinin başlığı", askText: "Sual bölməsinin mətni", tagline: "Şüar (footer)", rights: "Hüquqlar sətri",
-  greeting: "Salamlama mesajı", full: "Tam adı", place: "Şəhər · il", role: "Rol (hər kartda)", placeholder: "Yazı sahəsində ipucu", privacy: "Məxfilik", launcher: "Açma düyməsinin adı (ekran oxuyucu)",
+  greeting: "Salamlama mesajı", newBadge: "“Yeni” nişanı", visit: "Sayta keçid düyməsi", apps: "Tətbiqlər yazısı", full: "Tam adı", place: "Şəhər · il", role: "Rol (hər kartda)", placeholder: "Yazı sahəsində ipucu", privacy: "Məxfilik", launcher: "Açma düyməsinin adı (ekran oxuyucu)",
 };
 const human = (k: string) => KEY_LABELS[k] ?? k.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, (c) => c.toUpperCase());
 

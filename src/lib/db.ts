@@ -101,6 +101,19 @@ CREATE TABLE IF NOT EXISTS assistant_chats (
   created_at TEXT NOT NULL DEFAULT (datetime('now')),
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+CREATE TABLE IF NOT EXISTS own_products (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  sort INTEGER NOT NULL DEFAULT 0,
+  published INTEGER NOT NULL DEFAULT 1,
+  is_new INTEGER NOT NULL DEFAULT 0,
+  name TEXT NOT NULL DEFAULT '',
+  url TEXT NOT NULL DEFAULT '',
+  logo TEXT NOT NULL DEFAULT '', logo_dark TEXT NOT NULL DEFAULT '',
+  tagline_az TEXT NOT NULL DEFAULT '', tagline_en TEXT NOT NULL DEFAULT '', tagline_ru TEXT NOT NULL DEFAULT '',
+  description_az TEXT NOT NULL DEFAULT '', description_en TEXT NOT NULL DEFAULT '', description_ru TEXT NOT NULL DEFAULT '',
+  features_az TEXT NOT NULL DEFAULT '', features_en TEXT NOT NULL DEFAULT '', features_ru TEXT NOT NULL DEFAULT '',
+  app_ios TEXT NOT NULL DEFAULT '', app_android TEXT NOT NULL DEFAULT ''
+);
 CREATE TABLE IF NOT EXISTS cves (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   sort INTEGER NOT NULL DEFAULT 0,
@@ -182,6 +195,7 @@ export function db(): DatabaseSync {
     seed.seedIfEmpty(g.__cpdb);
     seed.seedFaqIfEmpty(g.__cpdb);
     seed.seedCvesOnce(g.__cpdb);
+    seed.seedMediaRadarOnce(g.__cpdb);
     seed.ensureEnvAdmin(g.__cpdb);
   }
   return g.__cpdb;

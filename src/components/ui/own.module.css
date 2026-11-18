@@ -1,0 +1,179 @@
+/* Cyberpoint's own products (R&D) */
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.6vw, 22px);
+}
+.single {
+  grid-template-columns: minmax(0, 1fr);
+}
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  height: 100%;
+  border-radius: var(--radius-lg);
+  background: var(--bg-2);
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.single .card {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+.logoPanel {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  padding: clamp(28px, 4vw, 56px);
+  background: radial-gradient(70% 80% at 30% 30%, color-mix(in srgb, var(--accent) 10%, var(--surface)), var(--surface) 70%);
+  overflow: hidden;
+}
+.logoPanel img {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 360px);
+  height: auto;
+  transition: transform 0.6s var(--ease);
+}
+.card:hover .logoPanel img {
+  transform: scale(1.03);
+}
+.rings {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 640px;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 0;
+  background: repeating-radial-gradient(circle, transparent 0 46px, color-mix(in srgb, var(--accent) 14%, transparent) 46px 47px);
+  mask: radial-gradient(circle, #000 25%, transparent 70%);
+  pointer-events: none;
+}
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: clamp(24px, 3vw, 44px);
+}
+.badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px 5px 9px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+.badge svg {
+  width: 14px;
+  height: 14px;
+}
+.new {
+  padding: 5px 11px;
+  background: linear-gradient(90deg, #0a5be2, #8201b6);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11.5px;
+}
+.name {
+  margin: 4px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(26px, 2.4vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.tagline {
+  margin: 0;
+  color: var(--accent-text);
+  font-weight: 700;
+}
+.desc {
+  margin: 0;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+.features {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 22px;
+  width: 100%;
+}
+.grid:not(.single) .features {
+  grid-template-columns: minmax(0, 1fr);
+}
+.features li {
+  position: relative;
+  padding-left: 26px;
+  color: var(--ink-2);
+  font-size: 14.5px;
+  line-height: 1.45;
+}
+.features li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 10px no-repeat;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.apps {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: var(--ink-3);
+}
+.apps a {
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--line-2);
+}
+.apps a:hover {
+  color: var(--accent-text);
+}
+.host {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink-3);
+}
+@media (max-width: 900px) {
+  .single .card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .features {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

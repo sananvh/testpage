@@ -136,7 +136,7 @@ const az = {
     },
     services: { eyebrow: "Xidmətlər", title: "Kibertəhlükəsizlik xidmətləri", lede: "Qiymətləndirmədən insidentlərə cavaba qədər: təşkilatınızın təhlükəsizliyinin hər mərhələsi üçün peşəkar xidmətlər." },
     service: { faqTitle: "Bu xidmət barədə suallar", includes: "Xidmətə daxildir", phase: "Mərhələ", ctaTitle: "Bu xidmət barədə danışaq", ctaText: "Mütəxəssislərimiz təşkilatınıza uyğun yanaşmanı müzakirə etməyə hazırdır." },
-    products: { eyebrow: "Məhsullar", title: "Kibertəhlükəsizlik məhsulları", lede: "Məlumat təhlükəsizliyinizi nəzarət altında saxlamaq üçün lazım olan bütün alətlər: lider vendorların həlləri, komandamızın tətbiqi və dəstəyi ilə." },
+    products: { eyebrow: "Məhsullar", title: "Kibertəhlükəsizlik məhsulları", lede: "Məlumat təhlükəsizliyinizi nəzarət altında saxlamaq üçün lazım olan bütün alətlər: lider vendorların həlləri, komandamızın tətbiqi və dəstəyi ilə." , own: { eyebrow: "Cyberpoint məhsulları", title: "Öz məhsullarımız", lede: "R&D Mərkəzimizin yerli bilik və mühəndislik potensialı ilə hazırladığı həllər.", badge: "Cyberpoint R&D", newBadge: "Yeni", visit: "Sayta keçin", apps: "Tətbiqlər:" } },
     product: { vendors: "Bu sahədə tərəfdaş vendorlar", ctaTitle: "Doğru həlli birlikdə seçək", ctaText: "Mühitinizə uyğun məhsulu seçməyə, quraşdırmağa və konfiqurasiya etməyə kömək edirik." },
     partners: { eyebrow: "Tərəfdaşlar", title: "Texnologiya tərəfdaşlarımız", lede: "Dünyanın öndə gələn kibertəhlükəsizlik şirkətləri ilə əməkdaşlıq edirik. Bu, müştərilərimizə yenilikçi və yüksək səviyyəli həllər təqdim etməyə imkan verir." },
     clients: { eyebrow: "Müştərilər", title: "Müştərilərimiz", lede: "Müştərilərimiz uğurumuzun əsas sütunlarıdır. Onların bizə etimadı və rəqəmsal təhlükəsizliklərinin yüksəlməsi bizim ən böyük nailiyyətimizdir." },
@@ -146,6 +146,7 @@ const az = {
       lede: "R&D Mərkəzimiz yerli bilik və mühəndislik potensialına əsaslanan milli kibertəhlükəsizlik həlləri hazırlayır və proqram təminatının nüvə səviyyəsində tədqiqatlar aparır.",
       cvesTitle: "Rəsmi qeydiyyatdan keçmiş CVE-lər", cols: { id: "CVE", product: "Məhsul", driver: "Drayver", impact: "Təsir" },
       newsTitle: "R&D xəbərləri",
+      own: { title: "R&D Mərkəzinin məhsulları", lede: "Tədqiqatlarımızdan doğan və bu gün istifadəçilərə xidmət edən məhsullar." },
       academy: {
         badge: "Tezliklə", title: "Cyberpoint Academy",
         lede: "Korporativ şirkətlər üçün kibertəhlükəsizlik təlimləri tezliklə başlayır.",

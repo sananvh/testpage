@@ -15,6 +15,7 @@ Home · About · Services (+9 detail pages) · Products (+12) · Partners · Cli
 
 **Admin panel** (`/admin`): everything on the site is editable
 - Content: news, services, products, partners, clients, certificates, CVEs (R&D), FAQ: add / edit / delete / publish, AZ-EN-RU tabs, image upload
+- **Cyberpoint məhsulları**: the company's own R&D products (e.g. MEDIA RADAR): logo, tagline, description, features, website and app links. Shown at the top of the Products page and on the R&D page; each card links to the product's own site
 - **Saytın mətnləri**: every text on the site grouped by page (hero, statistics, about, approach, Academy, careers, footer, menu labels, forms, AI assistant…), AZ/EN/RU side by side, "restore original" per field and per page; lists (statistics, cards, steps, SOC events, suggestions) can be added to, removed and reordered. Stored as overrides on top of `src/i18n/dictionaries`, so code updates never overwrite edits
 - **Yuxarı menyu**: which pages appear in the top menu and in what order
 - **SEO**: Google title and description per page (AZ/EN/RU)

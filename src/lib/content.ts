@@ -84,6 +84,21 @@ export function getNewsItem(slug: string, l: Locale) {
   return r ? toNews(r, l) : null;
 }
 
+/* ---------- Cyberpoint's own products (R&D) ---------- */
+export type OwnProduct = {
+  id: number; name: string; url: string; logo: string; logoDark: string; tagline: string; description: string;
+  features: string[]; appIos: string; appAndroid: string; isNew: boolean;
+};
+const safeUrl = (u: unknown) => (typeof u === "string" && /^https:\/\/[^\s"'<>]+$/i.test(u.trim()) ? u.trim() : "");
+export function getOwnProducts(l: Locale): OwnProduct[] {
+  return all("SELECT * FROM own_products WHERE published = 1 ORDER BY sort, id").map((r) => ({
+    id: Number(r.id), name: String(r.name), url: safeUrl(r.url), logo: String(r.logo), logoDark: String(r.logo_dark || r.logo),
+    tagline: pick(r, "tagline", l), description: pick(r, "description", l),
+    features: pick(r, "features", l).split("\n").map((x) => x.replace(/^[-•]\s*/, "").trim()).filter(Boolean),
+    appIos: safeUrl(r.app_ios), appAndroid: safeUrl(r.app_android), isNew: Number(r.is_new) === 1,
+  }));
+}
+
 /* ---------- CVEs (R&D) ---------- */
 export type Cve = { id: string; product: string; driver: string; impact: string };
 export function getCves(l: Locale): Cve[] {
@@ -133,6 +148,7 @@ export function search(q: string, l: Locale): SearchHit[] {
   const has = (...s: string[]) => s.some((x) => x.toLocaleLowerCase(l === "az" ? "az" : l).includes(term));
   const hits: SearchHit[] = [];
   for (const s of getServices(l)) if (has(s.title, s.short, s.body)) hits.push({ kind: "service", title: s.title, text: s.short, href: `/${l}/services/${s.slug}` });
+  for (const p of getOwnProducts(l)) if (has(p.name, p.tagline, p.description, p.features.join(" "))) hits.push({ kind: "product", title: `${p.name} · ${p.tagline}`, text: p.description, href: `/${l}/products` });
   for (const p of getProducts(l)) if (has(p.name, p.full, p.desc, p.body)) hits.push({ kind: "product", title: `${p.name} · ${p.full}`, text: p.desc, href: `/${l}/products/${p.slug}` });
   for (const n of getNews(l)) if (has(n.title, n.body)) hits.push({ kind: "news", title: n.title, text: n.date, href: `/${l}/news/${n.slug}` });
   for (const f of getFaqs(l)) if (has(f.question, f.answer)) hits.push({ kind: "faq", title: f.question, text: f.answer.slice(0, 140) + (f.answer.length > 140 ? "…" : ""), href: `/${l}/faq#faq-${f.id}` });
