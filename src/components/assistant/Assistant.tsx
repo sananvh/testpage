@@ -60,13 +60,15 @@ function Rich({ text, onLink }: { text: string; onLink: (href: string) => void }
       const m = p.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/);
       if (m) {
         const href = m[2];
-        if (href.startsWith("/"))
+        // Internal pages only as "/path" (not "//host" or "/\\host"); external links only over http(s).
+        if (/^\/(?![\/\\])/.test(href))
           return (
             <a key={`${key}-${i}`} href={href} onClick={(e) => { e.preventDefault(); onLink(href); }}>
               {m[1]}
             </a>
           );
-        return <a key={`${key}-${i}`} href={href} target="_blank" rel="noreferrer">{m[1]}</a>;
+        if (/^https?:\/\/[^\s]+$/i.test(href)) return <a key={`${key}-${i}`} href={href} target="_blank" rel="noopener noreferrer">{m[1]}</a>;
+        return <Fragment key={`${key}-${i}`}>{m[1]}</Fragment>;
       }
       return <Fragment key={`${key}-${i}`}>{p}</Fragment>;
     });
@@ -261,7 +263,6 @@ export default function Assistant({ locale, t }: { locale: Locale; t: Dictionary
       setNotice("");
       const user: Msg = { id: uid(), role: "user", text };
       const reply: Msg = { id: uid(), role: "assistant", text: "", chips: [] };
-      const history = [...messages.filter((m) => !m.error), user].map(({ role, text }) => ({ role, text }));
       setMessages((m) => [...m, user, reply]);
       setBusy(true);
       setVoiceState("thinking");
@@ -274,7 +275,8 @@ export default function Assistant({ locale, t }: { locale: Locale; t: Dictionary
         const res = await fetch("/api/assistant", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ sessionId: session.current, locale: localeRef.current, messages: history }),
+          // Only the new message is sent: the conversation history is kept on the server per session.
+          body: JSON.stringify({ sessionId: session.current, locale: localeRef.current, message: text }),
         });
         if (!res.body) throw new Error("no body");
         const reader = res.body.getReader();

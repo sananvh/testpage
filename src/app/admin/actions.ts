@@ -5,7 +5,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { createSession, destroySession, rateLimit, requireAdmin } from "@/lib/auth";
+import { createSession, destroySession, requireAdmin, revokeUserSessions } from "@/lib/auth";
+import { clearHits, clientIp, hits, rateLimit, recordHit } from "@/lib/security";
 import { get, run, UPLOAD_DIR, PRIVATE_DIR } from "@/lib/db";
 import { hashPassword, verifyPassword } from "@/lib/password";
 import { columnsOf, LOCALES, resources, SETTING_KEYS } from "@/lib/admin/resources";
@@ -19,13 +20,26 @@ function back(url: string, params: Record<string, string>): never {
 }
 
 /* ---------- Auth ---------- */
+// Used when the email is unknown, so a wrong email and a wrong password take the same time.
+let dummyHash: string | null = null;
+const LOGIN_WINDOW = 15 * 60 * 1000;
+const TOO_MANY = "Çox sayda cəhd. 15 dəqiqə sonra yenidən yoxlayın.";
+
 export async function login(formData: FormData) {
-  const ip = (await headers()).get("x-forwarded-for")?.split(",")[0]?.trim() || "local";
-  if (!rateLimit(`login:${ip}`, 8, 15 * 60 * 1000)) back("/admin/login", { error: "Çox sayda cəhd. 15 dəqiqə sonra yenidən yoxlayın." });
-  const email = String(formData.get("email") ?? "").trim().toLowerCase();
-  const password = String(formData.get("password") ?? "");
+  const ip = clientIp(await headers());
+  if (!rateLimit(`login:${ip}`, 8, LOGIN_WINDOW)) back("/admin/login", { error: TOO_MANY });
+  const email = String(formData.get("email") ?? "").trim().toLowerCase().slice(0, 200);
+  const password = String(formData.get("password") ?? "").slice(0, 200);
+  // Per-account lockout: stops slow brute force spread over many IP addresses.
+  const acct = `login-acct:${email}`;
+  if (hits(acct, LOGIN_WINDOW) >= 10) back("/admin/login", { error: TOO_MANY });
   const user = get<{ id: number; password_hash: string }>("SELECT id, password_hash FROM users WHERE lower(email) = ?", email);
-  if (!user || !verifyPassword(password, user.password_hash)) back("/admin/login", { error: "E-poçt və ya şifrə yanlışdır." });
+  const ok = user ? verifyPassword(password, user.password_hash) : (verifyPassword(password, (dummyHash ??= hashPassword(crypto.randomBytes(16).toString("hex")))), false);
+  if (!user || !ok) {
+    recordHit(acct);
+    back("/admin/login", { error: "E-poçt və ya şifrə yanlışdır." });
+  }
+  clearHits(acct);
   await createSession(user.id);
   redirect("/admin");
 }
@@ -155,6 +169,7 @@ export async function changePassword(formData: FormData) {
   if (next.length < 10) back("/admin/account", { error: "Yeni şifrə ən azı 10 simvol olmalıdır." });
   if (next !== confirm) back("/admin/account", { error: "Şifrələr uyğun gəlmir." });
   run("UPDATE users SET password_hash = ? WHERE id = ?", hashPassword(next), user.id);
+  await revokeUserSessions(user.id, true); // sign out every other device
   back("/admin/account", { saved: "1" });
 }
 
@@ -172,6 +187,7 @@ export async function addUser(formData: FormData) {
 export async function removeUser(id: number) {
   const me = await requireAdmin();
   if (id === me.id) back("/admin/account", { error: "Öz hesabınızı silə bilməzsiniz." });
+  await revokeUserSessions(id);
   run("DELETE FROM users WHERE id = ?", id);
   back("/admin/account", { saved: "1" });
 }
@@ -283,11 +299,34 @@ export async function saveSeo(formData: FormData) {
 }
 
 /* ---------- Brand assets ---------- */
+/**
+ * Allow-list style check for uploaded SVG logos: no scripts, event handlers, links, animations,
+ * external references or entity tricks. Checked on the raw text and after decoding entities.
+ * (Served from /brand/live with a script-blocking CSP as a second layer.)
+ */
+function svgIsClean(raw: string): boolean {
+  const named: Record<string, string> = { colon: ":", tab: "\t", newline: "\n", lpar: "(", rpar: ")", sol: "/", period: ".", quot: '"', apos: "'", amp: "&", lt: "<", gt: ">" };
+  const decoded = raw
+    .replace(/&#x([0-9a-f]+);?/gi, (_, h) => String.fromCodePoint(parseInt(h, 16) || 32))
+    .replace(/&#(\d+);?/g, (_, d) => String.fromCodePoint(Number(d) || 32))
+    .replace(/&([a-z]+);/gi, (m, n) => named[n.toLowerCase()] ?? m);
+  const bad = [
+    /<!(?:DOCTYPE|ENTITY)/i,
+    /<\s*(?:script|foreignObject|iframe|embed|object|a|animate\w*|set|handler|listener|style)\b/i,
+    /\son[a-z]+\s*=/i,
+    /(?:xlink:)?href\s*=\s*["']?\s*(?!#|data:image\/(?:png|jpe?g|gif|webp);base64,)/i,
+    /url\(\s*["']?\s*(?!#)/i,
+    /@import/i,
+  ];
+  const squashed = decoded.replace(/[\u0000-\u0020]+/g, "");
+  return !bad.some((re) => re.test(raw) || re.test(decoded)) && !/javascript:|vbscript:/i.test(squashed);
+}
+
 async function saveSvg(file: File): Promise<string> {
   if (file.size > 1024 * 1024) throw new Error("SVG 1 MB-dan böyük olmamalıdır.");
   const text = await file.text();
   if (!/<svg[\s>]/i.test(text)) throw new Error("SVG faylı tanınmadı.");
-  if (/<script|<foreignObject|<iframe|<embed|<object|javascript:|\son[a-z]+\s*=/i.test(text)) throw new Error("SVG-də skript və ya aktiv məzmun var. Təmiz SVG yükləyin.");
+  if (!svgIsClean(text)) throw new Error("SVG-də skript, link və ya aktiv məzmun var. Təmiz SVG yükləyin.");
   const name = `${Date.now()}-${crypto.randomBytes(6).toString("hex")}.svg`;
   fs.mkdirSync(UPLOAD_DIR, { recursive: true });
   fs.writeFileSync(path.join(UPLOAD_DIR, name), text);

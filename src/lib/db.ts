@@ -123,6 +123,14 @@ CREATE TABLE IF NOT EXISTS faqs (
   question_az TEXT NOT NULL DEFAULT '', question_en TEXT NOT NULL DEFAULT '', question_ru TEXT NOT NULL DEFAULT '',
   answer_az TEXT NOT NULL DEFAULT '', answer_en TEXT NOT NULL DEFAULT '', answer_ru TEXT NOT NULL DEFAULT ''
 );
+CREATE TABLE IF NOT EXISTS sessions (
+  token_hash TEXT PRIMARY KEY,
+  user_id INTEGER NOT NULL,
+  created_at INTEGER NOT NULL,
+  last_seen INTEGER NOT NULL,
+  expires_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS sessions_user ON sessions (user_id);
 CREATE TABLE IF NOT EXISTS users (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   email TEXT NOT NULL UNIQUE,

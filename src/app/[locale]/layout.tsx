@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { IBM_Plex_Mono, Manrope } from "next/font/google";
@@ -66,11 +67,12 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const services = getServices(locale).map((sv) => ({ slug: sv.slug, title: sv.title }));
   const allServices = getServices(locale);
   const certs = getCertificates();
+  const nonce = (await headers()).get("x-nonce") ?? undefined; // set by middleware (CSP)
 
   return (
     <html lang={locale} className={`${manrope.variable} ${plexMono.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script nonce={nonce} dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="alternate" type="application/rss+xml" title={`Cyberpoint — ${t.nav.news}`} href={`/${locale}/news/feed.xml`} />
         <link rel="alternate" type="text/plain" title="LLM index" href="/llms.txt" />
         <JsonLd

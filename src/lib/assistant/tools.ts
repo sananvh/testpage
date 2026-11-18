@@ -1,4 +1,5 @@
 import "server-only";
+import { rateLimit } from "@/lib/security";
 import type Anthropic from "@anthropic-ai/sdk";
 import { locales, type Locale } from "@/i18n/config";
 import { get, run } from "@/lib/db";
@@ -78,7 +79,7 @@ const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice
 export type ToolOutcome = { result: string; isError?: boolean; action?: AssistantAction; consultationId?: number };
 
 /** Validates model-supplied input (eager streaming means the API did not) and executes the tool. */
-export async function runTool(name: string, input: unknown, locale: Locale, sessionId: string): Promise<ToolOutcome> {
+export async function runTool(name: string, input: unknown, locale: Locale, sessionId: string, ip = "local"): Promise<ToolOutcome> {
   const args = (input && typeof input === "object" ? input : {}) as Record<string, unknown>;
 
   if (name === "navigate") {
@@ -102,6 +103,10 @@ export async function runTool(name: string, input: unknown, locale: Locale, sess
   }
 
   if (name === "request_consultation") {
+    // Same protection as the contact form: per visitor, per conversation and per day.
+    if (!rateLimit(`consult:${ip}`, 3, 60 * 60 * 1000) || !rateLimit(`consult-s:${sessionId}`, 2, 24 * 60 * 60 * 1000) || !rateLimit("consult:all", 50, 24 * 60 * 60 * 1000)) {
+      return { result: "Too many consultation requests were sent recently. Ask the visitor to use the contact form or call Cyberpoint instead.", isError: true };
+    }
     const lead = {
       name: str(args.name, 120), email: str(args.email, 160), phone: str(args.phone, 40),
       company: str(args.company, 160), slug: str(args.service_slug, 80), message: str(args.message, 2000),

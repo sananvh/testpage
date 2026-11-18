@@ -49,10 +49,10 @@ New → Blueprint on render.com, pick this repo; `render.yaml` does the rest. St
 
 ## Deploy on a VPS (Docker)
 ```bash
-cp .env.example .env   # fill in SITE_URL, ADMIN_*, SESSION_SECRET, SMTP_*
+cp .env.example .env   # fill in SITE_URL, ADMIN_*, SMTP_*
 docker compose up -d --build
 ```
-- App listens on `127.0.0.1:3000`; put Nginx or Caddy in front for HTTPS.
+- App listens on `127.0.0.1:3000`; put Nginx or Caddy in front for HTTPS. **Use the Nginx settings in `docs/05-security.md`** (real visitor IP, body size limit).
 - All data (database, uploaded images, CVs) lives in the `cyberpoint-data` volume — back it up.
 - Without Docker: Node ≥ 22.13, `npm ci && npm run build && npm start`, set `DATA_DIR` to a persistent folder.
 
@@ -61,7 +61,9 @@ docker compose up -d --build
 |---|---|
 | `SITE_URL` | Canonical URL for sitemap / Open Graph |
 | `ADMIN_EMAIL`, `ADMIN_PASSWORD` | First admin account (used once, when the DB is created) |
-| `SESSION_SECRET` | 32+ chars, signs admin sessions (auto-generated into `data/` if empty) |
+| `TRUSTED_PROXY_HOPS` | Proxies in front of the app (default `1` = Nginx). Used to read the real visitor IP for rate limits |
+| `CLIENT_IP_HEADER` | Only behind Cloudflare/Render: header(s) the edge sets, e.g. `true-client-ip,cf-connecting-ip` |
+| `ASSISTANT_DAILY_LIMIT` | Max AI assistant calls per day (default 1500); after that it answers in basic mode |
 | `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS` | Mail server for form emails |
 | `MAIL_FROM`, `MAIL_TO` | Sender and recipient (default `info@cyberpoint.az`) |
 | `ANTHROPIC_API_KEY` | Enables full AI answers in the assistant (basic mode without it) |

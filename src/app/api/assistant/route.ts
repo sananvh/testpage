@@ -1,6 +1,6 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { locales, type Locale } from "@/i18n/config";
-import { rateLimit } from "@/lib/auth";
+import { clientIp, rateLimit, readBody } from "@/lib/security";
 import { get, run } from "@/lib/db";
 import { basicReply } from "@/lib/assistant/basic";
 import { buildKnowledge } from "@/lib/assistant/knowledge";
@@ -11,6 +11,9 @@ export const dynamic = "force-dynamic";
 
 const MODEL = process.env.ASSISTANT_MODEL ?? "claude-opus-5-5";
 const MAX_TURNS = 16; // conversation turns sent to the model
+const MAX_USER_TURNS = 40; // per conversation (session)
+const MAX_BODY = 16 * 1024; // bytes; a request carries one message of up to 1500 characters
+const DAILY_AI_LIMIT = () => Math.max(0, Number(process.env.ASSISTANT_DAILY_LIMIT ?? 1500) || 0); // AI calls per day, then basic mode
 const MAX_TOOL_ROUNDS = 4;
 const aiEnabled = () => Boolean(process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN);
 
@@ -30,18 +33,47 @@ const REFUSAL = {
 let client: Anthropic | null = null;
 const anthropic = () => (client ??= new Anthropic());
 
-function sanitize(body: unknown): { sessionId: string; locale: Locale; turns: ChatTurn[] } | null {
+/** One new visitor message; the history is never taken from the client (it is loaded from the database). */
+function sanitize(body: unknown): { sessionId: string; locale: Locale; message: string } | null {
   if (!body || typeof body !== "object") return null;
   const b = body as Record<string, unknown>;
-  const sessionId = typeof b.sessionId === "string" && /^[a-zA-Z0-9-]{8,64}$/.test(b.sessionId) ? b.sessionId : null;
+  const sessionId = typeof b.sessionId === "string" && /^[a-zA-Z0-9-]{16,64}$/.test(b.sessionId) ? b.sessionId : null;
   const locale = (locales as readonly string[]).includes(String(b.locale)) ? (b.locale as Locale) : null;
-  if (!sessionId || !locale || !Array.isArray(b.messages)) return null;
-  const turns = (b.messages as unknown[])
-    .filter((m): m is ChatTurn => !!m && typeof m === "object" && ((m as ChatTurn).role === "user" || (m as ChatTurn).role === "assistant") && typeof (m as ChatTurn).text === "string")
-    .map((m) => ({ role: m.role, text: m.text.slice(0, 1500) }))
-    .filter((m) => m.text.trim());
-  if (!turns.length || turns[turns.length - 1].role !== "user") return null;
-  return { sessionId, locale, turns };
+  // Older widget versions sent the whole history: take only its last visitor message.
+  const legacy = Array.isArray(b.messages) ? (b.messages as { role?: unknown; text?: unknown }[]).filter((m) => m?.role === "user" && typeof m.text === "string").pop()?.text : undefined;
+  const message = typeof b.message === "string" ? b.message : typeof legacy === "string" ? legacy : "";
+  if (!sessionId || !locale || !message.trim()) return null;
+  return { sessionId, locale, message: message.slice(0, 1500) };
+}
+
+function loadHistory(sessionId: string): ChatTurn[] {
+  const row = get<{ transcript: string }>("SELECT transcript FROM assistant_chats WHERE session_id = ?", sessionId);
+  if (!row) return [];
+  try {
+    const t = JSON.parse(row.transcript);
+    return Array.isArray(t) ? t.filter((x) => (x?.role === "user" || x?.role === "assistant") && typeof x.text === "string") : [];
+  } catch {
+    return [];
+  }
+}
+
+/** Counts AI calls per day in the database; returns false once the daily limit is reached. */
+function takeAiBudget(): boolean {
+  const limit = DAILY_AI_LIMIT();
+  if (!limit) return false;
+  const day = new Date().toISOString().slice(0, 10);
+  const row = get<{ value: string }>("SELECT value FROM settings WHERE key = 'assistant_usage'");
+  let usage = { day, count: 0 };
+  try {
+    const u = row ? JSON.parse(row.value) : null;
+    if (u?.day === day && Number.isFinite(u.count)) usage = u;
+  } catch {
+    /* reset */
+  }
+  if (usage.count >= limit) return false;
+  usage.count += 1;
+  run("INSERT INTO settings (key, value) VALUES ('assistant_usage', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", JSON.stringify(usage));
+  return true;
 }
 
 function saveChat(sessionId: string, locale: Locale, turns: ChatTurn[], mode: "ai" | "basic", consultation: boolean) {
@@ -61,7 +93,7 @@ function saveChat(sessionId: string, locale: Locale, turns: ChatTurn[], mode: "a
 }
 
 /** Claude tool loop. Streams text deltas and client actions through `emit`; returns the full reply text. */
-async function runClaude(locale: Locale, sessionId: string, turns: ChatTurn[], emit: (e: Event) => void) {
+async function runClaude(locale: Locale, sessionId: string, turns: ChatTurn[], emit: (e: Event) => void, ip: string) {
   let current = locale;
   let reply = "";
   let consultation = false;
@@ -74,7 +106,7 @@ async function runClaude(locale: Locale, sessionId: string, turns: ChatTurn[], e
   for (let round = 0; round < MAX_TOOL_ROUNDS; round++) {
     const stream = anthropic().beta.messages.stream({
       model: MODEL,
-      max_tokens: 8000,
+      max_tokens: 1500, // short conversational answers; also bounds the cost of each call
       betas: ["server-side-fallback-2026-07-01"],
       fallbacks: "default", // re-run on a fallback model if a safety classifier declines
       output_config: { effort: "low" }, // conversational replies; keeps latency low
@@ -109,7 +141,7 @@ async function runClaude(locale: Locale, sessionId: string, turns: ChatTurn[], e
     messages.push({ role: "assistant", content: message.content });
     const results: Anthropic.Beta.BetaToolResultBlockParam[] = [];
     for (const tu of toolUses) {
-      const out = await runTool(tu.name, tu.input, current, sessionId);
+      const out = await runTool(tu.name, tu.input, current, sessionId, ip);
       if (out.action) {
         emit({ type: "action", action: out.action });
         if (out.action.type === "language") current = out.action.locale;
@@ -127,27 +159,38 @@ async function runClaude(locale: Locale, sessionId: string, turns: ChatTurn[], e
 }
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "local";
-  const input = sanitize(await request.json().catch(() => null));
+  const ip = clientIp(request.headers);
+  const allowed = rateLimit(`assistant:${ip}`, 30, 10 * 60 * 1000);
+  const raw = allowed ? await readBody(request, MAX_BODY) : null;
+  let input: ReturnType<typeof sanitize> = null;
+  try {
+    input = raw ? sanitize(JSON.parse(raw.toString("utf8"))) : null;
+  } catch {
+    input = null;
+  }
   const encoder = new TextEncoder();
 
   const body = new ReadableStream({
     async start(controller) {
       const emit = (e: Event) => controller.enqueue(encoder.encode(`data: ${JSON.stringify(e)}\n\n`));
       try {
+        if (!allowed) return emit({ type: "error", code: "rate_limited" });
         if (!input) return emit({ type: "error", code: "bad_request" });
-        if (!rateLimit(`assistant:${ip}`, 30, 10 * 60 * 1000)) return emit({ type: "error", code: "rate_limited" });
-        const { sessionId, locale, turns } = input;
-        const question = turns[turns.length - 1].text;
+        const { sessionId, locale, message } = input;
+        const history = loadHistory(sessionId);
+        if (history.filter((t) => t.role === "user").length >= MAX_USER_TURNS || !rateLimit(`assistant-s:${sessionId}`, 20, 10 * 60 * 1000)) {
+          return emit({ type: "error", code: "rate_limited" });
+        }
+        const turns: ChatTurn[] = [...history, { role: "user", text: message }];
 
         let mode: "ai" | "basic" = "basic";
         let reply = "";
         let consultation = false;
         let finalLocale = locale;
 
-        if (aiEnabled()) {
+        if (aiEnabled() && takeAiBudget()) {
           try {
-            const r = await runClaude(locale, sessionId, turns, emit);
+            const r = await runClaude(locale, sessionId, turns, emit, ip);
             ({ reply, consultation } = r);
             finalLocale = r.locale;
             mode = "ai";
@@ -159,7 +202,7 @@ export async function POST(request: Request) {
           }
         }
         if (mode === "basic" && !reply) {
-          const b = basicReply(question, locale);
+          const b = basicReply(message, locale);
           for (const a of b.actions) {
             emit({ type: "action", action: a });
             if (a.type === "language") finalLocale = a.locale;

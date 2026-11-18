@@ -2,7 +2,7 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { NextResponse } from "next/server";
-import { rateLimit } from "@/lib/auth";
+import { clientIp, rateLimit, readBody } from "@/lib/security";
 import { PRIVATE_DIR, get, run } from "@/lib/db";
 import { sendMail } from "@/lib/mail";
 
@@ -10,6 +10,7 @@ export const runtime = "nodejs";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const MAX_CV = 5 * 1024 * 1024;
+const MAX_BODY = 6 * 1024 * 1024; // CV + form fields; anything larger is rejected before parsing
 const clip = (v: FormDataEntryValue | null, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
 function cvKind(buf: Buffer, name: string): string | null {
@@ -21,14 +22,16 @@ function cvKind(buf: Buffer, name: string): string | null {
 }
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "local";
-  if (!rateLimit(`form:${ip}`, 5, 10 * 60 * 1000)) {
+  const ip = clientIp(request.headers);
+  if (!rateLimit(`form:${ip}`, 5, 10 * 60 * 1000) || !rateLimit("form:all", 300, 24 * 60 * 60 * 1000)) {
     return NextResponse.json({ ok: false, error: "rate_limited" }, { status: 429 });
   }
 
+  const raw = await readBody(request, MAX_BODY);
+  if (!raw) return NextResponse.json({ ok: false, error: "too_large" }, { status: 413 });
   let data: FormData;
   try {
-    data = await request.formData();
+    data = await new Response(new Uint8Array(raw), { headers: { "content-type": request.headers.get("content-type") ?? "" } }).formData();
   } catch {
     return NextResponse.json({ ok: false, error: "bad_request" }, { status: 400 });
   }

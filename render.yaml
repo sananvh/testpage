@@ -13,8 +13,10 @@ services:
     envVars:
       - key: NOINDEX            # keep the test copy out of Google
         value: "1"
-      - key: SESSION_SECRET
-        generateValue: true
+      - key: CLIENT_IP_HEADER   # real visitor IP behind Render's edge (rate limits)
+        value: true-client-ip,cf-connecting-ip
+      - key: ASSISTANT_DAILY_LIMIT
+        value: "300"
       - key: ADMIN_EMAIL
         value: admin@cyberpoint.az
       - key: ADMIN_PASSWORD     # you type it when creating the Blueprint
