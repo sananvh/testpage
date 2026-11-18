@@ -145,6 +145,13 @@ function migrate(db: DatabaseSync) {
     ["partners", "logo_dark", "TEXT NOT NULL DEFAULT ''"],
     ["clients", "logo_dark", "TEXT NOT NULL DEFAULT ''"],
     ["certificates", "logo_dark", "TEXT NOT NULL DEFAULT ''"],
+    // two-factor login
+    ["users", "totp_secret", "TEXT NOT NULL DEFAULT ''"],
+    ["users", "totp_enabled", "INTEGER NOT NULL DEFAULT 0"],
+    ["users", "totp_last_step", "INTEGER NOT NULL DEFAULT 0"],
+    ["users", "backup_codes", "TEXT NOT NULL DEFAULT '[]'"],
+    ["sessions", "stage", "TEXT NOT NULL DEFAULT 'full'"],
+    ["sessions", "data", "TEXT NOT NULL DEFAULT ''"],
   ];
   for (const [table, col, def] of add) {
     const cols = db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[];

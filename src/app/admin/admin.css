@@ -188,3 +188,19 @@ td a.title:hover { color: var(--accent); }
 .brand-og { height: auto; aspect-ratio: 1200 / 630; padding: 0; overflow: hidden; }
 .brand-og img { width: 100%; height: 100%; object-fit: cover; }
 .hint { color: var(--ink-3); font-size: 13px; margin: 0 0 12px; }
+
+/* Two-factor login */
+.login-note { margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.6; }
+.login-back { font-size: 13.5px; color: var(--ink-3); text-align: center; }
+.login-back:hover { color: var(--accent); }
+.login-wide { width: min(560px, 100%); }
+.otp-input { font-family: ui-monospace, "IBM Plex Mono", monospace; font-size: 22px !important; letter-spacing: .25em; text-align: center; }
+.setup-steps { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: var(--ink-2); }
+.setup-steps b { color: var(--ink); }
+.qr-box { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 10px; padding: 14px; border-radius: 14px; background: var(--bg); }
+.login-card .qr-box img { width: 196px; height: 196px; align-self: auto; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--line); }
+.qr-box div { display: flex; flex-direction: column; gap: 8px; min-width: 0; flex: 1; font-size: 12.5px; color: var(--ink-3); }
+.secret { font-family: ui-monospace, "IBM Plex Mono", monospace; font-size: 14px; color: var(--ink); background: #fff; padding: 8px 10px; border-radius: 8px; box-shadow: 0 0 0 1px var(--line); word-break: break-all; }
+.backup-codes { margin: 0; padding: 14px 14px 14px 40px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 24px; border-radius: 14px; background: var(--bg); font-family: ui-monospace, "IBM Plex Mono", monospace; font-size: 16px; color: var(--ink); }
+.tfa-on { color: var(--ok); font-weight: 700; }
+.tfa-off { color: #b4232f; font-weight: 700; }

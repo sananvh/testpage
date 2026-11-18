@@ -20,6 +20,25 @@ Passed: SQL injection, stored XSS (forms, chats, news, site texts, JSON-LD), pat
 control, CSRF (Next.js origin check), open redirect, Host-header injection, email header injection,
 upload type checks, secrets in Git, Docker user/ports.
 
+## Two-factor login (admin panel)
+
+- Required for every admin. After the password, the panel opens only with a 6-digit code from an
+  authenticator app (TOTP, RFC 6238: Google Authenticator, Microsoft Authenticator, Authy, 1Password…).
+- First login of each admin: QR code (or manual key) → confirm with a code → 10 single-use backup codes,
+  shown once. New codes can be created under *Hesab və istifadəçilər* (old ones stop working).
+- Protection: a code works only once (replay protection); 5 wrong codes cancel the login and the account
+  cools down for 15 minutes; the password step alone gives no access to the panel or CV downloads; the
+  session token is replaced when the login completes; sessions from before 2FA no longer open the panel.
+- Lost phone: log in with a backup code, or ask another admin to press **2FA sıfırla** next to your
+  account — you then set it up again at the next login (all your sessions are ended).
+- Emergency (every admin locked out), on the server:
+
+```bash
+docker compose exec web node -e "const {DatabaseSync}=require('node:sqlite');new DatabaseSync('/app/data/cyberpoint.db').prepare(\"UPDATE users SET totp_enabled=0, totp_secret='', backup_codes='[]' WHERE email=?\").run('admin@cyberpoint.az')"
+```
+
+  That admin sets up two-factor login again at the next login.
+
 ## Nginx (VPS) — required settings
 
 ```nginx
@@ -49,5 +68,5 @@ server {
 - Keep the app port private (docker-compose binds `127.0.0.1:3000`); otherwise visitors could reach it
   directly and choose their own `X-Forwarded-For`.
 - If Cloudflare is put in front of Nginx, set `TRUSTED_PROXY_HOPS=2` or `CLIENT_IP_HEADER=cf-connecting-ip`.
-- Recommended next steps outside the code: two-factor login for the admin, regular backups of the
+- Recommended next steps outside the code: regular backups of the
   `cyberpoint-data` volume, `npm audit` / dependency updates monthly.

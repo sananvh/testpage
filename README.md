@@ -21,6 +21,7 @@ Home · About · Services (+9 detail pages) · Products (+12) · Partners · Cli
 - **Logo və paylaşım şəkli**: upload logos (light/dark, with/without slogan) and the social share image; served from `/brand/live/*`
 - **Məxfilik siyasəti**: full policy text in AZ/EN/RU
 - Inbox for contact, career and Academy requests (CV download), AI chats, contact details & social links, users and password change
+- **Two-factor login (required for every admin):** password + 6-digit code from an authenticator app (Google/Microsoft Authenticator, Authy). Set up with a QR code at the first login; 10 single-use backup codes; another admin can reset a lost 2FA under “Hesab və istifadəçilər”. Recovery steps: `docs/05-security.md`
 
 **AI assistant** (bottom-right on every page)
 - Chat in AZ / EN / RU powered by Claude (`claude-opus-5-5`, low effort for fast replies; refusal fallbacks enabled), answering only from the site's own content (services, products, partners, clients, certificates, research, news, contacts — rebuilt from the database on each request, so admin edits are picked up immediately)

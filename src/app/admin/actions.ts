@@ -5,7 +5,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
-import { createSession, destroySession, requireAdmin, revokeUserSessions } from "@/lib/auth";
+import { completeLogin, createSession, destroySession, getPending, requireAdmin, revokeUserSessions, setSessionData, updatePending } from "@/lib/auth";
+import { hashBackup, newBackupCodes, newSecret, verifyCode } from "@/lib/totp";
 import { clearHits, clientIp, hits, rateLimit, recordHit } from "@/lib/security";
 import { get, run, UPLOAD_DIR, PRIVATE_DIR } from "@/lib/db";
 import { hashPassword, verifyPassword } from "@/lib/password";
@@ -33,15 +34,109 @@ export async function login(formData: FormData) {
   // Per-account lockout: stops slow brute force spread over many IP addresses.
   const acct = `login-acct:${email}`;
   if (hits(acct, LOGIN_WINDOW) >= 10) back("/admin/login", { error: TOO_MANY });
-  const user = get<{ id: number; password_hash: string }>("SELECT id, password_hash FROM users WHERE lower(email) = ?", email);
+  const user = get<{ id: number; password_hash: string; totp_enabled: number }>("SELECT id, password_hash, totp_enabled FROM users WHERE lower(email) = ?", email);
   const ok = user ? verifyPassword(password, user.password_hash) : (verifyPassword(password, (dummyHash ??= hashPassword(crypto.randomBytes(16).toString("hex")))), false);
   if (!user || !ok) {
     recordHit(acct);
     back("/admin/login", { error: "E-poçt və ya şifrə yanlışdır." });
   }
+  // Password is right: the panel only opens after the second factor.
+  if (user.totp_enabled) {
+    await createSession(user.id, "2fa");
+    redirect("/admin/login/verify");
+  }
+  await createSession(user.id, "setup", newSecret()); // first login: set up the authenticator app
+  redirect("/admin/login/setup");
+}
+
+/* ---------- Two-factor login ---------- */
+type TotpUser = { totp_secret: string; totp_last_step: number; backup_codes: string };
+const codesOf = (u: { backup_codes: string }): string[] => {
+  try {
+    const v = JSON.parse(u.backup_codes);
+    return Array.isArray(v) ? v : [];
+  } catch {
+    return [];
+  }
+};
+
+export async function verifyTwoFactor(formData: FormData) {
+  const pending = await getPending(["2fa"]);
+  if (!pending) redirect("/admin/login");
+  const ip = clientIp(await headers());
+  const acct = `login-acct:${pending.email.toLowerCase()}`;
+  const fails = `2fa-fail:${pending.id}`; // wrong codes per account (5 per 15 min, then the login is cancelled)
+  if (hits(fails, LOGIN_WINDOW) >= 5 || !rateLimit(`2fa-ip:${ip}`, 20, LOGIN_WINDOW) || hits(acct, LOGIN_WINDOW) >= 10) {
+    await destroySession();
+    back("/admin/login", { error: TOO_MANY });
+  }
+  const code = String(formData.get("code") ?? "").trim().slice(0, 40);
+  const u = get<TotpUser>("SELECT totp_secret, totp_last_step, backup_codes FROM users WHERE id = ?", pending.id);
+  if (!u) redirect("/admin/login");
+  const step = verifyCode(u.totp_secret, code, u.totp_last_step);
+  let backupLeft = -1;
+  if (step !== null) {
+    run("UPDATE users SET totp_last_step = ? WHERE id = ?", step, pending.id); // a code works only once
+  } else {
+    const codes = codesOf(u);
+    const i = codes.indexOf(hashBackup(code));
+    if (code.length < 8 || i < 0) {
+      recordHit(acct);
+      recordHit(fails);
+      back("/admin/login/verify", { error: "Kod yanlışdır və ya vaxtı keçib." });
+    }
+    codes.splice(i, 1); // backup codes are single-use
+    run("UPDATE users SET backup_codes = ? WHERE id = ?", JSON.stringify(codes), pending.id);
+    backupLeft = codes.length;
+  }
   clearHits(acct);
-  await createSession(user.id);
+  clearHits(fails);
+  await completeLogin(pending.id, pending.tokenHash);
+  redirect(backupLeft >= 0 ? `/admin/account?backup=${backupLeft}` : "/admin");
+}
+
+export async function confirmTwoFactorSetup(formData: FormData) {
+  const pending = await getPending(["setup"]);
+  if (!pending) redirect("/admin/login");
+  if (!rateLimit(`2fa-setup:${pending.id}`, 10, LOGIN_WINDOW)) {
+    await destroySession();
+    back("/admin/login", { error: TOO_MANY });
+  }
+  const secret = pending.data;
+  const step = verifyCode(secret, String(formData.get("code") ?? ""));
+  if (step === null) back("/admin/login/setup", { error: "Kod uyğun gəlmədi. Tətbiqdəki ən son 6 rəqəmli kodu daxil edin." });
+  const codes = newBackupCodes();
+  run(
+    "UPDATE users SET totp_secret = ?, totp_enabled = 1, totp_last_step = ?, backup_codes = ? WHERE id = ?",
+    secret, step, JSON.stringify(codes.map(hashBackup)), pending.id,
+  );
+  updatePending(pending.tokenHash, "codes", JSON.stringify(codes)); // shown once on the next page
+  redirect("/admin/login/setup");
+}
+
+export async function finishTwoFactorSetup() {
+  const pending = await getPending(["codes"]);
+  if (!pending) redirect("/admin/login");
+  await revokeUserSessions(pending.id, true); // any session from before 2FA is ended
+  await completeLogin(pending.id, pending.tokenHash);
   redirect("/admin");
+}
+
+export async function regenerateBackupCodes() {
+  const me = await requireAdmin();
+  const codes = newBackupCodes();
+  run("UPDATE users SET backup_codes = ? WHERE id = ?", JSON.stringify(codes.map(hashBackup)), me.id);
+  await setSessionData(JSON.stringify({ backupCodes: codes }));
+  redirect("/admin/account?codes=1");
+}
+
+/** For an admin who lost their phone: they set up two-factor login again at their next login. */
+export async function resetTwoFactor(id: number) {
+  const me = await requireAdmin();
+  if (id === me.id) back("/admin/account", { error: "Öz iki faktorlu girişinizi sıfırlaya bilməzsiniz. Ehtiyat kodlarından istifadə edin və ya başqa admindən xahiş edin." });
+  run("UPDATE users SET totp_secret = '', totp_enabled = 0, totp_last_step = 0, backup_codes = '[]' WHERE id = ?", id);
+  await revokeUserSessions(id);
+  back("/admin/account", { saved: "1" });
 }
 
 export async function logout() {
