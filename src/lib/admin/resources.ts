@@ -12,6 +12,8 @@ export type Field = {
   help?: string;
   options?: { value: string; label: string }[];
   rows?: number;
+  /** Checkbox state for a new item (default: checked). */
+  default?: boolean;
 };
 
 export type Resource = {
@@ -41,13 +43,14 @@ const body = "Boş sətir = yeni abzas · “- ” ilə başlayan sətir = siyah
 export const resources: Record<string, Resource> = {
   news: {
     key: "news", table: "news", label: "Xəbərlər", singular: "Xəbər", order: "date DESC, id DESC", titleColumn: "title_az",
-    listColumns: [{ name: "image", label: "", type: "image" }, { name: "title_az", label: "Başlıq" }, { name: "date", label: "Tarix", type: "date" }, { name: "published", label: "Dərc", type: "bool" }],
+    listColumns: [{ name: "image", label: "", type: "image" }, { name: "title_az", label: "Başlıq" }, { name: "date", label: "Tarix", type: "date" }, { name: "rnd", label: "R&D", type: "bool" }, { name: "published", label: "Dərc", type: "bool" }],
     fields: [
       { name: "title", label: "Başlıq", type: "text", localized: true, required: true },
       { name: "slug", label: "URL (slug)", type: "text", required: true, help: "Yalnız latın hərfləri, rəqəmlər və “-”. Məs: yeni-memorandum" },
       { name: "date", label: "Tarix", type: "date", required: true },
       { name: "image", label: "Şəkil", type: "image", help: "JPG, PNG və ya WEBP, maks. 5 MB. Tövsiyə: 1600×1000" },
       { name: "body", label: "Mətn", type: "textarea", localized: true, rows: 14, help: body },
+      { name: "rnd", label: "R&D səhifəsində göstər (“R&D xəbərləri”)", type: "checkbox", default: false, help: "Tədqiqat və inkişaf səhifəsindəki xəbərlər bölməsinə də əlavə olunur. Xəbər hər halda Xəbərlər səhifəsində görünür." },
       { name: "published", label: "Saytda göstər", type: "checkbox" },
     ],
   },

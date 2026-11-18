@@ -1,6 +1,6 @@
 import JsonLd from "@/components/seo/JsonLd";
 import { softwareLd, webPage } from "@/lib/schema";
-import { getCves, getNews, getOwnProducts } from "@/lib/content";
+import { getCves, getOwnProducts, getRndNews } from "@/lib/content";
 import { meta, resolve, type LocaleParams } from "@/lib/page";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -20,12 +20,11 @@ export async function generateMetadata({ params }: LocaleParams) {
   return meta(locale, "/research", t.pages.research.title, t.pages.research.lede);
 }
 
-const RND_SLUGS = ["3-new-cves", "rnd-center"];
 
 export default async function ResearchPage({ params }: LocaleParams) {
   const { locale, t } = await resolve(params);
   const r = t.pages.research;
-  const news = getNews(locale).filter((n) => RND_SLUGS.includes(n.slug));
+  const news = getRndNews(locale); // news marked for R&D in the admin
   const cves = getCves(locale);
   const own = getOwnProducts(locale);
   return (
@@ -101,7 +100,7 @@ export default async function ResearchPage({ params }: LocaleParams) {
         <section className="section">
           <div className="container">
             <SectionHead title={r.newsTitle} />
-            <ul className={ui.grid2}>
+            <ul className={news.length >= 3 ? ui.grid3 : ui.grid2}>
               {news.map((n) => (
                 <li key={n.slug}>
                   <NewsCard item={n} locale={locale} />

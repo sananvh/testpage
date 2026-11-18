@@ -158,6 +158,7 @@ function migrate(db: DatabaseSync) {
     ["partners", "logo_dark", "TEXT NOT NULL DEFAULT ''"],
     ["clients", "logo_dark", "TEXT NOT NULL DEFAULT ''"],
     ["certificates", "logo_dark", "TEXT NOT NULL DEFAULT ''"],
+    ["news", "rnd", "INTEGER NOT NULL DEFAULT 0"], // shown on the R&D page
     // two-factor login
     ["users", "totp_secret", "TEXT NOT NULL DEFAULT ''"],
     ["users", "totp_enabled", "INTEGER NOT NULL DEFAULT 0"],
@@ -196,6 +197,7 @@ export function db(): DatabaseSync {
     seed.seedFaqIfEmpty(g.__cpdb);
     seed.seedCvesOnce(g.__cpdb);
     seed.seedMediaRadarOnce(g.__cpdb);
+    seed.initRndNewsOnce(g.__cpdb);
     seed.ensureEnvAdmin(g.__cpdb);
   }
   return g.__cpdb;

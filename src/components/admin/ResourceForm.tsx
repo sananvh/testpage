@@ -53,7 +53,7 @@ export default function ResourceForm({ resource, row, action }: { resource: Reso
         if (f.type === "checkbox")
           return (
             <label key={f.name} className="check">
-              <input type="checkbox" name={f.name} value="1" defaultChecked={row ? Number(row[f.name]) === 1 : true} />
+              <input type="checkbox" name={f.name} value="1" defaultChecked={row ? Number(row[f.name]) === 1 : (f.default ?? true)} />
               {f.label}
             </label>
           );

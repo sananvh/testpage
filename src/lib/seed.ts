@@ -223,3 +223,10 @@ export function seedMediaRadarOnce(db: DatabaseSync) {
   }
   db.prepare("INSERT INTO settings (key, value) VALUES ('seed_mediaradar', '1') ON CONFLICT(key) DO NOTHING").run();
 }
+
+/** The R&D page used to show a fixed list of articles; mark those (and the MEDIA RADAR launch) once as R&D news. */
+export function initRndNewsOnce(db: DatabaseSync) {
+  if (db.prepare("SELECT 1 FROM settings WHERE key = 'news_rnd_init'").get()) return;
+  db.prepare("UPDATE news SET rnd = 1 WHERE slug IN ('3-new-cves', 'rnd-center', 'mediaradar')").run();
+  db.prepare("INSERT INTO settings (key, value) VALUES ('news_rnd_init', '1') ON CONFLICT(key) DO NOTHING").run();
+}

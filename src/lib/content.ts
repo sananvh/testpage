@@ -79,6 +79,10 @@ function toNews(r: Row, l: Locale): NewsItem {
 export const getNews = (l: Locale, limit = 500, offset = 0) =>
   all("SELECT * FROM news WHERE published = 1 ORDER BY date DESC, id DESC LIMIT ? OFFSET ?", limit, offset).map((r) => toNews(r, l));
 export const countNews = () => Number(get<{ n: number }>("SELECT COUNT(*) AS n FROM news WHERE published = 1")?.n ?? 0);
+/** News marked "R&D səhifəsində göstər" in the admin, newest first. */
+export const getRndNews = (l: Locale) =>
+  all("SELECT * FROM news WHERE published = 1 AND rnd = 1 ORDER BY date DESC, id DESC").map((r) => toNews(r, l));
+
 export function getNewsItem(slug: string, l: Locale) {
   const r = get("SELECT * FROM news WHERE slug = ? AND published = 1", slug);
   return r ? toNews(r, l) : null;
